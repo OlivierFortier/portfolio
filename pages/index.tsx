@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
+import {FaReact} from 'react-icons/fa';
 
 export default function Home() {
   return (
@@ -27,7 +28,7 @@ export default function Home() {
         />
       </section>
 
-      <section className="text-lg">
+      <section className="text-lg ">
         <p className="relative bg-blue-200 p-7 -mx-7 rounded-2xl">
           J’adore travailler avec des outils modernes et efficaces. Je passe mon
           temps à jouer avec des frameworks et des librairies pour le plaisir.
@@ -42,7 +43,82 @@ export default function Home() {
           Logiciel.
         </p>
       </section>
-      
+
+      <section className="my-6">
+        <h3 className="text-3xl my-3">Projets récents</h3>
+        <ul className="space-y-7">
+          <li>
+            <article className="flex flex-row-reverse shadow-lg rounded-md">
+              <div>
+                <h4>Nostrud culpa</h4>
+                <p>Reprehenderit esse labore id veniam ut veniam non ex</p>
+                <Link href="/">
+                  <a>Read more</a>
+                </Link>
+              </div>
+              <Image
+                src="/assets/img-placeholder.png"
+                width={165}
+                height={165}
+              />
+            </article>
+          </li>
+          <li>
+            <article className="flex flex-row-reverse shadow-lg rounded-md">
+              <div>
+                <h4>Nostrud culpa</h4>
+                <p>Reprehenderit esse labore id veniam ut veniam non ex</p>
+                <Link href="/">
+                  <a>Read more</a>
+                </Link>
+              </div>
+              <Image
+                src="/assets/img-placeholder.png"
+                width={165}
+                height={165}
+              />
+            </article>
+          </li>
+          <li>
+            <article className="flex flex-row-reverse shadow-lg rounded-md">
+              <div>
+                <h4>Nostrud culpa</h4>
+                <p>Reprehenderit esse labore id veniam ut veniam non ex</p>
+                <Link href="/">
+                  <a>Read more</a>
+                </Link>
+              </div>
+              <Image
+                src="/assets/img-placeholder.png"
+                width={165}
+                height={165}
+              />
+            </article>
+          </li>
+        </ul>
+      </section>
+
+      <section className="my-6">
+        <h3 className="text-3xl">Mes technos pref</h3>
+        <ul className="text-2xl">
+          <li className="flex items-center">
+            <FaReact size={50} className="mr-5"/>
+            React
+          </li>
+          <li className="flex items-center">
+             <FaReact size={50} className="mr-5"/>
+            React
+          </li>
+          <li className="flex items-center">
+             <FaReact size={50} className="mr-5"/>
+            React
+          </li>
+          <li className="flex items-center">
+             <FaReact size={50} className="mr-5"/>
+            React
+          </li>
+        </ul>
+      </section>
     </div>
   );
 }
