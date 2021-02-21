@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#Header > nav > details summary {
+    list-style: none;
+  }
+
+#Header > nav > details > summary::-webkit-details-marker {
+    display: none;
+  }
