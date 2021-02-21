@@ -27,8 +27,8 @@ export default function Home() {
         />
       </section>
 
-      <section>
-        <p className="bg-blue-200 p-3 rounded-xl">
+      <section className="text-lg">
+        <p className="relative bg-blue-200 p-7 -mx-7 rounded-2xl">
           J’adore travailler avec des outils modernes et efficaces. Je passe mon
           temps à jouer avec des frameworks et des librairies pour le plaisir.
           Ça m’arrive aussi d’aider les gens , les conseiller et les diriger
