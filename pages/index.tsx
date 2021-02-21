@@ -4,9 +4,9 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="max-w-xs mx-auto">
-      <section className="mb-4 flex flex-col-reverse md:flex-col">
-        <span className="space-y-2">
+    <div className="max-w-xs mx-auto md:max-w-2xl lg:max-w-4xl xl:max-w-7xl">
+      <section className="mb-4 flex flex-col-reverse md:flex-col lg:flex-row">
+        <span className="space-y-2 lg:w-1/2">
           <h1 className="text-5xl mt-2">Olivier Fortier</h1>
           <h2 className="text-2xl">
             Salut, je suis un développeur web passionné par les nouvelles
@@ -23,7 +23,7 @@ export default function Home() {
           width={445}
           height={394}
           alt="hero"
-          className=" object-cover rounded-lg"
+          className=" object-cover rounded-lg lg:w-1/2"
         />
       </section>
 
