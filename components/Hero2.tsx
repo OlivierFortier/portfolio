@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import Link from "next/link";
 
 export default function Hero2() {
   return (
@@ -7,19 +7,16 @@ export default function Hero2() {
         <div className="mb-10 lg:max-w-lg lg:pr-5 lg:mb-0">
           <div className="max-w-xl mb-6">
             <h1 className="max-w-lg mb-6 font-sans text-4xl font-bold tracking-tight sm:text-6xl sm:leading-none text-deep-purple-accent-400">
-             Olivier Fortier
+              Olivier Fortier
             </h1>
             <h2 className="text-xl text-gray-700 md:text-2xl">
-            Salut, je suis un développeur web passionné par les nouvelles
-            technologies 👋
+              Salut, je suis un développeur web passionné par les nouvelles
+              technologies 👋
             </h2>
           </div>
           <div className="flex flex-col items-center md:flex-row">
             <Link href="/">
-              <a
-               
-                className="inline-flex items-center justify-center w-full h-12 px-6 mb-3 font-medium tracking-wide text-white transition duration-200 rounded shadow-md md:w-auto md:mr-4 md:mb-0 bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-              >
+              <a className="text-lg inline-flex items-center justify-center w-full h-12 px-6 mb-3 font-medium tracking-wide text-white transition duration-200 rounded shadow-md md:w-auto md:mr-4 md:mb-0 bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none">
                 En savoir plus 👇
               </a>
             </Link>
@@ -35,4 +32,4 @@ export default function Hero2() {
       </div>
     </div>
   );
-};
+}
