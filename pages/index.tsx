@@ -1,7 +1,7 @@
 import  Hero2  from "../components/Hero/Hero2";
-import Projets1 from "../components/Projets/Projets1";
-import Perso1 from "../components/Perso/Perso1";
 import AppercuTechnos from "../components/Technos/AppercuTechnos";
+import Projets from "../components/Projets/Projets";
+import Perso from "../components/Perso/Perso";
 
 export default function Home() {
   return (
@@ -9,25 +9,9 @@ export default function Home() {
       
       <Hero2/>
 
-      {/* <section className="text-lg ">
-        <p className="relative bg-blue-200 p-7 -mx-7 rounded-2xl">
-          J’adore travailler avec des outils modernes et efficaces. Je passe mon
-          temps à jouer avec des frameworks et des librairies pour le plaisir.
-          Ça m’arrive aussi d’aider les gens , les conseiller et les diriger
-          vers une solution optimale.
-        </p>
-        <p>
-          J’aime réaliser des projets de A à Z, en passant par le DevOps, le
-          Back-End, aussi bien que le Front-End. J’aime avoir une vision global
-          d’un produit, et toucher à tout ce qui à trait au cycle de vie d’un
-          produit multimédia. C’est pourquoi je suis inscrit à L’ETS en Génie
-          Logiciel.
-        </p>
-      </section> */}
-
-      <Perso1/>
+      <Perso/>
       
-      <Projets1/>
+      <Projets/>
   
       <AppercuTechnos/>
 
