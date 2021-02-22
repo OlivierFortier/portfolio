@@ -2,31 +2,22 @@ import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 import {FaReact} from 'react-icons/fa';
+import { Hero } from "../components/Hero";
+import { Hero2 } from "../components/Hero2";
+import Technos from "../components/Technos";
+import Hero3 from "../components/Hero3";
+import { Hero1 } from "../components/Hero1";
+import Hero4 from "../components/Hero4";
+import Projets1 from "../components/Projets1";
 
 export default function Home() {
   return (
     <div className="max-w-xs mx-auto md:max-w-2xl lg:max-w-4xl xl:max-w-7xl">
-      <section className="mb-4 flex flex-col-reverse md:flex-col lg:flex-row">
-        <span className="space-y-2 lg:w-1/2">
-          <h1 className="text-5xl mt-2">Olivier Fortier</h1>
-          <h2 className="text-2xl">
-            Salut, je suis un développeur web passionné par les nouvelles
-            technologies 🤙
-          </h2>
-          <Link href="/">
-            <a className="inline-block p-2 border-4 border-blue-700 rounded-md">
-              En savoir plus 👋
-            </a>
-          </Link>
-        </span>
-        <Image
-          src="/assets/diego_unsplash.jpg"
-          width={445}
-          height={394}
-          alt="hero"
-          className=" object-cover rounded-lg lg:w-1/2"
-        />
-      </section>
+      
+      {/* <Hero/> */}
+      {/* <Hero1/> */}
+      <Hero2/>
+      {/* <Hero3/> */}
 
       <section className="text-lg ">
         <p className="relative bg-blue-200 p-7 -mx-7 rounded-2xl">
@@ -44,81 +35,11 @@ export default function Home() {
         </p>
       </section>
 
-      <section className="my-6">
-        <h3 className="text-3xl my-3">Projets récents</h3>
-        <ul className="space-y-7">
-          <li>
-            <article className="flex flex-row-reverse shadow-lg rounded-md">
-              <div>
-                <h4>Nostrud culpa</h4>
-                <p>Reprehenderit esse labore id veniam ut veniam non ex</p>
-                <Link href="/">
-                  <a>Read more</a>
-                </Link>
-              </div>
-              <Image
-                src="/assets/img-placeholder.png"
-                width={165}
-                height={165}
-              />
-            </article>
-          </li>
-          <li>
-            <article className="flex flex-row-reverse shadow-lg rounded-md">
-              <div>
-                <h4>Nostrud culpa</h4>
-                <p>Reprehenderit esse labore id veniam ut veniam non ex</p>
-                <Link href="/">
-                  <a>Read more</a>
-                </Link>
-              </div>
-              <Image
-                src="/assets/img-placeholder.png"
-                width={165}
-                height={165}
-              />
-            </article>
-          </li>
-          <li>
-            <article className="flex flex-row-reverse shadow-lg rounded-md">
-              <div>
-                <h4>Nostrud culpa</h4>
-                <p>Reprehenderit esse labore id veniam ut veniam non ex</p>
-                <Link href="/">
-                  <a>Read more</a>
-                </Link>
-              </div>
-              <Image
-                src="/assets/img-placeholder.png"
-                width={165}
-                height={165}
-              />
-            </article>
-          </li>
-        </ul>
-      </section>
+      
+      <Projets1/>
 
-      <section className="my-6">
-        <h3 className="text-3xl">Mes technos pref</h3>
-        <ul className="text-2xl">
-          <li className="flex items-center">
-            <FaReact size={50} className="mr-5"/>
-            React
-          </li>
-          <li className="flex items-center">
-             <FaReact size={50} className="mr-5"/>
-            React
-          </li>
-          <li className="flex items-center">
-             <FaReact size={50} className="mr-5"/>
-            React
-          </li>
-          <li className="flex items-center">
-             <FaReact size={50} className="mr-5"/>
-            React
-          </li>
-        </ul>
-      </section>
+      <Technos/>
+
     </div>
   );
 }
