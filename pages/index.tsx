@@ -2,12 +2,11 @@ import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 import {FaReact} from 'react-icons/fa';
-import { Hero } from "../components/Hero";
-import { Hero2 } from "../components/Hero2";
+import  Hero  from "../components/Hero";
+import  Hero2  from "../components/Hero2";
 import Technos from "../components/Technos";
 import Hero3 from "../components/Hero3";
-import { Hero1 } from "../components/Hero1";
-import Hero4 from "../components/Hero4";
+import  Hero1  from "../components/Hero1";
 import Projets1 from "../components/Projets1";
 
 export default function Home() {
