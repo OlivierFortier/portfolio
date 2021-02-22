@@ -1,12 +1,7 @@
 import  Hero2  from "../components/Hero/Hero2";
 import Projets1 from "../components/Projets/Projets1";
 import Perso1 from "../components/Perso/Perso1";
-import Technos2 from "../components/Technos/Technos2";
-import Technos from "../components/Technos/Technos";
-import Projets2 from "../components/Projets/Projets2";
-import Technos3 from "../components/Technos/Technos3";
-import Technos4 from "../components/Technos/Technos4";
-import Technos1 from "../components/Technos/Technos1";
+import AppercuTechnos from "../components/Technos/AppercuTechnos";
 
 export default function Home() {
   return (
@@ -34,11 +29,7 @@ export default function Home() {
       
       <Projets1/>
   
-      
-      <Technos1/>
-      <Technos2/>
-      <Technos3/>
-      <Technos4/>
+      <AppercuTechnos/>
 
 
     </div>
