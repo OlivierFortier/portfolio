@@ -10,6 +10,10 @@ import  Hero1  from "../components/Hero/Hero1";
 import Projets1 from "../components/Projets/Projets1";
 import Perso1 from "../components/Perso/Perso1";
 import Technos1 from "../components/Technos/Technos1";
+import Technos2 from "../components/Technos/Technos2";
+import Technos3 from "../components/Technos/Technos3";
+import Technos4 from "../components/Technos/Technos4";
+import Projets2 from "../components/Projets/Projets2";
 
 export default function Home() {
   return (
@@ -41,7 +45,17 @@ export default function Home() {
       
       <Projets1/>
 
-      <Technos/>
+      {/* <Projets2/> */}
+
+      {/* <Technos/> */}
+
+      {/* <Technos1/> */}
+
+      <Technos2/>
+
+      {/* <Technos3/> */}
+
+      {/* <Technos4/> */}
 
     </div>
   );
