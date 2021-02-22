@@ -26,13 +26,12 @@ export default function Technos3() {
                   height="24"
                 />
               </svg>
-              <span className="relative">The</span>
+              <span className="relative">Mes</span>
             </span>{' '}
-            quick, brown fox jumps over a lazy dog
+            technos pref
           </h2>
           <p className="text-base text-gray-700 md:text-lg">
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-            accusantium doloremque rem aperiam, eaque ipsa quae.
+           J'utilise ces technologies chaque fois que j'en ai l'occasion
           </p>
         </div>
         <div className="grid gap-8 row-gap-8 lg:grid-cols-3">
@@ -52,18 +51,10 @@ export default function Technos3() {
                 />
               </svg>
             </div>
-            <h6 className="mb-2 font-semibold leading-5">The good cheese</h6>
+            <h6 className="mb-2 font-semibold leading-5">React</h6>
             <p className="max-w-md mb-3 text-sm text-gray-900 sm:mx-auto">
-              Cheese on toast airedale the big cheese. Danish fontina cheesy grin
-              airedale danish
+              Un cadriciel front-end
             </p>
-            <a
-              href="/"
-              aria-label=""
-              className="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"
-            >
-              Learn more
-            </a>
           </div>
           <div className="sm:text-center">
             <div className="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-indigo-50 sm:mx-auto sm:w-24 sm:h-24">
@@ -81,18 +72,10 @@ export default function Technos3() {
                 />
               </svg>
             </div>
-            <h6 className="mb-2 font-semibold leading-5">Chainsaw foal hay</h6>
+            <h6 className="mb-2 font-semibold leading-5">Vue</h6>
             <p className="max-w-md mb-3 text-sm text-gray-900 sm:mx-auto">
-              Satoshi Nakamoto launched lots of decentralisation when Litecoin
-              required
+              Un cadriciel front-end
             </p>
-            <a
-              href="/"
-              aria-label=""
-              className="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"
-            >
-              Learn more
-            </a>
           </div>
           <div className="sm:text-center">
             <div className="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-indigo-50 sm:mx-auto sm:w-24 sm:h-24">
@@ -110,18 +93,73 @@ export default function Technos3() {
                 />
               </svg>
             </div>
-            <h6 className="mb-2 font-semibold leading-5">Pick up truck</h6>
+            <h6 className="mb-2 font-semibold leading-5">Next.js</h6>
             <p className="max-w-md mb-3 text-sm text-gray-900 sm:mx-auto">
-              Bavaria ipsum dolor sit amet Radler Schneid vui huift vui ognudelt i
-              mechad
+             Le méta-cadriciel isomorphe pour react
             </p>
-            <a
-              href="/"
-              aria-label=""
-              className="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"
-            >
-              Learn more
-            </a>
+          </div>
+          <div className="sm:text-center">
+            <div className="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-indigo-50 sm:mx-auto sm:w-24 sm:h-24">
+              <svg
+                className="w-12 h-12 text-deep-purple-accent-400 sm:w-20 sm:h-20"
+                stroke="currentColor"
+                viewBox="0 0 52 52"
+              >
+                <polygon
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  fill="none"
+                  points="29 13 14 29 25 29 23 39 38 23 27 23"
+                />
+              </svg>
+            </div>
+            <h6 className="mb-2 font-semibold leading-5">Node</h6>
+            <p className="max-w-md mb-3 text-sm text-gray-900 sm:mx-auto">
+              Le fameux runtime qui a changé le monde
+            </p>
+          </div>
+          <div className="sm:text-center">
+            <div className="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-indigo-50 sm:mx-auto sm:w-24 sm:h-24">
+              <svg
+                className="w-12 h-12 text-deep-purple-accent-400 sm:w-20 sm:h-20"
+                stroke="currentColor"
+                viewBox="0 0 52 52"
+              >
+                <polygon
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  fill="none"
+                  points="29 13 14 29 25 29 23 39 38 23 27 23"
+                />
+              </svg>
+            </div>
+            <h6 className="mb-2 font-semibold leading-5">.Net</h6>
+            <p className="max-w-md mb-3 text-sm text-gray-900 sm:mx-auto">
+              L'écosystème tout-en-un moderne
+            </p>
+          </div>
+          <div className="sm:text-center">
+            <div className="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-indigo-50 sm:mx-auto sm:w-24 sm:h-24">
+              <svg
+                className="w-12 h-12 text-deep-purple-accent-400 sm:w-20 sm:h-20"
+                stroke="currentColor"
+                viewBox="0 0 52 52"
+              >
+                <polygon
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  fill="none"
+                  points="29 13 14 29 25 29 23 39 38 23 27 23"
+                />
+              </svg>
+            </div>
+            <h6 className="mb-2 font-semibold leading-5">GraphQL</h6>
+            <p className="max-w-md mb-3 text-sm text-gray-900 sm:mx-auto">
+              La façon moderne d'interagir avec les données
+            </p>
           </div>
         </div>
       </div>

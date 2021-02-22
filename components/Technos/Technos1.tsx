@@ -1,7 +1,7 @@
 export default function Technos1() {
     return (
       <div className="px-4 py-2 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-8">
-        <h2 className="text-4xl text-center mb-8">Mes technos pref</h2>
+        <h2 className="text-center max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">Mes technos pref</h2>
         <div className="grid row-gap-8 sm:row-gap-0 sm:grid-cols-2 lg:grid-cols-3">
           <div className="p-8 border-b sm:border-r">
             <div className="max-w-md text-center">
@@ -22,9 +22,8 @@ export default function Technos1() {
               </div>
               <h6 className="mb-2 font-semibold leading-5">React</h6>
               <p className="mb-3 text-sm text-gray-900">
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium rem aperiam, eaque ipsa quae. Sit error voluptatem.
-              </p>
+                Un cadriciel front-end
+               </p>
             </div>
           </div>
           <div className="p-8 border-b lg:border-r">
@@ -46,9 +45,7 @@ export default function Technos1() {
               </div>
               <h6 className="mb-2 font-semibold leading-5">Vue</h6>
               <p className="mb-3 text-sm text-gray-900">
-                Storage shed, troughs feed bale manure, is garden wheat oats at
-                augers. Bulls at rose garden cucumbers mice sunflower wheat in
-                pig.
+                Un cadriciel front-end
               </p>
             </div>
           </div>
@@ -71,9 +68,8 @@ export default function Technos1() {
               </div>
               <h6 className="mb-2 font-semibold leading-5">Next.js</h6>
               <p className="mb-3 text-sm text-gray-900">
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium rem aperiam, eaque ipsa quae. Sit error voluptatem.
-              </p>
+              Le méta-cadriciel isomorphe pour react
+               </p>
             </div>
           </div>
           <div className="p-8 border-b lg:border-b-0 lg:border-r">
@@ -95,9 +91,7 @@ export default function Technos1() {
               </div>
               <h6 className="mb-2 font-semibold leading-5">Node</h6>
               <p className="mb-3 text-sm text-gray-900">
-                Storage shed, troughs feed bale manure, is garden wheat oats at
-                augers. Bulls at rose garden cucumbers mice sunflower wheat in
-                pig.
+              Le fameux runtime qui a changé le monde
               </p>
             </div>
           </div>
@@ -120,9 +114,8 @@ export default function Technos1() {
               </div>
               <h6 className="mb-2 font-semibold leading-5">.Net</h6>
               <p className="mb-3 text-sm text-gray-900">
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium rem aperiam, eaque ipsa quae. Sit error voluptatem.
-              </p>
+              L'écosystème tout-en-un moderne
+                </p>
             </div>
           </div>
           <div className="p-8">
@@ -144,9 +137,7 @@ export default function Technos1() {
               </div>
               <h6 className="mb-2 font-semibold leading-5">GraphQL</h6>
               <p className="mb-3 text-sm text-gray-900">
-                Storage shed, troughs feed bale manure, is garden wheat oats at
-                augers. Bulls at rose garden cucumbers mice sunflower wheat in
-                pig.
+              La façon moderne d'interagir avec les données
               </p>
             </div>
           </div>

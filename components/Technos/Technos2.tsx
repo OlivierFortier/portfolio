@@ -26,13 +26,12 @@ export default function Technos2() {
                   height="24"
                 />
               </svg>
-              <span className="relative">The</span>
+              <span className="relative">Mes</span>
             </span>{' '}
-            quick, brown fox jumps over a lazy dog
+            technos pref
           </h2>
           <p className="text-base text-gray-700 md:text-lg">
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-            accusantium doloremque rem aperiam, eaque ipsa quae.
+            J'utilise ces technologies chaque fois que j'en ai l'occasion
           </p>
         </div>
         <div className="grid grid-cols-2 gap-5 row-gap-6 mb-10 sm:grid-cols-3 lg:grid-cols-6">
@@ -52,7 +51,7 @@ export default function Technos2() {
                 />
               </svg>
             </div>
-            <h6 className="mb-2 font-semibold leading-5">World</h6>
+            <h6 className="mb-2 font-semibold leading-5">React</h6>
           </div>
           <div className="text-center">
             <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-24 sm:h-24">
@@ -70,7 +69,7 @@ export default function Technos2() {
                 />
               </svg>
             </div>
-            <h6 className="mb-2 font-semibold leading-5">Sport</h6>
+            <h6 className="mb-2 font-semibold leading-5">Vue</h6>
           </div>
           <div className="text-center">
             <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-24 sm:h-24">
@@ -88,7 +87,7 @@ export default function Technos2() {
                 />
               </svg>
             </div>
-            <h6 className="mb-2 font-semibold leading-5">Weather</h6>
+            <h6 className="mb-2 font-semibold leading-5">Next.js</h6>
           </div>
           <div className="text-center">
             <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-24 sm:h-24">
@@ -106,7 +105,7 @@ export default function Technos2() {
                 />
               </svg>
             </div>
-            <h6 className="mb-2 font-semibold leading-5">Projects</h6>
+            <h6 className="mb-2 font-semibold leading-5">Node</h6>
           </div>
           <div className="text-center">
             <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-24 sm:h-24">
@@ -124,7 +123,7 @@ export default function Technos2() {
                 />
               </svg>
             </div>
-            <h6 className="mb-2 font-semibold leading-5">Fitness</h6>
+            <h6 className="mb-2 font-semibold leading-5">.Net</h6>
           </div>
           <div className="text-center">
             <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-24 sm:h-24">
@@ -142,7 +141,7 @@ export default function Technos2() {
                 />
               </svg>
             </div>
-            <h6 className="mb-2 font-semibold leading-5">News</h6>
+            <h6 className="mb-2 font-semibold leading-5">GraphQL</h6>
           </div>
         </div>
         <div className="text-center">
@@ -150,7 +149,7 @@ export default function Technos2() {
             href="/"
             className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
           >
-            Learn more
+            En savoir plus
             <span className="ml-1 -mr-2">
               <svg
                 className="w-8 h-8 text-white"
