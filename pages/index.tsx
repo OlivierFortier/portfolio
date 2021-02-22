@@ -2,12 +2,14 @@ import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 import {FaReact} from 'react-icons/fa';
-import  Hero  from "../components/Hero";
-import  Hero2  from "../components/Hero2";
-import Technos from "../components/Technos";
-import Hero3 from "../components/Hero3";
-import  Hero1  from "../components/Hero1";
-import Projets1 from "../components/Projets1";
+import  Hero  from "../components/Hero/Hero";
+import  Hero2  from "../components/Hero/Hero2";
+import Technos from "../components/Technos/Technos";
+import Hero3 from "../components/Hero/Hero3";
+import  Hero1  from "../components/Hero/Hero1";
+import Projets1 from "../components/Projets/Projets1";
+import Perso1 from "../components/Perso/Perso1";
+import Technos1 from "../components/Technos/Technos1";
 
 export default function Home() {
   return (
@@ -18,7 +20,7 @@ export default function Home() {
       <Hero2/>
       {/* <Hero3/> */}
 
-      <section className="text-lg ">
+      {/* <section className="text-lg ">
         <p className="relative bg-blue-200 p-7 -mx-7 rounded-2xl">
           J’adore travailler avec des outils modernes et efficaces. Je passe mon
           temps à jouer avec des frameworks et des librairies pour le plaisir.
@@ -32,7 +34,9 @@ export default function Home() {
           produit multimédia. C’est pourquoi je suis inscrit à L’ETS en Génie
           Logiciel.
         </p>
-      </section>
+      </section> */}
+
+      <Perso1/>
 
       
       <Projets1/>

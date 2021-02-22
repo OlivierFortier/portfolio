@@ -1,7 +1,7 @@
 export default function Technos() {
   return (
-    <section className="text-gray-600 body-font">
-      <div className="container px-5 py-24 mx-auto">
+    <section className="text-gray-600 body-font py-10">
+      <div className="container px-5 mx-auto">
         <div className="flex flex-col text-center w-full mb-6">
           <h1 className="sm:text-3xl text-2xl font-medium title-font text-gray-900">
             Mes technos pref
