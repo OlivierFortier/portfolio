@@ -1,6 +1,6 @@
 export default function Perso() {
   return (
-    <section className="text-lg md:max-w-xl lg:max-w-4xl lg:-mt-28 mx-auto space-y-8 text-indigo-600">
+    <section className="text-lg md:max-w-xl lg:max-w-2xl xl:max-w-4xl lg:-mt-28 mx-auto space-y-8 text-indigo-600">
       <p className="relative bg-blue-100 p-7 -mx-7 rounded-2xl">
         J’adore travailler avec des outils modernes et efficaces. Je passe mon
         temps à jouer avec des frameworks et des librairies pour le plaisir. Ça
