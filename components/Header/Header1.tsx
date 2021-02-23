@@ -3,10 +3,9 @@ import Link from "next/link";
 import { SiGravatar } from "react-icons/si";
 import { IoMenu } from "react-icons/io5";
 import Menu1 from "./Menu1";
+import Menu from "./Menu";
 
 export default function Header1() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   return (
     <header className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-24 lg:px-8">
       <nav className="relative flex items-center justify-between">
@@ -14,7 +13,7 @@ export default function Header1() {
           <a
             aria-label="Olivier"
             title="Olivier"
-            className="inline-flex items-center"
+            className=" inline-flex items-center"
           >
             <span className="ml-2 text-4xl font-bold tracking-wide text-gray-800 uppercase">
               <SiGravatar />
@@ -68,8 +67,9 @@ export default function Header1() {
           </li>
         </ul>
 
-       <Menu1/>
-       
+        {/* <Menu1/> */}
+
+        <Menu />
       </nav>
     </header>
   );

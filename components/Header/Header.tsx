@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import {SiGravatar} from 'react-icons/si';
 import {IoMenu} from 'react-icons/io5';
-import Menu from './Menu';
 
 export default function Header() {
     return (
@@ -20,7 +19,12 @@ export default function Header() {
                     <summary className="relative z-10 list-none text-7xl">
                        <IoMenu/>
                     </summary>
-                     <Menu/>
+                    <ul className="absolute top-0 left-0 flex flex-col h-screen w-screen bg-blue-300 justify-center items-center space-y-7 text-4xl">
+                        <li><Link href="/"><a>Accueil</a></Link></li>
+                        <li><Link href="/"><a>Projets</a></Link></li>
+                        <li><Link href="/"><a>À propos</a></Link></li>
+                        <li><Link href="/"><a>Contact</a></Link></li>
+                    </ul> 
                 </details>
             </nav>
         </header>
