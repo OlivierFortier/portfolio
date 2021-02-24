@@ -10,8 +10,8 @@ export default function Menu() {
   }
 
   useEffect(() => {
-    menuOuvert && ( document.body.style.overflowY = "hidden");
-    !menuOuvert && (document.body.style.overflowY = "scroll");
+    menuOuvert && ( document.body.style.overflow = "hidden");
+    !menuOuvert && (document.body.style.overflow = "scroll");
    }, [menuOuvert]);
 
   return (
@@ -22,28 +22,30 @@ export default function Menu() {
       >
         <IoMenu />
       </summary>
-      <ul className="z-20 fixed top-0 left-0 flex flex-col h-screen w-screen bg-blue-300 justify-center items-center space-y-7 text-4xl">
-        <li>
-          <Link href="/">
-            <a>Accueil</a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/">
-            <a>Projets</a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/">
-            <a>À propos</a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/">
-            <a>Contact</a>
-          </Link>
-        </li>
-      </ul>
+      <div className="z-20 fixed top-0 left-0 h-screen w-screen bg-blue-300">
+        <ul className="h-full flex flex-col justify-center items-center space-y-7 text-4xl">
+          <li>
+            <Link href="/">
+              <a>Accueil</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/">
+              <a>Projets</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/">
+              <a>À propos</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/">
+              <a>Contact</a>
+            </Link>
+          </li>
+        </ul>
+      </div>
     </details>
   );
 }
