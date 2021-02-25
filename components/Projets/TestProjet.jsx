@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from "next/link";
 
 export default function TestProjet() {
   return (
@@ -11,6 +11,14 @@ export default function TestProjet() {
           Une solution à un problème y.
         </h2>
       </div>
+      <span className="flex flex-wrap">
+        <a className="text-blue-600 my-2 mx-4 underline">
+          Démo : tim-2020.vercel.app
+        </a>
+        <a className="text-blue-600 my-2 mx-4 underline">
+          Code : github.com/OlivierFortier
+        </a>
+      </span>
       <div className="grid max-w-screen-xl gap-8 lg:grid-cols-2 sm:mx-auto">
         <div className="grid grid-cols-2 gap-5">
           <img
@@ -31,40 +39,47 @@ export default function TestProjet() {
         </div>
         <div className="flex flex-col justify-center">
           <div className="pb-4 mb-4 border-b">
-            <h3 className="mb-2 font-semibold text-blue-600 leading-5">
+            <h3 className="mb-2 text-lg font-semibold text-blue-600 leading-5">
               Un sous-titre
             </h3>
-            <p className="text-sm text-blue-500">
-              Sportacus andrew weatherall goose Refined gentlemen super mario
-              des lynam alpha trion zap rowsdower, omar sharif old.
+            <p className="text-md text-blue-500">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic ullam
+              laborum ipsam incidunt numquam totam dicta, omnis molestiae quia
+              repudiandae atque iusto vero saepe temporibus culpa. Nihil
+              repellat inventore vel?
             </p>
           </div>
           <div className="pb-4 mb-4 border-b">
-            <h3 className="mb-2 font-semibold text-blue-600 leading-5">
+            <h3 className="mb-2 text-lg font-semibold text-blue-600 leading-5">
               Un autre sous-titre
             </h3>
-            <p className="text-sm text-blue-500">
-              Chase ball of string eat plants, meow, and throw up because I ate
-              plants going to catch the red dot today going to catch the red dot
-              today. I could pee on this if I had the energy.
+            <p className="text-md text-blue-500">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic ullam
+              laborum ipsam incidunt numquam totam dicta, omnis molestiae quia
+              repudiandae atque iusto vero saepe temporibus culpa. Nihil
+              repellat inventore vel?
             </p>
           </div>
           <div>
-            <h3 className="mb-2 font-semibold text-blue-600 leading-5">
+            <h3 className="mb-2 text-lg font-semibold text-blue-600 leading-5">
               Stack technologique
             </h3>
-            <ul className="text-sm text-blue-500">
-              <li className="md:ml-3"> - React</li>
-              <li className="md:ml-3"> - Next.js</li>
-              <li className="md:ml-3"> - TailwindCSS</li>
-              <li className="md:ml-3"> - Typescript</li>
-              <li className="md:ml-3"> - Headless CMS</li>
+            <ul className="text-md text-blue-500">
+              <li className="ml-3"> - React</li>
+              <li className="ml-3"> - Next.js</li>
+              <li className="ml-3"> - TailwindCSS</li>
+              <li className="ml-3"> - Typescript</li>
+              <li className="ml-3"> - Headless CMS</li>
             </ul>
           </div>
         </div>
-        <Link href="/projets"><a className="place-self-start cursor-pointer font-semibold text-blue-600 p-2 my-6 border-blue-600 border-2 rounded transition-colors hover:bg-blue-600 hover:text-white" > {"<"} Retour aux projets</a></Link>
+        <Link href="/projets">
+          <a className="place-self-start cursor-pointer font-semibold text-blue-600 p-2 my-6 border-blue-600 border-2 rounded transition-colors hover:bg-blue-600 hover:text-white">
+            {" "}
+            {"<"} Retour aux projets
+          </a>
+        </Link>
       </div>
-      
     </section>
   );
 }
