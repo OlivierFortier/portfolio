@@ -67,7 +67,7 @@ export default function Header1() {
           </li>
         </ul>
 
-        <Menu1/>
+        <Menu1 />
 
         {/* <Menu /> */}
       </nav>

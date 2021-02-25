@@ -3,7 +3,7 @@ import { SiGravatar } from "react-icons/si";
 import { IoClose } from "react-icons/io5";
 import { CgClose } from "react-icons/cg";
 import { IoMenu } from "react-icons/io5";
-import { FiSend } from 'react-icons/fi';
+import { FiSend } from "react-icons/fi";
 import { useState } from "react";
 
 export default function Menu1() {

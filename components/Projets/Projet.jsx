@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function Projet() {
   return (
     <li className="p-4 lg:w-1/2 md:w-full">
-      <article >
+      <article>
         <div className="flex  rounded-lg shadow-xl p-8 md:flex-row lg:flex-col xl:flex-row flex-col">
           <div className="w-52 h-52 sm:mr-8 sm:mb-0 mb-4 inline-flex items-center justify-center rounded text-indigo-500 flex-shrink-0">
             <Image src="/assets/img-placeholder.png" width={165} height={165} />
