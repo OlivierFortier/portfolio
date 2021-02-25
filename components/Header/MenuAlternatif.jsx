@@ -31,7 +31,7 @@ export default function MenuAlternatif() {
               </Link>
             </li>
             <li>
-              <Link href="/">
+              <Link href="/projets">
                 <a>Projets</a>
               </Link>
             </li>

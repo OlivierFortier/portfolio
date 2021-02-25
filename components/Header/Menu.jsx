@@ -19,7 +19,7 @@ export default function Menu() {
         <IoMenu className="text-5xl" />
       </button>
       {isMenuOpen && (
-        <div className="absolute top-0 left-0 w-full">
+        <div className="z-50 absolute top-0 left-0 w-full">
           <div className="p-5 bg-white border rounded shadow-sm">
             <div className="flex items-center justify-between mb-4">
               <div>
@@ -60,7 +60,7 @@ export default function Menu() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/">
+                  <Link href="/projets">
                     <a
                       aria-label="Projets"
                       title="Projets"

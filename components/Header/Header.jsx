@@ -32,7 +32,7 @@ export default function Header() {
             </Link>
           </li>
           <li>
-            <Link href="/">
+            <Link href="/projets">
               <a
                 aria-label="Projets"
                 title="Projets"
