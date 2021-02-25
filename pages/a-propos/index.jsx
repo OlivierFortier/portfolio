@@ -1,4 +1,5 @@
-import ListeTechnos from '../../components/Technos/ListeTechnos';
+import ListeTechnos from "../../components/Technos/ListeTechnos";
+import Link from "next/link";
 
 export default function index() {
   return (
@@ -37,14 +38,33 @@ export default function index() {
         </p>
       </section>
 
-      <ListeTechnos/>
-      
-      <section>
-        <h2>
-          Envie de discuter
-        </h2>
-      </section>
+      <ListeTechnos />
 
+      <section class="py-6  text-blue-600">
+        <div class="container mx-auto flex flex-col justify-around p-4 text-center md:p-10 lg:flex-row">
+          <div class="flex flex-col justify-center lg:text-left">
+            <h1 class="py-2 text-3xl font-bold leading-tight title-font">
+              Envie de discuter ?
+            </h1>
+          </div>
+          <div class="flex flex-col items-center justify-center flex-shrink-0 mt-6 space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 lg:ml-4 lg:mt-0 lg:justify-end">
+            <Link href="/">
+              <a class="cursor-pointer hover:text-white hover:bg-blue-600 transition-colors inline-flex items-center px-6 py-3 rounded border-blue-600 border-2 text-blue-600">
+                <span class="flex flex-col items-start  leading-none">
+                  <span class="font-semibold title-font">Contactez-moi !</span>
+                </span>
+              </a>
+            </Link>
+            <Link href="/">
+              <a class="cursor-pointer hover:text-white hover:bg-blue-600 transition-colors inline-flex items-center px-5 py-3 rounded border-blue-600 border-2 text-blue-600">
+                <span class="flex flex-col items-start  leading-none">
+                  <span class="font-semibold title-font">Mon CV</span>
+                </span>
+              </a>
+            </Link>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
