@@ -147,26 +147,14 @@ export default function AppercuTechnos() {
         </li>
       </ul>
       <div className="text-center">
-        <Link href="/">
+        <Link href="/a-propos">
           <a
-            href="/"
-            className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-blue-400 hover:bg-blue-700 focus:shadow-outline focus:outline-none"
+            
+            className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-blue-500 hover:bg-blue-700 focus:shadow-outline focus:outline-none"
           >
             En savoir plus
             <span className="ml-1 -mr-2">
-              {/* <svg
-                className="w-8 h-8 text-white"
-                stroke="currentColor"
-                viewBox="0 0 52 52"
-              >
-                <polygon
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  fill="none"
-                  points="29 13 14 29 25 29 23 39 38 23 27 23"
-                />
-              </svg> */}
+             
               🧐
             </span>
           </a>

@@ -7,15 +7,15 @@ export default function TestProjet() {
         <h1 className="max-w-lg mb-6 font-sans text-4xl font-bold leading-none tracking-tight text-blue-600 sm:text-6xl ">
           Un certain projet
         </h1>
-        <h2 className="text-base text-blue-500 md:text-lg">
+        <h2 className="tracking-tight text-base text-blue-500 md:text-lg">
           Une solution à un problème y.
         </h2>
       </div>
       <span className="flex flex-wrap">
-        <a className="text-blue-600 my-2 mx-4 underline">
+        <a href="https://tim-2020.vercel.app/" className="text-blue-600 my-2 mx-4 underline">
           Démo : tim-2020.vercel.app
         </a>
-        <a className="text-blue-600 my-2 mx-4 underline">
+        <a href="https://github.com/OlivierFortier" className="text-blue-600 my-2 mx-4 underline">
           Code : github.com/OlivierFortier
         </a>
       </span>

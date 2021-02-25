@@ -1,5 +1,5 @@
 import ListeTechnos from "../../components/Technos/ListeTechnos";
-import Link from "next/link";
+
 
 export default function index() {
   return (
@@ -48,20 +48,18 @@ export default function index() {
             </h1>
           </div>
           <div className="flex flex-col items-center justify-center flex-shrink-0 mt-6 space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 lg:ml-4 lg:mt-0 lg:justify-end">
-            <Link href="/">
-              <a className="cursor-pointer hover:text-white hover:bg-blue-600 transition-colors inline-flex items-center px-6 py-3 rounded border-blue-600 border-2 text-blue-600">
+              <a href="https://www.linkedin.com/in/olivier-fortier/" className="cursor-pointer hover:text-white hover:bg-blue-600 transition-colors inline-flex items-center px-6 py-3 rounded border-blue-600 border-2 text-blue-600">
                 <span className="flex flex-col items-start  leading-none">
                   <span className="font-semibold title-font">Contactez-moi !</span>
                 </span>
               </a>
-            </Link>
-            <Link href="/">
-              <a className="cursor-pointer hover:text-white hover:bg-blue-600 transition-colors inline-flex items-center px-5 py-3 rounded border-blue-600 border-2 text-blue-600">
+            
+              <a href="/assets/Olivier_Fortier_CV.pdf" className="cursor-pointer hover:text-white hover:bg-blue-600 transition-colors inline-flex items-center px-5 py-3 rounded border-blue-600 border-2 text-blue-600">
                 <span className="flex flex-col items-start  leading-none">
                   <span className="font-semibold title-font">Mon CV</span>
                 </span>
               </a>
-            </Link>
+            
           </div>
         </div>
       </section>
