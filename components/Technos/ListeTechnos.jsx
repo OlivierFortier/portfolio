@@ -4,7 +4,7 @@ export default function ListeTechnos() {
         <div className="max-w-xl mb-10 sm:mx-auto">
           <h2 className="font-sans text-3xl font-bold leading-tight tracking-tight text-gray-900 sm:text-4xl sm:text-center">
       
-            <span className="inline-block text-deep-purple-accent-400">
+            <span className="inline-block text-blue-400">
               Mes technos pref
             </span>
           </h2>
@@ -14,7 +14,7 @@ export default function ListeTechnos() {
             <div className="mr-4">
               <div className="flex items-center justify-center w-10 h-10 mb-3 rounded-full bg-indigo-50">
                 <svg
-                  className="w-8 h-8 text-deep-purple-accent-400"
+                  className="w-8 h-8 text-blue-400"
                   stroke="currentColor"
                   viewBox="0 0 52 52"
                 >
@@ -39,7 +39,7 @@ export default function ListeTechnos() {
             <div className="mr-4">
               <div className="flex items-center justify-center w-10 h-10 mb-3 rounded-full bg-indigo-50">
                 <svg
-                  className="w-8 h-8 text-deep-purple-accent-400"
+                  className="w-8 h-8 text-blue-400"
                   stroke="currentColor"
                   viewBox="0 0 52 52"
                 >
@@ -64,7 +64,7 @@ export default function ListeTechnos() {
             <div className="mr-4">
               <div className="flex items-center justify-center w-10 h-10 mb-3 rounded-full bg-indigo-50">
                 <svg
-                  className="w-8 h-8 text-deep-purple-accent-400"
+                  className="w-8 h-8 text-blue-400"
                   stroke="currentColor"
                   viewBox="0 0 52 52"
                 >
@@ -89,7 +89,7 @@ export default function ListeTechnos() {
             <div className="mr-4">
               <div className="flex items-center justify-center w-10 h-10 mb-3 rounded-full bg-indigo-50">
                 <svg
-                  className="w-8 h-8 text-deep-purple-accent-400"
+                  className="w-8 h-8 text-blue-400"
                   stroke="currentColor"
                   viewBox="0 0 52 52"
                 >
@@ -114,7 +114,7 @@ export default function ListeTechnos() {
             <div className="mr-4">
               <div className="flex items-center justify-center w-10 h-10 mb-3 rounded-full bg-indigo-50">
                 <svg
-                  className="w-8 h-8 text-deep-purple-accent-400"
+                  className="w-8 h-8 text-blue-400"
                   stroke="currentColor"
                   viewBox="0 0 52 52"
                 >
@@ -139,7 +139,7 @@ export default function ListeTechnos() {
             <div className="mr-4">
               <div className="flex items-center justify-center w-10 h-10 mb-3 rounded-full bg-indigo-50">
                 <svg
-                  className="w-8 h-8 text-deep-purple-accent-400"
+                  className="w-8 h-8 text-blue-400"
                   stroke="currentColor"
                   viewBox="0 0 52 52"
                 >

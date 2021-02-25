@@ -26,7 +26,7 @@ export default function Header1() {
               <a
                 aria-label="Accueil"
                 title="Accueil"
-                className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-400"
               >
                 Accueil
               </a>
@@ -37,7 +37,7 @@ export default function Header1() {
               <a
                 aria-label="Projets"
                 title="Projets"
-                className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-400"
               >
                 Projets
               </a>
@@ -48,7 +48,7 @@ export default function Header1() {
               <a
                 aria-label="À propos"
                 title="À propos"
-                className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-400"
               >
                 À propos
               </a>
@@ -57,7 +57,7 @@ export default function Header1() {
           <li>
             <Link href="/">
               <a
-                className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-blue-400 hover:bg-blue-700 focus:shadow-outline focus:outline-none"
                 aria-label="Contact"
                 title="Contact"
               >
@@ -68,6 +68,8 @@ export default function Header1() {
         </ul>
 
         {/* <Menu1/> */}
+
+        {/* <h1 className="p-5 bg-blue-500 text-3xl">allos</h1> */}
 
         <Menu />
       </nav>

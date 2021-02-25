@@ -13,7 +13,7 @@ export default function Hero1() {
                 The quick, brown fox
                 <br className="hidden md:block" />
                 jumps over{' '}
-                <span className="inline-block text-deep-purple-accent-400">
+                <span className="inline-block text-blue-400">
                   a lazy dog
                 </span>
               </h2>

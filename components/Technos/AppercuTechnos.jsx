@@ -38,7 +38,7 @@ export default function AppercuTechnos() {
         <li className="text-center">
           <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-24 sm:h-24">
             <svg
-              className="w-12 h-12 text-deep-purple-accent-400 sm:w-16 sm:h-16"
+              className="w-12 h-12 text-blue-400 sm:w-16 sm:h-16"
               stroke="currentColor"
               viewBox="0 0 52 52"
             >
@@ -56,7 +56,7 @@ export default function AppercuTechnos() {
         <li className="text-center">
           <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-24 sm:h-24">
             <svg
-              className="w-12 h-12 text-deep-purple-accent-400 sm:w-16 sm:h-16"
+              className="w-12 h-12 text-blue-400 sm:w-16 sm:h-16"
               stroke="currentColor"
               viewBox="0 0 52 52"
             >
@@ -74,7 +74,7 @@ export default function AppercuTechnos() {
         <li className="text-center">
           <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-24 sm:h-24">
             <svg
-              className="w-12 h-12 text-deep-purple-accent-400 sm:w-16 sm:h-16"
+              className="w-12 h-12 text-blue-400 sm:w-16 sm:h-16"
               stroke="currentColor"
               viewBox="0 0 52 52"
             >
@@ -92,7 +92,7 @@ export default function AppercuTechnos() {
         <li className="text-center">
           <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-24 sm:h-24">
             <svg
-              className="w-12 h-12 text-deep-purple-accent-400 sm:w-16 sm:h-16"
+              className="w-12 h-12 text-blue-400 sm:w-16 sm:h-16"
               stroke="currentColor"
               viewBox="0 0 52 52"
             >
@@ -110,7 +110,7 @@ export default function AppercuTechnos() {
         <li className="text-center">
           <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-24 sm:h-24">
             <svg
-              className="w-12 h-12 text-deep-purple-accent-400 sm:w-16 sm:h-16"
+              className="w-12 h-12 text-blue-400 sm:w-16 sm:h-16"
               stroke="currentColor"
               viewBox="0 0 52 52"
             >
@@ -128,7 +128,7 @@ export default function AppercuTechnos() {
         <li className="text-center">
           <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-24 sm:h-24">
             <svg
-              className="w-12 h-12 text-deep-purple-accent-400 sm:w-16 sm:h-16"
+              className="w-12 h-12 text-blue-400 sm:w-16 sm:h-16"
               stroke="currentColor"
               viewBox="0 0 52 52"
             >
@@ -147,7 +147,7 @@ export default function AppercuTechnos() {
       <div className="text-center">
         <a
           href="/"
-          className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+          className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-blue-400 hover:bg-blue-700 focus:shadow-outline focus:outline-none"
         >
           En savoir plus
           <span className="ml-1 -mr-2">
