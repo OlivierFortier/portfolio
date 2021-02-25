@@ -1,4 +1,4 @@
-import Projets from "../../components/Projets/Projets";
+import Projets from "../../components/Projets/AppercuProjets";
 
 export default function index() {
   return (

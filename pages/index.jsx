@@ -1,6 +1,6 @@
 import Hero from "../components/Hero/Hero";
 import AppercuTechnos from "../components/Technos/AppercuTechnos";
-import Projets from "../components/Projets/Projets";
+import Projets from "../components/Projets/AppercuProjets";
 import Perso from "../components/Perso/Perso";
 
 export default function Home() {
