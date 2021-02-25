@@ -13,7 +13,7 @@ export default function Menu1() {
       <button
         aria-label="Open Menu"
         title="Open Menu"
-        className="text-blue-600 p-2 -mr-1 transition duration-200 rounded focus:outline-none focus:shadow-outline hover:bg-blue-50 focus:bg-blue-50"
+        className="text-blue-500 p-2 -mr-1 transition duration-200 rounded focus:outline-none focus:shadow-outline hover:bg-blue-50 focus:bg-blue-50"
         onClick={() => setIsMenuOpen(true)}
       >
         <IoMenu className="text-5xl" />
@@ -29,7 +29,7 @@ export default function Menu1() {
                     title="Olivier"
                     className="inline-flex items-center"
                   >
-                    <span className="ml-2 text-4xl font-bold tracking-wide text-gray-800 uppercase">
+                    <span className="ml-2 text-4xl font-bold tracking-wide text-blue-500 uppercase">
                       <SiGravatar />
                     </span>
                   </a>
@@ -39,7 +39,7 @@ export default function Menu1() {
                 <button
                   aria-label="Fermer menu"
                   title="Fermer menu"
-                  className="p-2 -mt-2 -mr-2 transition duration-200 rounded hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                  className="text-blue-500 p-2 -mt-2 -mr-2 transition duration-200 rounded hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   <IoClose className="text-5xl" />
@@ -84,7 +84,7 @@ export default function Menu1() {
                 <li>
                   <Link href="/">
                     <a
-                      className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-blue-400 hover:bg-blue-700 focus:shadow-outline focus:outline-none"
+                      className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-blue-500 hover:bg-blue-700 focus:shadow-outline focus:outline-none"
                       aria-label="Contact"
                       title="Contact"
                     >

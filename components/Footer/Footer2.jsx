@@ -12,17 +12,17 @@ export default function Footer2() {
         </h4>
         <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
           <Link href="/">
-              <a className="px-2 rounded-full bg-blue-700 h-10 w-10 flex justify-center items-center text-white">
+              <a className="px-2 rounded-full bg-blue-400 h-10 w-10 flex justify-center items-center text-white">
                 <FaLinkedinIn />
               </a>
           </Link>
           <Link href="/">
-              <a className="px-2 rounded-full bg-blue-700 h-10 w-10 flex justify-center items-center shadow-md ml-3 text-white">
+              <a className="px-2 rounded-full bg-blue-400 h-10 w-10 flex justify-center items-center shadow-md ml-3 text-white">
                 <FiGithub />
               </a>
           </Link>
           <Link href="/">
-              <a className="px-2 rounded-full bg-blue-700 h-10 w-10 flex justify-center items-center shadow-md ml-3 text-white">
+              <a className="px-2 rounded-full bg-blue-400 h-10 w-10 flex justify-center items-center shadow-md ml-3 text-white">
                 <FiSend />
               </a>
           </Link>

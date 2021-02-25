@@ -3,8 +3,8 @@ import Projet from "./Projet";
 
 export default function Projets() {
   return (
-    <section className="px-4 text-gray-600 body-font py-8 sm:py-14">
-      <h1 className="sm:text-center mb-6 font-sans text-3xl font-bold tracking-tight text-blue-600 sm:text-4xl sm:leading-none">
+    <section className=" text-gray-600 body-font py-8 sm:py-14">
+      <h1 className="px-4 sm:text-center mb-6 font-sans text-3xl font-bold tracking-tight text-blue-600 sm:text-4xl sm:leading-none">
         Projets{" "}
         <span className="relative inline-block">{" "}
           <span className="relative">récents</span>
@@ -32,7 +32,7 @@ export default function Projets() {
           </svg>
         </span>
       </h1>
-      <p className="text-base sm:text-center text-blue-500 md:text-lg mb-8">
+      <p className="px-4 text-base sm:text-center text-blue-500 md:text-lg mb-8">
         Une collection de mes plus récents projets intéressants
       </p>
       <div className="container px-5  mx-auto flex flex-wrap">
