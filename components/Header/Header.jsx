@@ -43,7 +43,7 @@ export default function Header() {
             </Link>
           </li>
           <li>
-            <Link href="/">
+            <Link href="/a-propos">
               <a
                 aria-label="À propos"
                 title="À propos"
