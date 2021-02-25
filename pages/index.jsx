@@ -1,6 +1,6 @@
 import Hero from "../components/Hero/Hero";
 import AppercuTechnos from "../components/Technos/AppercuTechnos";
-import Projets from "../components/Projets/AppercuProjets";
+import AppercuProjets from "../components/Projets/AppercuProjets";
 import Perso from "../components/Perso/Perso";
 
 export default function Home() {
@@ -10,7 +10,7 @@ export default function Home() {
 
       <Perso />
 
-      <Projets />
+      <AppercuProjets />
 
       <AppercuTechnos />
     </div>
