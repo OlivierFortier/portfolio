@@ -38,6 +38,12 @@ export default function index() {
       </section>
 
       <ListeTechnos/>
+      
+      <section>
+        <h2>
+          Envie de discuter
+        </h2>
+      </section>
 
     </div>
   );
