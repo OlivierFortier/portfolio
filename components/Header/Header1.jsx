@@ -15,7 +15,7 @@ export default function Header1() {
             title="Olivier"
             className=" inline-flex items-center"
           >
-            <span className="ml-2 text-4xl font-bold tracking-wide text-gray-800 uppercase">
+            <span className="ml-2 text-4xl font-bold tracking-wide text-blue-600 uppercase">
               <SiGravatar />
             </span>
           </a>
@@ -67,9 +67,9 @@ export default function Header1() {
           </li>
         </ul>
 
-        {/* <Menu1/> */}
+        <Menu1/>
 
-        <Menu />
+        {/* <Menu /> */}
       </nav>
     </header>
   );

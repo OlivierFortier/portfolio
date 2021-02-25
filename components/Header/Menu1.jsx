@@ -3,6 +3,7 @@ import { SiGravatar } from "react-icons/si";
 import { IoClose } from "react-icons/io5";
 import { CgClose } from "react-icons/cg";
 import { IoMenu } from "react-icons/io5";
+import { FiSend } from 'react-icons/fi';
 import { useState } from "react";
 
 export default function Menu1() {
@@ -12,7 +13,7 @@ export default function Menu1() {
       <button
         aria-label="Open Menu"
         title="Open Menu"
-        className="p-2 -mr-1 transition duration-200 rounded focus:outline-none focus:shadow-outline hover:bg-blue-50 focus:bg-blue-50"
+        className="text-blue-600 p-2 -mr-1 transition duration-200 rounded focus:outline-none focus:shadow-outline hover:bg-blue-50 focus:bg-blue-50"
         onClick={() => setIsMenuOpen(true)}
       >
         <IoMenu className="text-5xl" />
@@ -46,13 +47,13 @@ export default function Menu1() {
               </div>
             </div>
             <nav>
-              <ul className="space-y-4">
+              <ul className="text-2xl text-blue-500 space-y-4 text-right">
                 <li>
                   <Link href="/">
                     <a
                       aria-label="Accueil"
                       title="Accueil"
-                      className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-400"
+                      className="font-medium tracking-wide transition-colors duration-200 hover:text-blue-400"
                     >
                       Accueil
                     </a>
@@ -63,7 +64,7 @@ export default function Menu1() {
                     <a
                       aria-label="Projets"
                       title="Projets"
-                      className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-400"
+                      className="font-medium tracking-wide transition-colors duration-200 hover:text-blue-400"
                     >
                       Projets
                     </a>
@@ -74,7 +75,7 @@ export default function Menu1() {
                     <a
                       aria-label="À propos"
                       title="À propos"
-                      className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-400"
+                      className="font-medium tracking-wide transition-colors duration-200 hover:text-blue-400"
                     >
                       À propos
                     </a>
@@ -87,7 +88,7 @@ export default function Menu1() {
                       aria-label="Contact"
                       title="Contact"
                     >
-                      Contact
+                      Contact <FiSend className="ml-4" />
                     </a>
                   </Link>
                 </li>

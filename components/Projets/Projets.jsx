@@ -3,15 +3,15 @@ import Projet from "./Projet";
 
 export default function Projets() {
   return (
-    <section className="text-gray-600 body-font py-14">
-      <h1 className="sm:text-center mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
+    <section className="px-4 text-gray-600 body-font py-8 sm:py-14">
+      <h1 className="sm:text-center mb-6 font-sans text-3xl font-bold tracking-tight text-blue-600 sm:text-4xl sm:leading-none">
         Projets{" "}
         <span className="relative inline-block">{" "}
           <span className="relative">récents</span>
           <svg
             viewBox="0 0 52 24"
             fill="currentColor"
-            className="absolute top-0 right-0 z-0 hidden w-32 -mt-8 -mr-20 text-blue-gray-100 lg:w-32 lg:-mr-28 lg:-mt-10 sm:block"
+            className="absolute top-0 right-0 z-0 hidden w-32 -mt-8 -mr-20 text-blue-400 lg:w-32 lg:-mr-28 lg:-mt-10 sm:block"
           >
             <defs>
               <pattern
@@ -32,7 +32,7 @@ export default function Projets() {
           </svg>
         </span>
       </h1>
-      <p className="text-base sm:text-center text-gray-700 md:text-lg mb-8">
+      <p className="text-base sm:text-center text-blue-500 md:text-lg mb-8">
         Une collection de mes plus récents projets intéressants
       </p>
       <div className="container px-5  mx-auto flex flex-wrap">
