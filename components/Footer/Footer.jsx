@@ -2,7 +2,7 @@ import Link from "next/link";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FiGithub, FiSend } from "react-icons/fi";
 
-export default function Footer2() {
+export default function Footer() {
   return (
     <footer className="text-gray-600 body-font sm:max-w-lg mx-auto">
       <hr className="h-0.5 w-10/12 sm:w-full mx-auto bg-blue-600 my-2 sm:mb-4" />

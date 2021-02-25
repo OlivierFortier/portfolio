@@ -1,11 +1,10 @@
-import { useState } from "react";
 import Link from "next/link";
 import { SiGravatar } from "react-icons/si";
 import { IoMenu } from "react-icons/io5";
-import Menu1 from "./Menu1";
 import Menu from "./Menu";
+import MenuAlternatif from "./MenuAlternatif";
 
-export default function Header1() {
+export default function Header() {
   return (
     <header className="z-50 px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-24 lg:px-8">
       <nav className="relative flex items-center justify-between">
@@ -67,7 +66,7 @@ export default function Header1() {
           </li>
         </ul>
 
-        <Menu1 />
+        <Menu />
 
         {/* <Menu /> */}
       </nav>
