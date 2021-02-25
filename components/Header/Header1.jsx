@@ -20,13 +20,13 @@ export default function Header1() {
             </span>
           </a>
         </Link>
-        <ul className=" items-center hidden space-x-8 lg:flex">
+        <ul className="text-blue-400 items-center hidden space-x-8 lg:flex">
           <li>
             <Link href="/">
               <a
                 aria-label="Accueil"
                 title="Accueil"
-                className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-400"
+                className="font-medium tracking-wide transition-colors duration-200 hover:text-blue-800"
               >
                 Accueil
               </a>
@@ -37,7 +37,7 @@ export default function Header1() {
               <a
                 aria-label="Projets"
                 title="Projets"
-                className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-400"
+                className="font-medium tracking-wide transition-colors duration-200 hover:text-blue-800"
               >
                 Projets
               </a>
@@ -48,7 +48,7 @@ export default function Header1() {
               <a
                 aria-label="À propos"
                 title="À propos"
-                className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-400"
+                className="font-medium tracking-wide transition-colors duration-200 hover:text-blue-800"
               >
                 À propos
               </a>
@@ -68,8 +68,6 @@ export default function Header1() {
         </ul>
 
         {/* <Menu1/> */}
-
-        {/* <h1 className="p-5 bg-blue-500 text-3xl">allos</h1> */}
 
         <Menu />
       </nav>

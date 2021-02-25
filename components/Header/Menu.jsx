@@ -23,7 +23,7 @@ export default function Menu() {
         >
           <IoMenu />
         </summary>
-        <div className="z-20 fixed top-0 left-0 h-full w-full bg-opacity-85 bg-blue-300" style={{opacity : '0.90'}}>
+        <div className=" z-20 fixed top-0 left-0 h-full w-full bg-opacity-85 bg-blue-300" style={{opacity : '0.90'}}>
           <ul className="h-full flex flex-col justify-center items-center space-y-7 text-4xl">
             <li>
               <Link href="/">
