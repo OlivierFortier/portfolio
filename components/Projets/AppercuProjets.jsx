@@ -3,7 +3,7 @@ import Projet from "./Projet";
 
 export default function AppercuProjets() {
   return (
-    <section className=" text-gray-600 body-font py-8 sm:py-14">
+    <section id="appercuProjets" className=" text-gray-600 body-font py-8 sm:py-14">
       <h1 className="px-4 sm:text-center mb-6 font-sans text-3xl font-bold tracking-tight text-blue-600 sm:text-4xl sm:leading-none">
         Projets{" "}
         <span className="relative inline-block">{" "}

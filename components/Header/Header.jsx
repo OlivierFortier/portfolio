@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { SiGravatar } from "react-icons/si";
 import { IoMenu } from "react-icons/io5";
+import { FiSend } from "react-icons/fi";
 import Menu from "./Menu";
 import MenuAlternatif from "./MenuAlternatif";
 
@@ -54,15 +55,15 @@ export default function Header() {
             </Link>
           </li>
           <li>
-            <Link href="/">
-              <a
-                className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-blue-500 hover:bg-blue-700 focus:shadow-outline focus:outline-none"
-                aria-label="Contact"
-                title="Contact"
-              >
-                Contact
-              </a>
-            </Link>
+            <a
+              href="mailto:olivier_fortier@outlook.com"
+              className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-blue-500 hover:bg-blue-700 focus:shadow-outline focus:outline-none"
+              aria-label="Contact"
+              title="Contact"
+            >
+              Contact
+              <FiSend className="ml-4" />
+            </a>
           </li>
         </ul>
 

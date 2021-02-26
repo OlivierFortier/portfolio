@@ -71,7 +71,7 @@ export default function Menu() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/">
+                  <Link href="/a-propos">
                     <a
                       aria-label="À propos"
                       title="À propos"
@@ -82,15 +82,16 @@ export default function Menu() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/">
+                  
                     <a
+                    href="https://www.linkedin.com/in/olivier-fortier/"
                       className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-blue-500 hover:bg-blue-700 focus:shadow-outline focus:outline-none"
                       aria-label="Contact"
                       title="Contact"
                     >
                       Contact <FiSend className="ml-4" />
                     </a>
-                  </Link>
+                  
                 </li>
               </ul>
             </nav>

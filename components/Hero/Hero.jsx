@@ -15,7 +15,7 @@ export default function Hero() {
             </h2>
           </div>
           <div className="flex flex-col items-center md:flex-row">
-            <Link href="/">
+            <Link href="/a-propos">
               <a className="text-lg inline-flex items-center justify-center w-full h-12 px-6 mb-3 font-medium tracking-wide text-blue-600 transition duration-200 rounded shadow-md md:w-auto md:mr-4 md:mb-0 border-2 border-blue-600  hover:bg-blue-600 hover:text-white focus:shadow-outline focus:outline-none">
                 En savoir plus 👇
               </a>
