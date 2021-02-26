@@ -24,7 +24,7 @@ export default function Menu() {
             <div className="flex items-center justify-between mb-4">
               <div>
                 <Link href="/">
-                  <a
+                  <a onClick={()=> setIsMenuOpen(false)}
                     aria-label="Olivier"
                     title="Olivier"
                     className="inline-flex items-center"
@@ -50,7 +50,7 @@ export default function Menu() {
               <ul className="text-2xl text-blue-500 space-y-4 text-right">
                 <li>
                   <Link href="/">
-                    <a
+                    <a onClick={()=> setIsMenuOpen(false)}
                       aria-label="Accueil"
                       title="Accueil"
                       className="font-medium tracking-wide transition-colors duration-200 hover:text-blue-400"
@@ -61,7 +61,7 @@ export default function Menu() {
                 </li>
                 <li>
                   <Link href="/projets">
-                    <a
+                    <a onClick={()=> setIsMenuOpen(false)}
                       aria-label="Projets"
                       title="Projets"
                       className="font-medium tracking-wide transition-colors duration-200 hover:text-blue-400"
@@ -72,7 +72,7 @@ export default function Menu() {
                 </li>
                 <li>
                   <Link href="/a-propos">
-                    <a
+                    <a onClick={()=> setIsMenuOpen(false)}
                       aria-label="À propos"
                       title="À propos"
                       className="font-medium tracking-wide transition-colors duration-200 hover:text-blue-400"
@@ -83,7 +83,7 @@ export default function Menu() {
                 </li>
                 <li>
                   
-                    <a
+                    <a onClick={()=> setIsMenuOpen(false)}
                     href="https://www.linkedin.com/in/olivier-fortier/"
                       className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-blue-500 hover:bg-blue-700 focus:shadow-outline focus:outline-none"
                       aria-label="Contact"
