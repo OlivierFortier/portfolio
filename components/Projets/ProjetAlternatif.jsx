@@ -27,6 +27,32 @@ export default function ProjetAlternatif() {
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud ullamco laboris aliquip ex ea.
         </p>
+        <h2 className="max-w-xl mt-8 mb-4 text-2xl font-semibold text-blue-600 lg:max-w-3xl lg:mx-auto">
+          Les technologies utilisées
+        </h2>
+        <ul className="space-y-3 max-w-xl mb-10 text-base text-blue-500 lg:max-w-3xl lg:mx-auto">
+          <li>
+            <span className="font-semibold">React </span> - pour controler le
+            flow de l'interface utilisateur
+          </li>
+          <li>
+            <span className="font-semibold">Next</span> - pour optimiser
+            l'expérience développement et la performance
+          </li>
+          <li>
+            <span className="font-semibold">TailwindCSS</span> - pour réaliser
+            le formatage
+          </li>
+          <li>
+            <span className="font-semibold">GraphQL</span> - pour gracieusement
+            sélectionner le contenu pour mes pages
+          </li>
+          <li>
+            <span className="font-semibold">Headless CMS</span> - pour gérer et
+            créer le contenu du site
+          </li>
+        </ul>
+       
         <Link href="/projets">
           <span className="flex my-6 lg:max-w-3xl lg:mx-auto">
             <a className="cursor-pointer font-semibold text-blue-600 p-2  border-blue-600 border-2 rounded transition-colors hover:bg-blue-600 hover:text-white">
