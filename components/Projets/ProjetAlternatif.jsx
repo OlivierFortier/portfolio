@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Carousel from "./Carousel";
 
 export default function ProjetAlternatif() {
   return (
@@ -13,11 +14,13 @@ export default function ProjetAlternatif() {
           </h2>
         </div>
         <div className="mb-4 transition-shadow duration-300 lg:mb-6 lg:max-w-3xl lg:mx-auto">
-          <img
+          {/* <img
             className="mx-auto object-cover max-w-full h-auto"
             src="https://images.pexels.com/photos/3727459/pexels-photo-3727459.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
             alt=""
-          />
+          /> */}
+
+          <Carousel/>
         </div>
         <h2 className="max-w-xl mt-8 mb-4 text-2xl font-semibold text-blue-600 lg:max-w-3xl lg:mx-auto">
           Un sous-titre
