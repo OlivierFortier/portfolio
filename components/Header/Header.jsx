@@ -68,8 +68,6 @@ export default function Header() {
         </ul>
 
         <Menu />
-
-        {/* <Menu /> */}
       </nav>
     </header>
   );
