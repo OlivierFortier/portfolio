@@ -1,12 +1,16 @@
-import Image from "next/image";
-import Projet from "./Projet";
+import CarteProjet from "./CarteProjet";
+import ListeProjets from "./ListeProjets";
 
 export default function AppercuProjets() {
   return (
-    <section id="appercuProjets" className=" text-gray-600 body-font py-8 sm:py-14">
+    <section
+      id="appercuProjets"
+      className=" text-gray-600 body-font py-8 sm:py-14"
+    >
       <h1 className="px-4 sm:text-center mb-6 font-sans text-3xl font-bold tracking-tight text-blue-600 sm:text-4xl sm:leading-none">
         Projets{" "}
-        <span className="relative inline-block">{" "}
+        <span className="relative inline-block">
+          {" "}
           <span className="relative">récents</span>
           <svg
             viewBox="0 0 52 24"
@@ -37,12 +41,9 @@ export default function AppercuProjets() {
       </p>
       <div className="container px-5  mx-auto flex flex-wrap">
         <ul className="flex flex-wrap justify-center ">
-          <Projet />
-          <Projet />
-          <Projet />
-          <Projet />
-
-      
+          
+          <ListeProjets nbProjets={4}/>
+          
         </ul>
       </div>
     </section>

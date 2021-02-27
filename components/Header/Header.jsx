@@ -2,8 +2,8 @@ import Link from "next/link";
 import { SiGravatar } from "react-icons/si";
 import { IoMenu } from "react-icons/io5";
 import { FiSend } from "react-icons/fi";
-import Menu from "./Menu";
-import MenuAlternatif from "./MenuAlternatif";
+import MenuMobile from "./MenuMobile";
+import MenuMobilePleinEcran from "./MenuMobilePleinEcran";
 
 export default function Header() {
   return (
@@ -67,7 +67,10 @@ export default function Header() {
           </li>
         </ul>
 
-        <Menu />
+        <MenuMobile />
+
+        {/* <MenuMobilePleinEcran/> */}
+
       </nav>
     </header>
   );

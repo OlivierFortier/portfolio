@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Carousel from "./Carousel";
 
-export default function ProjetAlternatif() {
+export default function PageProjetV1() {
   return (
     <section className="px-4 py-14 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 ">
       <div className="mx-auto  lg:max-w-4xl">
@@ -14,13 +14,7 @@ export default function ProjetAlternatif() {
           </h2>
         </div>
         <div className="mb-4 transition-shadow duration-300 lg:mb-6 lg:max-w-3xl lg:mx-auto">
-          {/* <img
-            className="mx-auto object-cover max-w-full h-auto"
-            src="https://images.pexels.com/photos/3727459/pexels-photo-3727459.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
-            alt=""
-          /> */}
-
-          <Carousel/>
+          <Carousel />
         </div>
         <h2 className="max-w-xl mt-8 mb-4 text-2xl font-semibold text-blue-600 lg:max-w-3xl lg:mx-auto">
           Un sous-titre
@@ -55,7 +49,7 @@ export default function ProjetAlternatif() {
             créer le contenu du site
           </li>
         </ul>
-       
+
         <Link href="/projets">
           <span className="flex my-6 lg:max-w-3xl lg:mx-auto">
             <a className="cursor-pointer font-semibold text-blue-600 p-2  border-blue-600 border-2 rounded transition-colors hover:bg-blue-600 hover:text-white">

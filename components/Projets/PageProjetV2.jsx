@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function TestProjet() {
+export default function PageProjetV2() {
   return (
     <section className="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8  ">
       <div className="max-w-xl mb-10   lg:max-w-2xl md:mb-12">
@@ -12,10 +12,16 @@ export default function TestProjet() {
         </h2>
       </div>
       <span className="flex flex-wrap">
-        <a href="https://tim-2020.vercel.app/" className="text-blue-600 my-2 mx-4 underline">
+        <a
+          href="https://tim-2020.vercel.app/"
+          className="text-blue-600 my-2 mx-4 underline"
+        >
           Démo : tim-2020.vercel.app
         </a>
-        <a href="https://github.com/OlivierFortier" className="text-blue-600 my-2 mx-4 underline">
+        <a
+          href="https://github.com/OlivierFortier"
+          className="text-blue-600 my-2 mx-4 underline"
+        >
           Code : github.com/OlivierFortier
         </a>
       </span>
@@ -54,7 +60,7 @@ export default function TestProjet() {
               Un autre sous-titre
             </h3>
             <p className="text-md text-blue-500">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic ullam
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic ullam
               laborum ipsam incidunt numquam totam dicta, omnis molestiae quia
               repudiandae atque iusto vero saepe temporibus culpa. Nihil
               repellat inventore vel?

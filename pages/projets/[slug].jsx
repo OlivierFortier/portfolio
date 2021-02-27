@@ -1,10 +1,9 @@
-import ListeProjets from "../../components/Projets/ListeProjets";
-import ProjetAlternatif from "../../components/Projets/ProjetAlternatif";
-import TestProjet from "../../components/Projets/TestProjet";
+import PageProjetV1 from "../../components/Projets/PageProjetV1";
+import PageProjetV2 from "../../components/Projets/PageProjetV2";
 
 export default function Projet() {
   return (
-  //  <TestProjet/>
-   <ProjetAlternatif/>
+  //  <PageProjetV2/>
+   <PageProjetV1/>
   );
 }

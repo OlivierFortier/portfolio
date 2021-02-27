@@ -6,7 +6,7 @@ import { IoMenu } from "react-icons/io5";
 import { FiSend } from "react-icons/fi";
 import { useState } from "react";
 
-export default function Menu() {
+export default function MenuMobile() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <div className="lg:hidden">
@@ -16,7 +16,7 @@ export default function Menu() {
         className="text-blue-500 p-2 -mr-1 transition duration-200 rounded focus:outline-none focus:shadow-outline hover:bg-blue-50 focus:bg-blue-50"
         onClick={() => setIsMenuOpen(true)}
       >
-        <IoMenu className="text-5xl" />
+        <IoMenu className="text-6xl" />
       </button>
       {isMenuOpen && (
         <div className="z-50 absolute top-0 left-0 w-full">
@@ -42,7 +42,7 @@ export default function Menu() {
                   className="text-blue-500 p-2 -mt-2 -mr-2 transition duration-200 rounded hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  <IoClose className="text-5xl" />
+                  <IoClose className="text-6xl" />
                 </button>
               </div>
             </div>
