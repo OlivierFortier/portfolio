@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation, Pagination, A11y, Autoplay } from "swiper";
@@ -29,36 +31,40 @@ export default function Carousel() {
       }}
     >
       <SwiperSlide>
-        <img
+        <Image
           className="mx-auto object-cover max-w-full h-auto"
-          src="https://images.pexels.com/photos/3727459/pexels-photo-3727459.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
-          alt=""
+          width={1260}
+          height={750}
+          src={"/assets/pexels-photo-3727459.jpeg"}
         />
       </SwiperSlide>
       <SwiperSlide>
-        <img
+        <Image
           className="mx-auto object-cover max-w-full h-auto"
-          src="https://images.pexels.com/photos/3727459/pexels-photo-3727459.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
-          alt=""
+          width={1260}
+          height={750}
+          src={"/assets/pexels-photo-3727459.jpeg"}
         />
       </SwiperSlide>
       <SwiperSlide>
-        <img
+        <Image
           className="mx-auto object-cover max-w-full h-auto"
-          src="https://images.pexels.com/photos/3727459/pexels-photo-3727459.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
-          alt=""
+          width={1260}
+          height={750}
+          src={"/assets/pexels-photo-3727459.jpeg"}
         />
       </SwiperSlide>
       <SwiperSlide>
-        <img
+        <Image
           className="mx-auto object-cover max-w-full h-auto"
-          src="https://images.pexels.com/photos/3727459/pexels-photo-3727459.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
-          alt=""
+          width={1260}
+          height={750}
+          src={"/assets/pexels-photo-3727459.jpeg"}
         />
       </SwiperSlide>
 
-      <div className="swiper-button-prev"></div>
-      <div className="swiper-button-next"></div>
+      <div className="swiper-button-prev bg-opacity-50 bg-gray-50 rounded-2xl py-7 px-5"></div>
+      <div className="swiper-button-next bg-opacity-50 bg-gray-50 rounded-2xl py-7 px-5"></div>
 
       <div className="laPagination flex justify-center mt-2"></div>
     </Swiper>
