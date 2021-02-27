@@ -1,5 +1,5 @@
-import PageProjetV1 from "../../components/Projets/PageProjetV1";
-import PageProjetV2 from "../../components/Projets/PageProjetV2";
+import PageProjetV1 from "../../components/projets/PageProjetV1";
+import PageProjetV2 from "../../components/projets/PageProjetV2";
 
 export default function Projet() {
   return (

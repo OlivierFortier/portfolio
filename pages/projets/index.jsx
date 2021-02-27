@@ -1,4 +1,4 @@
-import ListeProjets from "../../components/Projets/ListeProjets";
+import ListeProjets from "../../components/commun/ListeProjets";
 
 export default function index() {
   return (

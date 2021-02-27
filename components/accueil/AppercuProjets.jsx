@@ -1,5 +1,5 @@
-import CarteProjet from "./CarteProjet";
-import ListeProjets from "./ListeProjets";
+import CarteProjet from "../commun/CarteProjet";
+import ListeProjets from "../commun/ListeProjets";
 
 export default function AppercuProjets() {
   return (

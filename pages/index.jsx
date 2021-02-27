@@ -1,7 +1,7 @@
-import Hero from "../components/Hero/Hero";
-import AppercuTechnos from "../components/Technos/AppercuTechnos";
-import AppercuProjets from "../components/Projets/AppercuProjets";
-import Perso from "../components/Perso/Perso";
+import Hero from '../components/accueil/Hero';
+import Perso from "../components/accueil/Perso";
+import AppercuProjet from '../components/accueil/AppercuProjets';
+import AppercuTechnos from '../components/accueil/AppercuTechnos';
 
 export default function Home() {
   return (
@@ -10,7 +10,7 @@ export default function Home() {
 
       <Perso />
 
-      <AppercuProjets />
+      <AppercuProjet />
 
       <AppercuTechnos />
     </div>

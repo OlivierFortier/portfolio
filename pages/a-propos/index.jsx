@@ -1,4 +1,4 @@
-import ListeTechnos from "../../components/Technos/ListeTechnos";
+import ListeTechnos from "../../components/apropos/ListeTechnos";
 
 
 export default function index() {
