@@ -36,11 +36,13 @@ export default function AppercuProjets() {
         Une collection de mes plus récents projets intéressants
       </p>
       <div className="container px-5  mx-auto flex flex-wrap">
-        <ul className="flex flex-wrap -m-4">
+        <ul className="flex flex-wrap justify-center ">
           <Projet />
           <Projet />
           <Projet />
           <Projet />
+
+      
         </ul>
       </div>
     </section>
