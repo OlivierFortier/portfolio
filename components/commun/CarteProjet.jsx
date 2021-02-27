@@ -8,7 +8,7 @@ export default function CarteProjet() {
       <Link href="/projets/test">
         <article className="cursor-pointer">
           <div className="flex items-center  rounded-lg shadow-md transition-shadow hover:shadow-xl p-8 md:flex-row lg:flex-col xl:flex-row flex-col">
-            <div className="h-40 w-full md:w-1/2 lg:w-full xl:w-1/2 sm:mr-8 sm:mb-0 inline-flex mx-auto  justify-center rounded text-indigo-500 flex-shrink-0">
+            <div className="h-56 w-full md:w-1/2 lg:w-full xl:w-1/2 sm:mr-8 sm:mb-0 inline-flex mx-auto  justify-center rounded text-indigo-500 flex-shrink-0">
               <Image
                 className="object-cover rounded-md"
                 src="/assets/diego_unsplash.jpg"
