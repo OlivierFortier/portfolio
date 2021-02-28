@@ -1,6 +1,10 @@
+import { client } from "../../lib/api";
 import ListeProjets from "../../components/commun/ListeProjets";
+import { gql } from "graphql-request";
 
-export default function index() {
+export default function index({ projets }) {
+  console.log(projets);
+
   return (
     <div className="max-w-xs mx-auto md:max-w-2xl lg:max-w-4xl xl:max-w-7xl">
       <section className=" text-gray-600 body-font py-8 sm:py-14">
@@ -11,11 +15,38 @@ export default function index() {
           Une collection de mes plus récents projets intéressants
         </p>
         <div className="container px-5  mx-auto flex flex-wrap">
-
-          <ListeProjets nbProjets={6}/>
-          
+          <ListeProjets nbProjets={6} projets={projets}/>
         </div>
       </section>
     </div>
   );
+}
+
+export async function getStaticProps(context) {
+  const testGql = gql`
+    {
+      projets {
+        titre
+        sommaire
+        images {
+          height
+          width
+          url
+        }
+        sousTitreDetails
+        details
+        sousTitreSectionOptionnelle
+        sectionOptionnelle
+        slug
+      }
+    }
+  `;
+
+  const { projets } = await client.request(testGql);
+
+  return {
+    props: {
+      projets,
+    },
+  };
 }
