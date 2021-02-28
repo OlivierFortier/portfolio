@@ -26,16 +26,20 @@ export default function PageProjetV1({ projet }: { projet: Projet }) {
             "Erreur : sous-titre des détails non défini"}
         </h2>
         <ReactMarkdown className="max-w-xl mb-10 text-base text-blue-500 lg:max-w-3xl lg:mx-auto">
-          {projet.details}
+          {projet.details || "Erreur : contenu de la section détails non définie"}
         </ReactMarkdown>
 
-        <h2 className="max-w-xl mt-8 mb-4 text-2xl font-semibold text-blue-600 lg:max-w-3xl lg:mx-auto">
-          {projet.sousTitreSectionOptionnelle}
-        </h2>
+        {projet.sousTitreSectionOptionnelle && (
+          <h2 className="max-w-xl mt-8 mb-4 text-2xl font-semibold text-blue-600 lg:max-w-3xl lg:mx-auto">
+            {projet.sousTitreSectionOptionnelle}
+          </h2>
+        )}
 
-        <ReactMarkdown className="space-y-3 max-w-xl mb-10 text-base text-blue-500 lg:max-w-3xl lg:mx-auto">
-          {projet.sectionOptionnelle}
-        </ReactMarkdown>
+        {projet.sectionOptionnelle && (
+          <ReactMarkdown className="space-y-3 max-w-xl mb-10 text-base text-blue-500 lg:max-w-3xl lg:mx-auto">
+            {projet.sectionOptionnelle}
+          </ReactMarkdown>
+        )}
 
         <Link href="/projets">
           <span className="flex my-6 lg:max-w-3xl lg:mx-auto">

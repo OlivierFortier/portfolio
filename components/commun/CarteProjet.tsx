@@ -23,11 +23,10 @@ export default function CarteProjet({ projet }: CarteProjet) {
             </div>
             <div className="flex-grow">
               <h2 className="text-blue-600 text-xl title-font font-bold mb-3 mt-3 xl:mt-0">
-                Un projet
+                {projet.titre || "Erreur : titre non défini"}
               </h2>
               <p className="leading-relaxed text-base text-blue-500">
-                Blue bottle crucifix vinyl post-ironic four dollar toast vegan
-                taxidermy. Gastropub indxgo juice poutine.
+                {projet.sommaire || "Erreur : sommaire non défini"}
               </p>
               <a className="font-semibold text-lg mt-3 text-blue-600 inline-flex items-center">
                 En savoir plus
