@@ -1,7 +1,7 @@
 import CarteProjet from "../commun/CarteProjet";
 import ListeProjets from "../commun/ListeProjets";
 
-export default function AppercuProjets() {
+export default function AppercuProjets({projets}) {
   return (
     <section
       id="appercuProjets"
@@ -42,7 +42,7 @@ export default function AppercuProjets() {
       <div className="container px-5  mx-auto flex flex-wrap">
         <ul className="flex flex-wrap justify-center ">
           
-          <ListeProjets nbProjets={4}/>
+          <ListeProjets projets={projets} nbProjets={4}/>
           
         </ul>
       </div>
