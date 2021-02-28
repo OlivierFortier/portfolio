@@ -1,5 +1,12 @@
 import React from "react";
-import IconeEclairSvgPetit from './IconeEclairSvgPetit';
+import {
+  TechnoGql,
+  TechnoNet,
+  TechnoNext,
+  TechnoNode,
+  TechnoReact,
+  TechnoVue,
+} from "./Technos";
 
 export default function ListeTechnos() {
   return (
@@ -10,86 +17,12 @@ export default function ListeTechnos() {
         </h1>
       </div>
       <div className="grid gap-12 row-gap-8 lg:grid-cols-3">
-        <div className="flex">
-          <div className="mr-4">
-            <div className="flex items-center justify-center w-10 h-10 mb-3 rounded-full bg-indigo-50">
-              <IconeEclairSvgPetit />
-            </div>
-          </div>
-          <div>
-            <h6 className="mb-2 font-semibold text-blue-600 leading-5">
-              React
-            </h6>
-            <p className="text-sm text-blue-500">Un cadriciel front-end</p>
-          </div>
-        </div>
-        <div className="flex">
-          <div className="mr-4">
-            <div className="flex items-center justify-center w-10 h-10 mb-3 rounded-full bg-indigo-50">
-              <IconeEclairSvgPetit />
-            </div>
-          </div>
-          <div>
-            <h6 className="mb-2 font-semibold text-blue-600 leading-5">Vue</h6>
-            <p className="text-sm text-blue-500">Un cadriciel front-end</p>
-          </div>
-        </div>
-        <div className="flex">
-          <div className="mr-4">
-            <div className="flex items-center justify-center w-10 h-10 mb-3 rounded-full bg-indigo-50">
-              <IconeEclairSvgPetit />
-            </div>
-          </div>
-          <div>
-            <h6 className="mb-2 font-semibold text-blue-600 leading-5">
-              Next.js
-            </h6>
-            <p className="text-sm text-blue-500">
-              Le méta-cadriciel isomorphe pour react
-            </p>
-          </div>
-        </div>
-        <div className="flex">
-          <div className="mr-4">
-            <div className="flex items-center justify-center w-10 h-10 mb-3 rounded-full bg-indigo-50">
-              <IconeEclairSvgPetit />
-            </div>
-          </div>
-          <div>
-            <h6 className="mb-2 font-semibold text-blue-600 leading-5">Node</h6>
-            <p className="text-sm text-blue-500">
-              Le fameux runtime qui a changé le monde
-            </p>
-          </div>
-        </div>
-        <div className="flex">
-          <div className="mr-4">
-            <div className="flex items-center justify-center w-10 h-10 mb-3 rounded-full bg-indigo-50">
-              <IconeEclairSvgPetit />
-            </div>
-          </div>
-          <div>
-            <h6 className="mb-2 font-semibold text-blue-600 leading-5">.Net</h6>
-            <p className="text-sm text-blue-500">
-              L'écosystème tout-en-un moderne
-            </p>
-          </div>
-        </div>
-        <div className="flex">
-          <div className="mr-4">
-            <div className="flex items-center justify-center w-10 h-10 mb-3 rounded-full bg-indigo-50">
-              <IconeEclairSvgPetit />
-            </div>
-          </div>
-          <div>
-            <h6 className="mb-2 font-semibold text-blue-600 leading-5">
-              GraphQL
-            </h6>
-            <p className="text-sm text-blue-500">
-              La façon moderne d'interagir avec les données
-            </p>
-          </div>
-        </div>
+        <TechnoReact />
+        <TechnoVue />
+        <TechnoNext />
+        <TechnoNode />
+        <TechnoNet />
+        <TechnoGql />
       </div>
     </section>
   );

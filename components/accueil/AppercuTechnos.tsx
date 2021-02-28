@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import GrilleSvgGauche from './GrilleSvgGauche';
-import IconeEclairSvg from './IconeEclairSvg';
+import {FaVuejs, FaReact, FaNodeJs} from 'react-icons/fa'
+import {SiNextDotJs, SiDotNet, SiGraphql} from 'react-icons/si'
 
 export default function AppercuTechnos() {
   return (
@@ -19,38 +20,38 @@ export default function AppercuTechnos() {
       </div>
       <ul className="text-blue-600 grid grid-cols-2 gap-5 row-gap-6 mb-10 sm:grid-cols-3 lg:grid-cols-6">
         <li className="text-center">
-          <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-24 sm:h-24">
-           <IconeEclairSvg/>
+          <div className="text-4xl sm:text-5xl flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-24 sm:h-24">
+           <FaReact/>
           </div>
           <h2 className="mb-2 font-semibold leading-5">React</h2>
         </li>
         <li className="text-center">
-          <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-24 sm:h-24">
-          <IconeEclairSvg/>
+          <div className="text-4xl sm:text-5xl flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-24 sm:h-24">
+          <FaVuejs/>
           </div>
           <h2 className="mb-2 font-semibold leading-5">Vue</h2>
         </li>
         <li className="text-center">
-          <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-24 sm:h-24">
-          <IconeEclairSvg/>
+          <div className="text-4xl sm:text-5xl flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-24 sm:h-24">
+          <SiNextDotJs/>
           </div>
           <h2 className="mb-2 font-semibold leading-5">Next.js</h2>
         </li>
         <li className="text-center">
-          <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-24 sm:h-24">
-          <IconeEclairSvg/>
+          <div className="text-4xl sm:text-5xl flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-24 sm:h-24">
+          <FaNodeJs/>
           </div>
           <h2 className="mb-2 font-semibold leading-5">Node</h2>
         </li>
         <li className="text-center">
-          <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-24 sm:h-24">
-          <IconeEclairSvg/>
+          <div className="text-4xl sm:text-5xl flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-24 sm:h-24">
+          <SiDotNet/>
           </div>
           <h2 className="mb-2 font-semibold leading-5">.Net</h2>
         </li>
         <li className="text-center">
-          <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-24 sm:h-24">
-          <IconeEclairSvg/>
+          <div className="text-4xl sm:text-5xl flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-24 sm:h-24">
+          <SiGraphql/>
           </div>
           <h2 className="mb-2 font-semibold leading-5">GraphQL</h2>
         </li>
