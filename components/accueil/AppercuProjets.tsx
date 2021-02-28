@@ -1,7 +1,25 @@
 import CarteProjet from "../commun/CarteProjet";
 import ListeProjets from "../commun/ListeProjets";
 
-export default function AppercuProjets({projets}) {
+
+export type ImageProjet = {
+  height: Number;
+  width: Number;
+  url: String;
+}
+
+export type AppercuProjet = {
+  titre : String;
+  sommaire: String;
+  images: Array<ImageProjet>;
+  slug: String;
+}
+
+export type ListeAppercuProjets = {
+  projets: Array<AppercuProjet>;
+}
+
+export default function AppercuProjets({projets} : ListeAppercuProjets) {
   return (
     <section
       id="appercuProjets"
