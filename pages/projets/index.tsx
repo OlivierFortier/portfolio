@@ -1,3 +1,5 @@
+import { GetStaticProps } from 'next';
+
 import { client } from "../../lib/api";
 import ListeProjets from "../../components/commun/ListeProjets";
 import { gql } from "graphql-request";
@@ -22,7 +24,7 @@ export default function index({ projets }) {
   );
 }
 
-export async function getStaticProps(context) {
+export const getStaticProps: GetStaticProps = async (context) => {
   const testGql = gql`
     {
       projets {

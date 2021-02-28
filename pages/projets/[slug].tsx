@@ -1,4 +1,5 @@
 import { gql } from "graphql-request";
+import { GetStaticPaths, GetStaticProps } from "next";
 import PageProjetV1 from "../../components/projets/PageProjetV1";
 import PageProjetV2 from "../../components/projets/PageProjetV2";
 import { client } from "../../lib/api";
@@ -10,7 +11,7 @@ export default function Projet({projet}) {
   );
 }
 
-export async function getStaticProps({ params }) {
+export const getStaticProps: GetStaticProps = async ({params}) => {
   const requeteGql = gql`
     query unProjet($slug: String!) {
       projet(where: { slug: $slug }) {
@@ -40,7 +41,7 @@ export async function getStaticProps({ params }) {
   };
 }
 
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths = async () => {
   const { projets } = await client.request(gql`
     {
       projets {

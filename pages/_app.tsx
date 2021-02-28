@@ -1,3 +1,5 @@
+import type { AppProps } from 'next/app';
+
 // import '../styles/fonts.css';
 
 // import 'tailwindcss/tailwind.css';
@@ -13,7 +15,7 @@ import "../styles/detailsFix.css";
 
 import Layout from "../components/layout/Layout";
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }: AppProps) {
   return (
       <Layout>
         <Component {...pageProps} />
