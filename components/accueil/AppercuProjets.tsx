@@ -1,22 +1,20 @@
-import CarteProjet from "../commun/CarteProjet";
 import ListeProjets from "../commun/ListeProjets";
 
-
 export type ImageProjet = {
-  height: Number;
-  width: Number;
-  url: String;
+  height: number;
+  width: number;
+  url: string;
 }
 
 export type AppercuProjet = {
-  titre : String;
-  sommaire: String;
-  images: Array<ImageProjet>;
-  slug: String;
+  titre : string;
+  sommaire: string;
+  images: ImageProjet[];
+  slug: string;
 }
 
 export type ListeAppercuProjets = {
-  projets: Array<AppercuProjet>;
+  projets: AppercuProjet[];
 }
 
 export default function AppercuProjets({projets} : ListeAppercuProjets) {
@@ -60,7 +58,7 @@ export default function AppercuProjets({projets} : ListeAppercuProjets) {
       <div className="container px-5  mx-auto flex flex-wrap">
         <ul className="flex flex-wrap justify-center ">
           
-          <ListeProjets projets={projets} nbProjets={4}/>
+          <ListeProjets projets={projets} />
           
         </ul>
       </div>

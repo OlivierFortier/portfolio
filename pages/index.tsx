@@ -22,7 +22,7 @@ export default function Home({projets} : ListeAppercuProjets) {
 
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const testGql = gql`
+  const requeteGql = gql`
     {
       projets {
         titre
@@ -37,7 +37,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
     }
   `;
 
-  const { projets } : ListeAppercuProjets = await client.request(testGql);
+  const { projets } : ListeAppercuProjets = await client.request(requeteGql);
 
   return {
     props: {

@@ -1,10 +1,10 @@
 import { GetStaticProps } from 'next';
-
 import { client } from "../../lib/api";
 import ListeProjets from "../../components/commun/ListeProjets";
 import { gql } from "graphql-request";
+import { ListeAppercuProjets } from '../../components/accueil/AppercuProjets';
 
-export default function index({ projets }) {
+export default function index({ projets }: ListeAppercuProjets) {
   console.log(projets);
 
   return (
@@ -17,7 +17,7 @@ export default function index({ projets }) {
           Une collection de mes plus récents projets intéressants
         </p>
         <div className="container px-5  mx-auto flex flex-wrap">
-          <ListeProjets nbProjets={6} projets={projets}/>
+          <ListeProjets projets={projets}/>
         </div>
       </section>
     </div>
@@ -25,7 +25,7 @@ export default function index({ projets }) {
 }
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const testGql = gql`
+  const requeteGql = gql`
     {
       projets {
         titre
@@ -35,16 +35,12 @@ export const getStaticProps: GetStaticProps = async (context) => {
           width
           url
         }
-        sousTitreDetails
-        details
-        sousTitreSectionOptionnelle
-        sectionOptionnelle
         slug
       }
     }
   `;
 
-  const { projets } = await client.request(testGql);
+  const { projets } : ListeAppercuProjets = await client.request(requeteGql);
 
   return {
     props: {

@@ -1,7 +1,8 @@
 import Link from "next/link";
+import { Projet } from "../../pages/projets/[slug]";
 import Carousel from "./Carousel";
 
-export default function PageProjetV1({projet}) {
+export default function PageProjetV1({projet} : {projet : Projet}) {
   return (
     <section className="px-4 py-14 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 ">
       <div className="mx-auto  lg:max-w-4xl">

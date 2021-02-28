@@ -1,10 +1,19 @@
 import { gql } from "graphql-request";
 import { GetStaticPaths, GetStaticProps } from "next";
+import { AppercuProjet } from "../../components/accueil/AppercuProjets";
 import PageProjetV1 from "../../components/projets/PageProjetV1";
 import PageProjetV2 from "../../components/projets/PageProjetV2";
 import { client } from "../../lib/api";
 
-export default function Projet({projet}) {
+
+export type Projet = AppercuProjet & {
+  sousTitreDetails : string;
+  details : string;
+  sousTitreSectionOptionnelle: string;
+  sectionOptionnelle: string;
+}
+
+export default function Projet({projet} : {projet : Projet}) {
   return (
     //  <PageProjetV2/>
     <PageProjetV1 projet={projet}/>
@@ -30,7 +39,7 @@ export const getStaticProps: GetStaticProps = async ({params}) => {
     }
   `;
 
-  const { projet } = await client.request(requeteGql, {
+  const {projet} : {projet : Projet} = await client.request(requeteGql, {
     slug: params.slug,
   });
 
@@ -42,7 +51,13 @@ export const getStaticProps: GetStaticProps = async ({params}) => {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const { projets } = await client.request(gql`
+
+  type CheminsProjets = {
+    titre: string;
+    slug: string;
+  }
+
+  const  {projets} : {projets : CheminsProjets[]}  = await client.request(gql`
     {
       projets {
         slug
