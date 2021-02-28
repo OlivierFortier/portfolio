@@ -11,16 +11,16 @@ export default function PageProjetV1({projet} : {projet : Projet}) {
         {/* TODO : Gérer le rendu markdown de cette section depuis le CMS */}
 
           <h1 className="max-w-lg mb-6 font-sans text-4xl font-bold leading-none tracking-tight text-blue-600 sm:text-6xl ">
-            Un projet X
+            {projet.titre || "Erreur : titre non défini"}
           </h1>
           <h2 className="text-base text-blue-500 md:text-lg">
-            Une solution à votre problème Y
+          {projet.sommaire || "Erreur : sommaire non défini"}
           </h2>
         </div>
         <div className="mb-4 transition-shadow duration-300 lg:mb-6 lg:max-w-3xl lg:mx-auto">
 
           {/* TODO : gérer les types et le carousel dynamiquement */}
-          <Carousel />
+          <Carousel images={projet.images}/>
         </div>
 
         {/* TODO : Gérer le rendu markdown de cette section depuis le CMS */}
