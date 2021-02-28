@@ -7,7 +7,6 @@ import SwiperCore, {
   Pagination,
   A11y,
   Autoplay,
-  Virtual,
 } from "swiper";
 
 // Import Swiper styles
@@ -18,7 +17,7 @@ import "swiper/components/pagination/pagination.min.css";
 
 import { ImageProjet } from "../accueil/AppercuProjets";
 
-SwiperCore.use([Navigation, Pagination, A11y, Autoplay, Virtual]);
+SwiperCore.use([Navigation, Pagination, A11y, Autoplay]);
 
 export default function Carousel({ images }: { images: ImageProjet[] }) {
 
@@ -28,6 +27,7 @@ export default function Carousel({ images }: { images: ImageProjet[] }) {
       spaceBetween={50}
       slidesPerView={"auto"}
       centeredSlides={true}
+      centerInsufficientSlides={true}
       autoplay={{ delay: 5000 }}
       pagination={{ el: ".laPagination", type: "bullets", clickable: true }}
       navigation={{
@@ -38,12 +38,14 @@ export default function Carousel({ images }: { images: ImageProjet[] }) {
       {images.map((photo, index) => {
         return (
           <SwiperSlide key={index}>
-            <Image
-              className="mx-auto object-cover max-w-full h-auto"
-              width={photo.width}
-              height={photo.height}
-              src={photo.url || "/assets/pexels-photo-3727459.jpeg"}
-            />
+            <div className="flex justify-center">
+              <Image
+                className="mx-auto object-cover max-w-full h-auto"
+                width={photo.width}
+                height={photo.height}
+                src={photo.url || "/assets/pexels-photo-3727459.jpeg"}
+              />
+            </div>
           </SwiperSlide>
         );
       })}
