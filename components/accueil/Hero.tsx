@@ -3,21 +3,20 @@ import { useSpring, animated } from "react-spring";
 
 export default function Hero() {
 
-  const entreeGauche = useSpring({
-    from : {opacity: 0.5, marginRight: "50rem"},
-    opacity: 1, marginRight : "0"
+  const fadeInGauche = useSpring({
+    from : {opacity: 0.5, },
+    opacity: 1, 
   })
 
   const entreeDroite = useSpring({
-    from : {opacity: 0.5, marginLeft: "50rem"},
-    opacity: 1, marginLeft: "0"
+   transform : "translate(0%)", opacity: 1, from : {transform: "translate(10%)", opacity: 0.5}
   })
 
   return (
     <section className="px-4 py-14 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
       <div className="flex flex-col items-center justify-between lg:flex-row">
 
-        <animated.div  className="lg:self-start lg:pt-8 mb-10 lg:max-w-lg lg:pr-5 lg:mb-0" style={entreeGauche}>
+        <animated.div style={fadeInGauche}  className="lg:self-start lg:pt-8 mb-10 lg:max-w-lg lg:pr-5 lg:mb-0">
           <div className="max-w-xl mb-6">
             <h1 className="max-w-lg mb-6 font-sans text-4xl font-bold tracking-tight sm:text-6xl sm:leading-none text-blue-600">
               Olivier Fortier
@@ -37,7 +36,7 @@ export default function Hero() {
         </animated.div>
 
 
-        <animated.div  className="relative lg:w-1/2" style={entreeDroite}>
+        <animated.div style={entreeDroite} className="relative lg:w-1/2" >
           <img
             className="object-cover w-full h-56 rounded shadow-lg sm:h-96"
             src="https://images.pexels.com/photos/927022/pexels-photo-927022.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=3&amp;h=750&amp;w=1260"
