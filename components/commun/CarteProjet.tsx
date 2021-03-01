@@ -16,17 +16,17 @@ export default function CarteProjet({ projet }: CarteProjet) {
             <div className="h-56 w-full md:w-1/2 lg:w-full xl:w-1/2 sm:mr-8 sm:mb-0 inline-flex mx-auto  justify-center rounded text-indigo-500 flex-shrink-0">
               <Image
                 className="object-cover rounded-md"
-                src={projet.images[0].url || "/assets/thumbnail.jpg"}
-                width={projet.images[0].width}
-                height={projet.images[0].height}
+                src={projet?.images[0]?.url || "/assets/img-placeholder.jpg"}
+                width={projet?.images[0]?.width || 200}
+                height={projet?.images[0]?.height || 200}
               />
             </div>
             <div className="flex-grow">
               <h2 className="text-blue-600 text-xl title-font font-bold mb-3 mt-3 xl:mt-0">
-                {projet.titre || "Erreur : titre non défini"}
+                {projet?.titre || "Erreur : titre non défini"}
               </h2>
               <p className="leading-relaxed text-base text-blue-500">
-                {projet.sommaire || "Erreur : sommaire non défini"}
+                {projet?.sommaire || "Erreur : sommaire non défini"}
               </p>
               <a className="font-semibold text-lg mt-3 text-blue-600 inline-flex items-center">
                 En savoir plus
