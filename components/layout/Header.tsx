@@ -33,7 +33,7 @@ export default function Header() {
               <a
                 aria-label="Accueil"
                 title="Accueil"
-                className="font-medium tracking-wide transition-colors duration-200 hover:text-blue-800"
+                className={`${router.pathname == "/" && "underline"} font-medium tracking-wide transition-colors duration-200 hover:text-blue-800`}
               >
                 Accueil
               </a>
@@ -44,7 +44,7 @@ export default function Header() {
               <a
                 aria-label="Projets"
                 title="Projets"
-                className="font-medium tracking-wide transition-colors duration-200 hover:text-blue-800"
+                className={`${router.pathname.includes("/projets") && "underline"} font-medium tracking-wide transition-colors duration-200 hover:text-blue-800`}
               >
                 Projets
               </a>
@@ -55,7 +55,7 @@ export default function Header() {
               <a
                 aria-label="À propos"
                 title="À propos"
-                className="font-medium tracking-wide transition-colors duration-200 hover:text-blue-800"
+                className={`${router.pathname == "/a-propos" && "underline"} font-medium tracking-wide transition-colors duration-200 hover:text-blue-800`}
               >
                 À propos
               </a>

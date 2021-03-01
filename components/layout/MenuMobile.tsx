@@ -1,13 +1,14 @@
 import Link from "next/link";
-import { SiGravatar } from "react-icons/si";
 import { IoClose } from "react-icons/io5";
-import { CgClose } from "react-icons/cg";
 import { IoMenu } from "react-icons/io5";
 import { FiSend } from "react-icons/fi";
 import { useState } from "react";
+import {useRouter} from 'next/router';
+import Avatar from "./Avatar";
 
 export default function MenuMobile() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const router = useRouter();
   return (
     <div className="lg:hidden">
       <button
@@ -30,7 +31,7 @@ export default function MenuMobile() {
                     className="inline-flex items-center"
                   >
                     <span className="ml-2 text-4xl font-bold tracking-wide text-blue-500 uppercase">
-                      <SiGravatar />
+                     <Avatar/>
                     </span>
                   </a>
                 </Link>
@@ -53,7 +54,7 @@ export default function MenuMobile() {
                     <a onClick={()=> setIsMenuOpen(false)}
                       aria-label="Accueil"
                       title="Accueil"
-                      className="font-medium tracking-wide transition-colors duration-200 hover:text-blue-400"
+                      className={`${router.pathname == "/" && "underline"} font-medium tracking-wide transition-colors duration-200 hover:text-blue-400`}
                     >
                       Accueil
                     </a>
@@ -64,7 +65,7 @@ export default function MenuMobile() {
                     <a onClick={()=> setIsMenuOpen(false)}
                       aria-label="Projets"
                       title="Projets"
-                      className="font-medium tracking-wide transition-colors duration-200 hover:text-blue-400"
+                      className={`${router.pathname.includes("/projets") && "underline"} font-medium tracking-wide transition-colors duration-200 hover:text-blue-400`}
                     >
                       Projets
                     </a>
@@ -75,7 +76,7 @@ export default function MenuMobile() {
                     <a onClick={()=> setIsMenuOpen(false)}
                       aria-label="À propos"
                       title="À propos"
-                      className="font-medium tracking-wide transition-colors duration-200 hover:text-blue-400"
+                      className={`${router.pathname == "/a-propos" && "underline"} font-medium tracking-wide transition-colors duration-200 hover:text-blue-400`}
                     >
                       À propos
                     </a>
