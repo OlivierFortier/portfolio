@@ -1,11 +1,13 @@
 import Link from "next/link";
-import { SiGravatar } from "react-icons/si";
-import { IoMenu } from "react-icons/io5";
 import { FiSend } from "react-icons/fi";
 import MenuMobile from "./MenuMobile";
 import MenuMobilePleinEcran from "./MenuMobilePleinEcran";
+import Avatar from "./Avatar";
+import { useRouter } from "next/router";
 
 export default function Header() {
+  const router = useRouter();
+
   return (
     <header className="z-50 px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-24 lg:px-8">
       <nav className="relative flex items-center justify-between">
@@ -16,8 +18,13 @@ export default function Header() {
             className=" inline-flex items-center"
           >
             <span className="ml-2 text-4xl font-bold tracking-wide text-blue-500 uppercase">
-              <SiGravatar />
+              <Avatar />
             </span>
+            {router.pathname !== "/" && (
+              <h1 className="ml-4 text-xl text-blue-600 font-semibold">
+                Olivier Fortier
+              </h1>
+            )}
           </a>
         </Link>
         <ul className="text-blue-400 items-center hidden space-x-8 lg:flex">
@@ -70,7 +77,6 @@ export default function Header() {
         <MenuMobile />
 
         {/* <MenuMobilePleinEcran/> */}
-
       </nav>
     </header>
   );
