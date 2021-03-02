@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { FiSend } from "react-icons/fi";
 import MenuMobile from "./MenuMobile";
-import MenuMobilePleinEcran from "./MenuMobilePleinEcran";
+// import MenuMobilePleinEcran from "./MenuMobilePleinEcran";
 import Avatar from "./Avatar";
 import { useRouter } from "next/router";
 
