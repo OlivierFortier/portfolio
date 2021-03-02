@@ -7,7 +7,7 @@ export default function Layout({ children }) {
     <div className="bg-gray-50">
       <Header />
 
-      <main>{children}</main>
+      <main className="relative">{children}</main>
 
       <Footer />
     </div>

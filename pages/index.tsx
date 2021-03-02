@@ -5,8 +5,10 @@ import AppercuTechnos from '../components/accueil/AppercuTechnos';
 import { client } from '../lib/api';
 import { gql } from 'graphql-request';
 import { GetStaticProps } from 'next';
+import { useEffect } from 'react';
 
 export default function Home({projets} : ListeAppercuProjets) {
+  
   return (
     <div className="max-w-xs mx-auto md:max-w-2xl lg:max-w-4xl xl:max-w-7xl">
       <Hero />
