@@ -2,16 +2,16 @@ import { useSpring, animated } from "react-spring";
 
 export default function Perso() {
   
-  const entreeHaut = useSpring({
-    from: { transform: "translateY(35%)", opacity: 0 },
-    to: { transform: "translateY(0)", opacity: 1 },
-    delay: 400
-  });
+  // const entreeHaut = useSpring({
+  //   from: { transform: "translateY(35%)", opacity: 0 },
+  //   to: { transform: "translateY(0)", opacity: 1 },
+  //   delay: 400
+  // });
 
   return (
     <animated.section
-      style={entreeHaut}
-      className=" pb-8 px-6 sm:px-0 text-lg md:max-w-xl lg:max-w-2xl xl:max-w-4xl lg:-mt-28 mx-auto space-y-8 text-indigo-600"
+      // style={entreeHaut}
+      className=" pb-8 px-6 sm:px-0 text-lg md:max-w-xl lg:max-w-2xl xl:max-w-4xl lg:-mt-8 xl:-mt-28 mx-auto space-y-8 text-indigo-600"
     >
       <p className="shadow-sm relative bg-blue-200 p-6 -mx-6 rounded-2xl ">
         J’adore travailler avec des outils modernes et efficaces. Je passe mon
