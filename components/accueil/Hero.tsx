@@ -22,7 +22,7 @@ export default function Hero() {
       <div className="flex flex-col items-center justify-between lg:flex-row">
         <animated.div
           style={entreeGauche}
-          className="overflow-x-hidden lg:self-start lg:pt-8 mb-10 lg:max-w-lg lg:pr-5 lg:mb-0"
+          className=" overflow-x-hidden lg:self-start lg:pt-8 mb-10 lg:max-w-lg lg:pr-5 lg:mb-0"
         >
           <div className="max-w-xl mb-6">
             <h1 className="max-w-lg mb-6 font-sans text-4xl font-bold tracking-tight sm:text-6xl sm:leading-none text-blue-600">
@@ -42,7 +42,7 @@ export default function Hero() {
           </div>
         </animated.div>
 
-        <animated.div style={entreeDroite} className="overflow-x-hidden relative lg:w-1/2">
+        <animated.div style={entreeDroite} className="origin-right overflow-x-hidden relative lg:w-1/2">
           <img
             className="object-cover w-full h-56 rounded shadow-lg sm:h-96"
             src="https://images.pexels.com/photos/927022/pexels-photo-927022.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=3&amp;h=750&amp;w=1260"
