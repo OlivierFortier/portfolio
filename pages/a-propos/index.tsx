@@ -1,5 +1,6 @@
 import ListeTechnos from "../../components/apropos/ListeTechnos";
 import {animated, useSpring} from 'react-spring';
+import { useInView } from "react-intersection-observer";
 
 export default function index() {
 
@@ -12,6 +13,21 @@ export default function index() {
     delay: 200,
     from: {transform: "scaleX(0)"},
     transform: "scaleX(1)"
+  })
+
+  //hook pour détecter la visibilité d'un élément
+  const {ref , entry} = useInView({triggerOnce: true});
+
+  //animer les CTA quand ils entrent dans la vue
+  const popCta = useSpring({
+    delay: 250,
+    config: {
+      tension: 300,
+      friction: 16
+    },
+    from: {transform: "scale(0)", opacity: 0},
+    transform: entry?.isIntersecting ? "scale(1)" : "scale(0)",
+    opacity: entry?.isIntersecting ? 1 : 0
   })
 
   return (
@@ -53,13 +69,13 @@ export default function index() {
       <ListeTechnos />
 
       <section className="py-6  text-blue-600">
-        <div className="container mx-auto flex flex-col justify-around p-4 text-center md:p-10 lg:flex-row">
+        <div ref={ref} className="container mx-auto flex flex-col justify-around p-4 text-center md:p-10 lg:flex-row">
           <div className="flex flex-col justify-center lg:text-left">
             <h1 className="py-2 text-3xl font-bold leading-tight title-font">
               Envie de discuter ?
             </h1>
           </div>
-          <div className="flex flex-col items-center justify-center flex-shrink-0 mt-6 space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 lg:ml-4 lg:mt-0 lg:justify-end">
+          <animated.div style={popCta} className="flex flex-col items-center justify-center flex-shrink-0 mt-6 space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 lg:ml-4 lg:mt-0 lg:justify-end">
               <a href="https://www.linkedin.com/in/olivier-fortier/" className="cursor-pointer hover:text-white hover:bg-blue-600 transition-colors inline-flex items-center px-6 py-3 rounded border-blue-600 border-2 text-blue-600">
                 <span className="flex flex-col items-start  leading-none">
                   <span className="font-semibold title-font">Contactez-moi !</span>
@@ -72,7 +88,7 @@ export default function index() {
                 </span>
               </a>
             
-          </div>
+          </animated.div>
         </div>
       </section>
     </div>
