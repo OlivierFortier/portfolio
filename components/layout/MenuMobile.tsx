@@ -18,11 +18,6 @@ export default function MenuMobile() {
     leave : {transform: "scale(0)", opacity: 0}
   })
 
-  const listeMenuItems = [
-    "Accueil", "Projets" , "À-propos"
-  ]
-
-
   return (
     <div className="lg:hidden">
       <button
@@ -71,48 +66,7 @@ export default function MenuMobile() {
                 </div>
                 <nav>
                   <ul className="text-2xl text-blue-500 space-y-4 text-right">
-                    {
-                      listeMenuItems.map((menuItem, index) => {
-                        if(index===0) {
-                          return (
-                            <li>
-                              <Link href="/">
-                                <a
-                                  onClick={() => setIsMenuOpen(false)}
-                                  aria-label="Accueil"
-                                  title="Accueil"
-                                  className={`${
-                                    router.pathname == "/" && "underline"
-                                  } font-medium tracking-wide transition-colors duration-200 hover:text-blue-400`}
-                                >
-                                  Accueil
-                                </a>
-                              </Link>
-                            </li>
-                          );
-                        } else {
-                          return (
-                            <li>
-                              <Link href={"/" + menuItem.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")}>
-                                <a
-                                  onClick={() => setIsMenuOpen(false)}
-                                  aria-label={menuItem}
-                                  title={menuItem}
-                                  className={`${
-                                    router.pathname.includes(
-                                      "/" + menuItem.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")
-                                    ) && "underline"
-                                  } font-medium tracking-wide transition-colors duration-200 hover:text-blue-400`}
-                                >
-                                  {menuItem.replace("-"," ")}
-                                </a>
-                              </Link>
-                            </li>
-                          );
-                        }
-                      })
-                    }
-                    {/* <li>
+                    <li>
                       <Link href="/">
                         <a
                           onClick={() => setIsMenuOpen(false)}
@@ -153,7 +107,7 @@ export default function MenuMobile() {
                           À propos
                         </a>
                       </Link>
-                    </li> */}
+                    </li>
                     <li>
                       <a
                         onClick={() => setIsMenuOpen(false)}
