@@ -1,5 +1,10 @@
+:root {
+  --dark-mode-bg : #131516;
+  --light-mode-bg : rgba(249, 250, 251, 1);
+}
+
 html {
-  background-color: rgba(249, 250, 251, 1);
+  background-color: var(--light-mode-bg);
 }
 
 #Menu > summary {
