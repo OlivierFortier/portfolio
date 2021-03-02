@@ -1,7 +1,19 @@
 import ListeTechnos from "../../components/apropos/ListeTechnos";
-
+import {animated, useSpring} from 'react-spring';
 
 export default function index() {
+
+  // animation d'entrée du fond bleu
+  const growRight = useSpring({
+    config: {
+      mass: 2,
+      tension: 100,
+    },
+    delay: 200,
+    from: {transform: "scaleX(0)"},
+    transform: "scaleX(1)"
+  })
+
   return (
     <div className="max-w-xs mx-auto md:max-w-2xl lg:max-w-4xl xl:max-w-4xl">
       <section className="body-font py-8 sm:py-14">
@@ -16,11 +28,11 @@ export default function index() {
           plaisir, et à mentorer des gens dans leurs études et projets
         </p>
 
-        <div className="xl:max-w-4xl flex items-center justify-between mx-4 p-6 border-l-4 sm:py-8 border-blue-300 bg-blue-50 text-blue-300">
+        <animated.div style={growRight} className="origin-left xl:max-w-4xl flex items-center justify-between mx-4 p-6 border-l-4 sm:py-8 border-blue-300 bg-blue-50 text-blue-300">
           <p>
             J’adore les belles interfaces et les expériences utilisateur fluides
           </p>
-        </div>
+        </animated.div>
       </section>
 
       <section className="body-font py-8 pb-6 sm:py-14 sm:pt-0 sm:pb-8">
