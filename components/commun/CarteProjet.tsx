@@ -2,14 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { BsArrowRight } from "react-icons/bs";
 import { AppercuProjet } from "../accueil/AppercuProjets";
+import {animated} from "react-spring";
 
-type CarteProjet = {
-  projet: AppercuProjet;
-};
-
-export default function CarteProjet({ projet }: CarteProjet) {
+export default function CarteProjet({ projet, animation }: {projet : AppercuProjet; animation : React.CSSProperties}) {
   return (
-    <li className="py-4 md:p-4 lg:w-1/2 md:w-full">
+    <animated.li style={animation} className="py-4 md:p-4 lg:w-1/2 md:w-full">
       <Link href={`/projets/${projet.slug}`}>
         <article className="cursor-pointer">
           <div className="flex items-center  rounded-lg shadow-md transition-shadow hover:shadow-xl p-8 md:flex-row lg:flex-col xl:flex-row flex-col">
@@ -36,6 +33,6 @@ export default function CarteProjet({ projet }: CarteProjet) {
           </div>
         </article>
       </Link>
-    </li>
+    </animated.li>
   );
 }

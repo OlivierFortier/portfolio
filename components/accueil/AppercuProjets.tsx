@@ -1,7 +1,5 @@
 import ListeProjets from "../commun/ListeProjets";
 import GrilleSvgDroit from "./GrilleSvgDroit";
-import { useInView } from "react-intersection-observer";
-import { useSpring, animated } from "react-spring";
 
 export type ImageProjet = {
   /** Hauteur de l'image */
@@ -29,16 +27,6 @@ export type ListeAppercuProjets = {
 };
 
 export default function AppercuProjets({ projets }: ListeAppercuProjets) {
-
-  // hook pour détecter quand un élément entre dans la vue
-  const { ref, entry } = useInView({ triggerOnce: true });
-
-  // animer si l'élément est dans la vue
-  const scaleIn = useSpring({
-    from: { transform: "scale(0)", opacity: 0 },
-    to: entry?.isIntersecting && { transform: "scale(1)", opacity: 1 },
-  });
-
   return (
     <section
       id="appercuProjets"
@@ -56,13 +44,9 @@ export default function AppercuProjets({ projets }: ListeAppercuProjets) {
         Une collection de mes plus récents projets intéressants
       </p>
       <div className="container px-5  mx-auto flex flex-wrap">
-        <animated.ul
-          style={scaleIn}
-          ref={ref}
-          className="flex flex-wrap justify-center "
-        >
+        <ul className="flex flex-wrap justify-center ">
           <ListeProjets projets={projets} />
-        </animated.ul>
+        </ul>
       </div>
     </section>
   );
