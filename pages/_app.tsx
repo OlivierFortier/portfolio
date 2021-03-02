@@ -16,6 +16,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   const [theme, setTheme] = useState("light");
 
   useEffect(() => {
+
+    if(!localStorage.getItem('theme')) localStorage.setItem("theme", "light");
+    
     if (
       localStorage.theme === "dark" ||
       (!("theme" in localStorage) &&

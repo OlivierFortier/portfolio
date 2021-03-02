@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { useState } from "react";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FiGithub, FiSend, FiMoon, FiSun } from "react-icons/fi";
 
@@ -22,8 +21,8 @@ export default function Footer({theme, setDarkTheme, setLightTheme}) {
           }}
           className="text-2xl bg-blue-200 text-blue-700 h-12 w-12 p-2 rounded-full mx-auto flex justify-center items-center"
         >
-          {theme === "dark" && <FiMoon />}
           {theme === "light" && <FiSun />}
+          {theme === "dark" && <FiMoon />}
         </button>
 
         <span className="inline-flex  sm:mt-0 mt-4 justify-center sm:justify-start">
