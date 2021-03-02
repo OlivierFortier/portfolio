@@ -1,7 +1,7 @@
 :root {
   --dark-mode-bg : #131516;
   --light-mode-bg : rgba(249, 250, 251, 1);
-  --eaewe: 0 4px 6px -1px rgba(179, 176, 176, 0.01), 0 2px 4px -1px rgba(104, 103, 103, 0.04);
+  --eaewe: 0 4px 6px -1px rgba(89, 128, 214, 0.01), 0 2px 4px -1px rgba(89, 128, 214, 0.04);
 }
 
 html {

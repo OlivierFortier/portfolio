@@ -9,7 +9,7 @@ export default function CarteProjet({ projet, animation }: {projet : AppercuProj
     <animated.li style={animation} className="py-4 md:p-4 lg:w-1/2 md:w-full">
       <Link href={`/projets/${projet.slug}`}>
         <article className="cursor-pointer">
-          <div className="flex items-center  rounded-lg shadow-md dark:shadow-md-white transition-shadow hover:shadow-xl dark:hover:shadow-xl-white p-8 md:flex-row lg:flex-col xl:flex-row flex-col">
+          <div className="flex items-center rounded-lg shadow-md dark:shadow-none dark:hover:transform dark:hover:scale-105 dark:bg-gray-800 dark:bg-opacity-60 transition-all hover:shadow-xl dark:hover:shadow-none p-8 md:flex-row lg:flex-col xl:flex-row flex-col">
             <div className="h-56 w-full md:w-1/2 lg:w-full xl:w-1/2 sm:mr-8 sm:mb-0 inline-flex mx-auto  justify-center rounded text-indigo-500 flex-shrink-0">
               <Image
                 className="object-cover rounded-md"
