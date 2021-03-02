@@ -36,11 +36,12 @@ export default function AppercuTechnos() {
 
   const scaleIn = useSpring({
     config: {
-      tension: 650,
+      delay: 100,
+      duration: 100,
+      tension: 500,
       friction: 10,
-      mass: 1
+      mass: 2
     },
-    delay: 0,
     from: {transform: "scale(0)", opacity: 0},
     transform: entrySpring?.isIntersecting ? "scale(1)" : "scale(0)",
     opacity: entrySpring?.isIntersecting ? 1 : 0
