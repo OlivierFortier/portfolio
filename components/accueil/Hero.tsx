@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from 'next/image';
 import { useSpring, animated } from "react-spring";
 
 export default function Hero() {
@@ -43,7 +44,10 @@ export default function Hero() {
         </animated.div>
 
         <animated.div style={entreeDroite} className="origin-right overflow-x-hidden relative lg:w-1/2">
-          <img
+          <Image
+          height={750}
+          width={1260}
+          loading={"eager"}
             className="object-cover w-full h-56 rounded shadow-lg sm:h-96"
             src="https://images.pexels.com/photos/927022/pexels-photo-927022.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=3&amp;h=750&amp;w=1260"
             alt=""
