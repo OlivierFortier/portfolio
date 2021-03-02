@@ -2,7 +2,7 @@ import Link from "next/link";
 import GrilleSvgGauche from "./GrilleSvgGauche";
 import { FaVuejs, FaReact, FaNodeJs } from "react-icons/fa";
 import { SiNextDotJs, SiDotNet, SiGraphql } from "react-icons/si";
-import { animated, useTrail } from 'react-spring'
+import { animated, useSpring, useTrail } from 'react-spring'
 import { useInView } from "react-intersection-observer";
 
 export default function AppercuTechnos() {
@@ -18,20 +18,33 @@ export default function AppercuTechnos() {
   ];
 
   // hook pour détecter quand un élément entre dans la vue
-  const { ref, entry } = useInView({ triggerOnce: true });
+  const { ref: refTrail, entry: entryTrail } = useInView({ triggerOnce: true });
+  const {ref: refSpring, entry: entrySpring} = useInView({triggerOnce: true});
 
   // animer si l'élément est dans la vue
   const trail = useTrail(icones.length, {
     config: {
       mass: 1,
       friction: 15,
-      tension: 200
+      tension: 200,
     },
     delay: 0,
     from: { transform: "scale(0)", opacity: 0 },
-    transform: entry?.isIntersecting ? "scale(1)" : "scale(0)",
-    opacity: entry?.isIntersecting ? 1 : 0,
+    transform: entryTrail?.isIntersecting ? "scale(1)" : "scale(0)",
+    opacity: entryTrail?.isIntersecting ? 1 : 0,
   });
+
+  const scaleIn = useSpring({
+    config: {
+      tension: 650,
+      friction: 10,
+      mass: 1
+    },
+    delay: 0,
+    from: {transform: "scale(0)", opacity: 0},
+    transform: entrySpring?.isIntersecting ? "scale(1)" : "scale(0)",
+    opacity: entrySpring?.isIntersecting ? 1 : 0
+  })
 
   return (
     <section className="px-4 py-8 sm:py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20 lg:pb-8">
@@ -47,7 +60,7 @@ export default function AppercuTechnos() {
           J'utilise ces technologies chaque fois que j'en ai l'occasion
         </p>
       </div>
-      <ul ref={ref} className="text-blue-600 grid grid-cols-2 gap-5 row-gap-6 mb-10 sm:grid-cols-3 lg:grid-cols-6">
+      <ul ref={refTrail}  className="text-blue-600 grid grid-cols-2 gap-5 row-gap-6 mb-10 sm:grid-cols-3 lg:grid-cols-6">
         {trail.map((props, index) => (
           <animated.li style={props} key={index} className="text-center">
             <div className="text-4xl sm:text-5xl flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-24 sm:h-24">
@@ -57,12 +70,12 @@ export default function AppercuTechnos() {
           </animated.li>
         ))}
       </ul>
-      <div className="text-center">
+      <div ref={refSpring}  className="text-center">
         <Link href="/a-propos">
-          <a className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-blue-500 hover:bg-blue-700 focus:shadow-outline focus:outline-none">
+          <animated.a style={scaleIn} className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-blue-500 hover:bg-blue-700 focus:shadow-outline focus:outline-none">
             En savoir plus
             <span className="ml-1 -mr-2">🧐</span>
-          </a>
+          </animated.a>
         </Link>
       </div>
     </section>
