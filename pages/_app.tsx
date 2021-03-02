@@ -3,7 +3,7 @@ import type { AppProps } from 'next/app';
 import "../styles/tailwind.css";
 import "../styles/utilities.css";
 
-import "../styles/detailsFix.css";
+import "../styles/global.css";
 
 import Layout from "../components/layout/Layout";
 

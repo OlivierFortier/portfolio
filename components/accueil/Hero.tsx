@@ -3,20 +3,27 @@ import { useSpring, animated } from "react-spring";
 
 export default function Hero() {
 
-  const fadeInGauche = useSpring({
-    from : {opacity: 0.5, },
-    opacity: 1, 
-  })
+  const entreeGauche = useSpring({
+    from: { opacity: 0, transform: "scaleX(0.65)" },
+    opacity: 1,
+    transform: "scaleX(1)",
+    delay: 100
+  });
 
   const entreeDroite = useSpring({
-   transform : "translate(0%)", opacity: 1, from : {transform: "translate(10%)", opacity: 0.5}
-  })
+    transform: "scaleX(1)",
+    opacity: 1,
+    from: { transform: "scaleX(0.65)", opacity: 0 },
+    delay: 250,
+  });
 
   return (
     <section className="px-4 py-14 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
       <div className="flex flex-col items-center justify-between lg:flex-row">
-
-        <animated.div style={fadeInGauche}  className="lg:self-start lg:pt-8 mb-10 lg:max-w-lg lg:pr-5 lg:mb-0">
+        <animated.div
+          style={entreeGauche}
+          className="overflow-x-hidden lg:self-start lg:pt-8 mb-10 lg:max-w-lg lg:pr-5 lg:mb-0"
+        >
           <div className="max-w-xl mb-6">
             <h1 className="max-w-lg mb-6 font-sans text-4xl font-bold tracking-tight sm:text-6xl sm:leading-none text-blue-600">
               Olivier Fortier
@@ -35,16 +42,13 @@ export default function Hero() {
           </div>
         </animated.div>
 
-
-        <animated.div style={entreeDroite} className="relative lg:w-1/2" >
+        <animated.div style={entreeDroite} className="overflow-x-hidden relative lg:w-1/2">
           <img
             className="object-cover w-full h-56 rounded shadow-lg sm:h-96"
             src="https://images.pexels.com/photos/927022/pexels-photo-927022.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=3&amp;h=750&amp;w=1260"
             alt=""
           />
         </animated.div>
-
-
       </div>
     </section>
   );

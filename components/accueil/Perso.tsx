@@ -3,8 +3,9 @@ import { useSpring, animated } from "react-spring";
 export default function Perso() {
   
   const entreeHaut = useSpring({
-    from: { transform: "translateY(10%)", opacity: 0.5 },
+    from: { transform: "translateY(35%)", opacity: 0 },
     to: { transform: "translateY(0)", opacity: 1 },
+    delay: 400
   });
 
   return (
