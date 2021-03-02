@@ -1,7 +1,7 @@
 import Footer from "./Footer";
 import Header from "./Header";
 
-export default function Layout({ children }) {
+export default function Layout({ children, theme, setDarkTheme, setLightTheme }) {
 
   return (
     <div className="bg-gray-50 dark:bg-gray-900">
@@ -9,7 +9,7 @@ export default function Layout({ children }) {
 
       <main className="relative">{children}</main>
 
-      <Footer />
+      <Footer theme={theme} setDarkTheme={setDarkTheme} setLightTheme={setLightTheme} />
     </div>
   );
 }
