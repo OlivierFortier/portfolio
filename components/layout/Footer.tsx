@@ -19,7 +19,7 @@ export default function Footer({theme, setDarkTheme, setLightTheme}) {
           onClick={() => {
             theme === "dark" ? setLightTheme() : setDarkTheme();
           }}
-          className="text-2xl mt-2 transform transition-transform hover:scale-125 bg-yellow-600 dark:bg-blue-900 text-yellow-300 dark:text-blue-500 h-12 w-12 p-2 rounded-full  flex justify-center items-center"
+          className="text-2xl mt-2 transform transition-transform hover:scale-125  from-yellow-400 to-yellow-800 dark:from-blue-400 dark:to-blue-800 bg-gradient-to-br text-yellow-300 dark:text-blue-400 h-12 w-12 p-2 rounded-full  flex justify-center items-center"
         >
           {theme === "light" && <FiSun />}
           {theme === "dark" && <FiMoon />}
@@ -28,21 +28,21 @@ export default function Footer({theme, setDarkTheme, setLightTheme}) {
         <span className="inline-flex  sm:mt-0 mt-4 justify-center sm:justify-start">
           <a
             href="https://www.linkedin.com/in/olivier-fortier/"
-            className="hover:bg-blue-600 transition-colors px-2 rounded-full bg-blue-500 dark:bg-blue-700 dark:hover:bg-blue-500 h-10 w-10 flex justify-center items-center text-white"
+            className="hover:bg-blue-600 transition-colors px-2 rounded-full bg-blue-500 dark:bg-blue-900 dark:hover:bg-blue-500 h-10 w-10 flex justify-center items-center text-white dark:text-blue-400"
           >
             <FaLinkedinIn />
           </a>
 
           <a
             href="https://github.com/OlivierFortier"
-            className="hover:bg-blue-600 transition-colors px-2 rounded-full bg-blue-500 dark:bg-blue-700 dark:hover:bg-blue-500 h-10 w-10 flex justify-center items-center shadow-md ml-3 text-white"
+            className="hover:bg-blue-600 transition-colors px-2 rounded-full bg-blue-500 dark:bg-blue-900 dark:hover:bg-blue-500 h-10 w-10 flex justify-center items-center shadow-md ml-3 text-white dark:text-blue-400"
           >
             <FiGithub />
           </a>
 
           <a
             href="mailto:olivier_fortier@outlook.com"
-            className="hover:bg-blue-600 transition-colors px-2 rounded-full bg-blue-500 dark:bg-blue-700 dark:hover:bg-blue-500 h-10 w-10 flex justify-center items-center shadow-md ml-3 text-white"
+            className="hover:bg-blue-600 transition-colors px-2 rounded-full bg-blue-500 dark:bg-blue-900 dark:hover:bg-blue-500 h-10 w-10 flex justify-center items-center shadow-md ml-3 text-white dark:text-blue-400"
           >
             <FiSend />
           </a>

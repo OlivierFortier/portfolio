@@ -23,7 +23,7 @@ export default function MenuMobile() {
       <button
         aria-label="Open Menu"
         title="Open Menu"
-        className="text-blue-500 p-2 -mr-1 transition duration-200 rounded focus:outline-none focus:shadow-outline hover:bg-blue-50 focus:bg-blue-50"
+        className="text-blue-500 p-2 -mr-1 transition-all duration-200 rounded focus:outline-none focus:shadow-outline transform hover:scale-125 focus:ring-1"
         onClick={() => setIsMenuOpen(true)}
       >
         <IoMenu className="text-6xl" />
@@ -37,7 +37,7 @@ export default function MenuMobile() {
               style={props}
               className="origin-top-right z-50 absolute top-0 left-0 w-full"
             >
-              <div className="p-5 bg-white border rounded shadow-sm">
+              <div className="p-5 bg-white dark:bg-blue-900 dark:border-gray-900 border rounded shadow-sm">
                 <div className="flex items-center justify-between mb-4">
                   <div>
                     <Link href="/">
@@ -57,7 +57,7 @@ export default function MenuMobile() {
                     <button
                       aria-label="Fermer menu"
                       title="Fermer menu"
-                      className="text-blue-500 p-2 -mt-2 -mr-2 transition duration-200 rounded hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                      className="text-blue-500 p-2 -mt-2 -mr-2 transition-all transform duration-200 rounded hover:rotate-90 focus:ring-1 focus:outline-none focus:shadow-outline"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       <IoClose className="text-6xl" />

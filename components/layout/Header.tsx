@@ -21,7 +21,7 @@ export default function Header() {
               <Avatar />
             </span>
             {router.pathname !== "/" && (
-              <h1 className="ml-4 text-xl text-blue-600 font-semibold">
+              <h1 className="ml-4 text-xl text-blue-600 dark:text-blue-500 font-semibold">
                 Olivier Fortier
               </h1>
             )}
@@ -33,7 +33,7 @@ export default function Header() {
               <a
                 aria-label="Accueil"
                 title="Accueil"
-                className={`${router.pathname == "/" && "underline"} font-medium tracking-wide transition-colors duration-200 hover:text-blue-800`}
+                className={`${router.pathname == "/" && "underline"} font-medium tracking-wide transition-colors duration-200 dark:hover:text-blue-500 hover:text-blue-800`}
               >
                 Accueil
               </a>
@@ -44,7 +44,7 @@ export default function Header() {
               <a
                 aria-label="Projets"
                 title="Projets"
-                className={`${router.pathname.includes("/projets") && "underline"} font-medium tracking-wide transition-colors duration-200 hover:text-blue-800`}
+                className={`${router.pathname.includes("/projets") && "underline"} font-medium tracking-wide transition-colors duration-200 dark:hover:text-blue-500  hover:text-blue-800`}
               >
                 Projets
               </a>
@@ -55,7 +55,7 @@ export default function Header() {
               <a
                 aria-label="À propos"
                 title="À propos"
-                className={`${router.pathname == "/a-propos" && "underline"} font-medium tracking-wide transition-colors duration-200 hover:text-blue-800`}
+                className={`${router.pathname == "/a-propos" && "underline"} font-medium tracking-wide transition-colors duration-200 dark:hover:text-blue-500  hover:text-blue-800`}
               >
                 À propos
               </a>

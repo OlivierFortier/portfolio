@@ -33,7 +33,7 @@ export default function index() {
   return (
     <div className="max-w-xs mx-auto md:max-w-2xl lg:max-w-4xl xl:max-w-4xl">
       <section className="body-font py-8 sm:py-14">
-        <h1 className="px-4 mb-4 md:mb-16 font-sans text-4xl font-bold tracking-tight text-blue-600 sm:text-6xl sm:leading-none">
+        <h1 className="px-4 mb-4 md:mb-16 font-sans text-4xl font-bold tracking-tight text-blue-600 dark:text-blue-500 sm:text-6xl sm:leading-none">
           Qui suis-je?
         </h1>
         <p className="px-4 text-lg mx-auto xl:max-w-4xl text-blue-500 mb-8">
@@ -44,7 +44,7 @@ export default function index() {
           plaisir, et à mentorer des gens dans leurs études et projets
         </p>
 
-        <animated.div style={growRight} className="origin-left xl:max-w-4xl flex items-center justify-between mx-4 p-6 border-l-4 sm:py-8 border-blue-300 bg-blue-50 text-blue-300">
+        <animated.div style={growRight} className="origin-left xl:max-w-4xl flex items-center justify-between mx-4 p-6 border-l-4 sm:py-8 dark:border-blue-600 dark:bg-blue-900 dark:text-blue-500 border-blue-300 bg-blue-50 text-blue-300">
           <p>
             J’adore les belles interfaces et les expériences utilisateur fluides
           </p>
@@ -52,7 +52,7 @@ export default function index() {
       </section>
 
       <section className="body-font py-8 pb-6 sm:py-14 sm:pt-0 sm:pb-8">
-        <h1 className="px-4 mb-6 md:mb-8 font-sans text-xl font-bold tracking-tight text-blue-600 sm:text-3xl sm:leading-none">
+        <h1 className="px-4 mb-6 md:mb-8 font-sans text-xl font-bold tracking-tight text-blue-600 dark:text-blue-500 sm:text-3xl sm:leading-none">
           Intérêts professionnels
         </h1>
         <p className="px-4 text-lg mx-auto xl:max-w-4xl text-blue-500">
@@ -71,7 +71,7 @@ export default function index() {
       <section className="py-6  text-blue-600">
         <div ref={ref} className="container mx-auto flex flex-col justify-around p-4 text-center md:p-10 lg:flex-row">
           <div className="flex flex-col justify-center lg:text-left">
-            <h1 className="py-2 text-3xl font-bold leading-tight title-font">
+            <h1 className="py-2 text-3xl font-bold leading-tight title-font dark:text-blue-500">
               Envie de discuter ?
             </h1>
           </div>

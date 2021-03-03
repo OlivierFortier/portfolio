@@ -18,10 +18,10 @@ export default function Projet({ projet }: { projet: Projet }) {
     <section className="px-4 py-14 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 ">
       <div className="mx-auto  lg:max-w-4xl">
         <div className="max-w-xl mb-10   lg:max-w-4xl md:mb-12">
-          <h1 className="max-w-lg mb-6 font-sans text-4xl font-bold leading-none tracking-tight text-blue-600 sm:text-6xl ">
+          <h1 className="max-w-lg mb-6 font-sans text-4xl font-bold leading-none tracking-tight dark:text-blue-400 text-blue-600 sm:text-6xl ">
             {projet.titre || "Erreur : titre non défini"}
           </h1>
-          <h2 className="text-base text-blue-500 md:text-lg">
+          <h2 className="text-base text-blue-500 dark:text-blue-400 md:text-lg">
             {projet.sommaire || "Erreur : sommaire non défini"}
           </h2>
         </div>
@@ -29,7 +29,7 @@ export default function Projet({ projet }: { projet: Projet }) {
           <Carousel images={projet.images} />
         </div>
 
-        <h2 className="max-w-xl mt-8 mb-4 text-2xl font-semibold text-blue-600 lg:max-w-3xl lg:mx-auto">
+        <h2 className="max-w-xl mt-8 mb-4 text-2xl font-semibold text-blue-600 dark:text-blue-400 lg:max-w-3xl lg:mx-auto">
           {projet.sousTitreDetails ||
             "Erreur : sous-titre des détails non défini"}
         </h2>
@@ -39,7 +39,7 @@ export default function Projet({ projet }: { projet: Projet }) {
         </ReactMarkdown>
 
         {projet.sousTitreSectionOptionnelle && (
-          <h2 className="max-w-xl mt-8 mb-4 text-2xl font-semibold text-blue-600 lg:max-w-3xl lg:mx-auto">
+          <h2 className="max-w-xl mt-8 mb-4 text-2xl font-semibold text-blue-600 dark:text-blue-400 lg:max-w-3xl lg:mx-auto">
             {projet.sousTitreSectionOptionnelle}
           </h2>
         )}
