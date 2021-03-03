@@ -1,17 +1,16 @@
 import Link from "next/link";
 // import Image from 'next/image';
 import { useSpring, animated } from "react-spring";
-import lottie from 'lottie-web';
+import lottie from "lottie-web";
 import { useEffect } from "react";
-import svgAnim from '../../assets/hero-anim.json';
+import svgAnim from "../../assets/hero-anim.json";
 
 export default function Hero() {
-
   const entreeGauche = useSpring({
     from: { opacity: 0, transform: "scaleX(0.65)" },
     opacity: 1,
     transform: "scaleX(1)",
-    delay: 100
+    delay: 100,
   });
 
   const entreeDroite = useSpring({
@@ -21,15 +20,16 @@ export default function Hero() {
     delay: 250,
   });
 
-  useEffect(()=>{
+  // animation lottie
+  useEffect(() => {
     lottie.loadAnimation({
-      container: document.getElementById("conteneurLottie"), // the dom element that will contain the animation
-      renderer: 'svg',
+      container: document.getElementById("conteneurLottie"),
+      renderer: "svg",
       loop: true,
       autoplay: true,
-      animationData: svgAnim // the path to the animation json
+      animationData: svgAnim,
     });
-  },[])
+  }, []);
 
   return (
     <section className="px-4 py-14 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
@@ -56,16 +56,14 @@ export default function Hero() {
           </div>
         </animated.div>
 
-        <animated.div style={entreeDroite} className="origin-right overflow-x-hidden relative lg:w-1/2">
-          {/* <Image
-          height={750}
-          width={1260}
-          loading={"eager"}
-            className="object-cover w-full h-56 rounded shadow-lg sm:h-96"
-            src="https://images.pexels.com/photos/927022/pexels-photo-927022.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=3&amp;h=750&amp;w=1260"
-            alt=""
-          /> */}
-          <div id="conteneurLottie" className="object-cover w-full h-56 rounded shadow-lg sm:h-96"></div>
+        <animated.div
+          style={entreeDroite}
+          className="origin-right overflow-visible relative lg:w-1/2"
+        >
+          <div
+            id="conteneurLottie"
+            className="transform scale-110 sm:scale-125 object-cover w-full h-56 rounded sm:h-96 lg:-mt-8"
+          ></div>
         </animated.div>
       </div>
     </section>

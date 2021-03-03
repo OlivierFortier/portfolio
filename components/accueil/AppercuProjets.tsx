@@ -44,9 +44,7 @@ export default function AppercuProjets({ projets }: ListeAppercuProjets) {
         Une collection de mes plus récents projets intéressants
       </p>
       <div className="container px-5  mx-auto flex flex-wrap">
-        <ul className="flex flex-wrap justify-center ">
-          <ListeProjets projets={projets} />
-        </ul>
+        <ListeProjets projets={projets} />
       </div>
     </section>
   );

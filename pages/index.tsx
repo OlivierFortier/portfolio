@@ -5,9 +5,13 @@ import AppercuTechnos from '../components/accueil/AppercuTechnos';
 import { client } from '../lib/api';
 import { gql } from 'graphql-request';
 import { GetStaticProps } from 'next';
-import { useEffect } from 'react';
+import { MutableRefObject } from 'react';
 
 export default function Home({projets} : ListeAppercuProjets) {
+  
+  function scrollToAppercu<T extends HTMLElement>(refScroll : MutableRefObject<T>) {
+    refScroll.current.scrollIntoView();
+  }
   
   return (
     <div className="max-w-xs mx-auto md:max-w-2xl lg:max-w-4xl xl:max-w-7xl">
