@@ -43,7 +43,7 @@ export default function Carousel({ images }: { images: ImageProjet[] }) {
                 className="mx-auto object-cover max-w-full h-auto"
                 width={photo.width}
                 height={photo.height}
-                src={photo.url || "/assets/pexels-photo-3727459.jpeg"}
+                src={photo.url || "/medias/pexels-photo-3727459.jpeg"}
               />
             </div>
           </SwiperSlide>

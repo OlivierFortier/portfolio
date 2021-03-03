@@ -82,7 +82,7 @@ export default function index() {
                 </span>
               </a>
             
-              <a href="/assets/Olivier_Fortier_CV.pdf" className="cursor-pointer hover:text-white hover:bg-blue-600 transition-colors inline-flex items-center px-5 py-3 rounded border-blue-600 border-2 text-blue-600">
+              <a href="/medias/Olivier_Fortier_CV.pdf" className="cursor-pointer hover:text-white hover:bg-blue-600 transition-colors inline-flex items-center px-5 py-3 rounded border-blue-600 border-2 text-blue-600">
                 <span className="flex flex-col items-start  leading-none">
                   <span className="font-semibold title-font">Mon CV</span>
                 </span>

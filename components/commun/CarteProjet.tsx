@@ -13,7 +13,7 @@ export default function CarteProjet({ projet, animation }: {projet : AppercuProj
             <div className="h-56 w-full md:w-1/2 lg:w-full xl:w-1/2 sm:mr-8 sm:mb-0 inline-flex mx-auto  justify-center rounded text-indigo-500 flex-shrink-0">
               <Image
                 className="object-cover rounded-md"
-                src={projet?.images[0]?.url || "/assets/img-placeholder.jpg"}
+                src={projet?.images[0]?.url || "/medias/img-placeholder.jpg"}
                 width={projet?.images[0]?.width || 200}
                 height={projet?.images[0]?.height || 200}
               />
