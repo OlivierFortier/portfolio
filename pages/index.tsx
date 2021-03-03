@@ -5,23 +5,21 @@ import AppercuTechnos from '../components/accueil/AppercuTechnos';
 import { client } from '../lib/api';
 import { gql } from 'graphql-request';
 import { GetStaticProps } from 'next';
-import { MutableRefObject } from 'react';
+import { MutableRefObject, useState } from 'react';
 
 export default function Home({projets} : ListeAppercuProjets) {
-  
-  function scrollToAppercu<T extends HTMLElement>(refScroll : MutableRefObject<T>) {
-    refScroll.current.scrollIntoView();
-  }
+
+  const [refElScroll, setRefElScroll] = useState<MutableRefObject<HTMLElement | null>>(null);
   
   return (
     <div className="max-w-xs mx-auto md:max-w-2xl lg:max-w-4xl xl:max-w-7xl">
-      <Hero />
+      <Hero refPourScroll={refElScroll} />
 
       <Perso />
 
       <AppercuProjet projets={projets}/>
 
-      <AppercuTechnos />
+      <AppercuTechnos setRef={setRefElScroll}/>
     </div>
   );
 }

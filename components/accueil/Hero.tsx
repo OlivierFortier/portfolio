@@ -4,8 +4,11 @@ import { useSpring, animated } from "react-spring";
 import lottie from "lottie-web";
 import { useEffect } from "react";
 import svgAnim from "../../assets/hero-anim.json";
+import { MutableRefObject } from "react";
 
-export default function Hero() {
+export default function Hero({refPourScroll}) {
+
+  // animation d'entrée du texte principal
   const entreeGauche = useSpring({
     from: { opacity: 0, transform: "scaleX(0.65)" },
     opacity: 1,
@@ -13,6 +16,7 @@ export default function Hero() {
     delay: 100,
   });
 
+  // animation d'entrée de l'image hero
   const entreeDroite = useSpring({
     transform: "scaleX(1)",
     opacity: 1,
@@ -31,6 +35,11 @@ export default function Hero() {
     });
   }, []);
 
+  // faire dérouler la page jusqu'en bas
+  function scrollToAppercu<T extends HTMLElement>(refScroll : MutableRefObject<T>) {
+    refScroll.current.scrollIntoView({behavior: "smooth"});
+  }
+
   return (
     <section className="px-4 py-14 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
       <div className="flex flex-col items-center justify-between lg:flex-row">
@@ -48,11 +57,9 @@ export default function Hero() {
             </h2>
           </div>
           <div className="flex flex-col items-center md:flex-row">
-            <Link href="/a-propos">
-              <a className="text-lg inline-flex items-center justify-center w-full h-12 px-6 mb-3 font-medium tracking-wide text-blue-600 transition duration-200 rounded shadow-md md:w-auto md:mr-4 md:mb-0 border-2 border-blue-600  hover:bg-blue-600 hover:text-white focus:shadow-outline focus:outline-none">
+              <a onClick={()=> scrollToAppercu(refPourScroll)} className="text-lg inline-flex items-center justify-center w-full h-12 px-6 mb-3 font-medium tracking-wide text-blue-600 transition duration-200 rounded shadow-md md:w-auto md:mr-4 md:mb-0 border-2 border-blue-600  hover:bg-blue-600 hover:text-white focus:shadow-outline focus:outline-none">
                 En savoir plus 👇
               </a>
-            </Link>
           </div>
         </animated.div>
 

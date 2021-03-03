@@ -4,8 +4,9 @@ import { FaVuejs, FaReact, FaNodeJs } from "react-icons/fa";
 import { SiNextDotJs, SiDotNet, SiGraphql } from "react-icons/si";
 import { animated, useSpring, useTrail } from 'react-spring'
 import { useInView } from "react-intersection-observer";
+import { useRef } from "react";
 
-export default function AppercuTechnos() {
+export default function AppercuTechnos({setRef}) {
 
   // tableau des technologies
   const icones: Array<Array<JSX.Element | string>> = [
@@ -21,7 +22,7 @@ export default function AppercuTechnos() {
   const { ref: refTrail, entry: entryTrail } = useInView({ triggerOnce: true });
   const {ref: refSpring, entry: entrySpring} = useInView({triggerOnce: true});
 
-  // animer si l'élément est dans la vue
+  // animer l'apparition des badges de technos si l'élément est dans la vue
   const trail = useTrail(icones.length, {
     config: {
       mass: 1,
@@ -34,6 +35,7 @@ export default function AppercuTechnos() {
     opacity: entryTrail?.isIntersecting ? 1 : 0,
   });
 
+  // animer l'entrée du CTA
   const scaleIn = useSpring({
     config: {
       delay: 100,
@@ -47,8 +49,13 @@ export default function AppercuTechnos() {
     opacity: entrySpring?.isIntersecting ? 1 : 0
   })
 
+  // monter l'état du ref pour scroll à partir de la section hero
+  const refElem = useRef();
+
+  setRef(refElem);
+
   return (
-    <section className="px-4 py-8 sm:py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20 lg:pb-8">
+    <section ref={refElem} className="px-4 py-8 sm:py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20 lg:pb-8">
       <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
         <h1 className="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-blue-600 sm:text-4xl md:mx-auto">
           <span className="relative inline-block">
