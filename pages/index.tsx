@@ -9,6 +9,7 @@ import { MutableRefObject, useState } from 'react';
 
 export default function Home({projets} : ListeAppercuProjets) {
 
+  // création d'un état de page pour sauvegarder le ref d'un élément auquel on veut scroll
   const [refElScroll, setRefElScroll] = useState<MutableRefObject<HTMLElement | null>>(null);
   
   return (

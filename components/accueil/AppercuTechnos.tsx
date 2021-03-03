@@ -80,7 +80,7 @@ export default function AppercuTechnos({setRef}) {
       </ul>
       <div ref={refSpring}  className="text-center">
         <Link href="/a-propos">
-          <animated.a style={scaleIn} className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-blue-500 hover:bg-blue-700 focus:shadow-outline focus:outline-none">
+          <animated.a style={scaleIn} className="cursor-pointer inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-blue-500 hover:bg-blue-700 focus:shadow-outline focus:outline-none">
             En savoir plus
             <span className="ml-1 -mr-2">🧐</span>
           </animated.a>
