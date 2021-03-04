@@ -8,6 +8,8 @@ import Carousel from "../../components/projets/Carousel";
 import ReactMarkdown from "react-markdown";
 
 export type Projet = AppercuProjet & {
+  lienUrlDuProjet: string;
+  lienUrlDuCode: string;
   sousTitreDetails: string;
   details: string;
   sousTitreSectionOptionnelle: string;
@@ -35,6 +37,10 @@ export default function Projet({ projet }: { projet: Projet }) {
             </h2>
           </div>
           <div className="mb-4 transition-shadow duration-300 lg:mb-6 lg:max-w-3xl lg:mx-auto">
+            <span className="flex justify-between text-blue-700 dark:text-blue-500">
+             {projet.lienUrlDuProjet && <a href={projet.lienUrlDuProjet}>{'Démo : ' + projet.lienUrlDuProjet}</a>}
+             {projet.lienUrlDuCode && <a href={projet.lienUrlDuCode}>{'Code : ' + projet.lienUrlDuCode}</a>}
+            </span>
             <Carousel images={projet.images} />
           </div>
 
@@ -61,7 +67,10 @@ export default function Projet({ projet }: { projet: Projet }) {
 
           <span className="flex my-6 lg:max-w-3xl lg:mx-auto">
             <Link href="/projets">
-              <a aria-label="Retourner à la liste des projets" className="cursor-pointer font-semibold text-blue-600 p-2  border-blue-600 border-2 rounded transition-colors hover:bg-blue-600 hover:text-white">
+              <a
+                aria-label="Retourner à la liste des projets"
+                className="cursor-pointer font-semibold text-blue-600 p-2  border-blue-600 border-2 rounded transition-colors hover:bg-blue-600 hover:text-white"
+              >
                 {"<"} Retour aux projets
               </a>
             </Link>
@@ -78,6 +87,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       projet(where: { slug: $slug }) {
         titre
         sommaire
+        lienUrlDuProjet
+        lienUrlDuCode
         images {
           url
           height
