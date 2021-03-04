@@ -5,7 +5,7 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import { AppercuProjet } from "../../components/accueil/AppercuProjets";
 import { client } from "../../lib/api";
 import Carousel from "../../components/projets/Carousel";
-import ReactMarkdown from "react-markdown";
+import Markdown from "markdown-to-jsx";
 
 export type Projet = AppercuProjet & {
   lienUrlDuProjet: string;
@@ -38,8 +38,16 @@ export default function Projet({ projet }: { projet: Projet }) {
           </div>
           <div className="mb-4 transition-shadow duration-300 lg:mb-6 lg:max-w-3xl lg:mx-auto">
             <span className="flex justify-between text-blue-700 dark:text-blue-500">
-             {projet.lienUrlDuProjet && <a href={projet.lienUrlDuProjet}>{'Démo : ' + projet.lienUrlDuProjet}</a>}
-             {projet.lienUrlDuCode && <a href={projet.lienUrlDuCode}>{'Code : ' + projet.lienUrlDuCode}</a>}
+              {projet.lienUrlDuProjet && (
+                <a aria-label="Lien vers le site du projet" className="break-words underline" href={projet.lienUrlDuProjet}>
+                  {"Voir le projet"}
+                </a>
+              )}
+              {projet.lienUrlDuCode && (
+                <a aria-label="Lien vers le répo GitHub du projet" className="break-words underline" href={projet.lienUrlDuCode}>
+                  {"Voir le code"}
+                </a>
+              )}
             </span>
             <Carousel images={projet.images} />
           </div>
@@ -48,10 +56,10 @@ export default function Projet({ projet }: { projet: Projet }) {
             {projet.sousTitreDetails ||
               "Erreur : sous-titre des détails non défini"}
           </h2>
-          <ReactMarkdown className="max-w-xl mb-10 text-base text-blue-500 lg:max-w-3xl lg:mx-auto">
+          <Markdown className="space-y-4 max-w-xl mb-10 text-base text-blue-500 lg:max-w-3xl lg:mx-auto">
             {projet.details ||
               "Erreur : contenu de la section détails non définie"}
-          </ReactMarkdown>
+          </Markdown>
 
           {projet.sousTitreSectionOptionnelle && (
             <h2 className="max-w-xl mt-8 mb-4 text-2xl font-semibold text-blue-600 dark:text-blue-400 lg:max-w-3xl lg:mx-auto">
@@ -60,9 +68,9 @@ export default function Projet({ projet }: { projet: Projet }) {
           )}
 
           {projet.sectionOptionnelle && (
-            <ReactMarkdown className="space-y-3 max-w-xl mb-10 text-base text-blue-500 lg:max-w-3xl lg:mx-auto">
+            <Markdown className="space-y-3 max-w-xl mb-10 text-base text-blue-500 lg:max-w-3xl lg:mx-auto">
               {projet.sectionOptionnelle}
-            </ReactMarkdown>
+            </Markdown>
           )}
 
           <span className="flex my-6 lg:max-w-3xl lg:mx-auto">
@@ -110,7 +118,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     props: {
       projet,
     },
-    revalidate: 10
+    revalidate: 10,
   };
 };
 
