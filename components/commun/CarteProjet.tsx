@@ -16,6 +16,7 @@ export default function CarteProjet({ projet, animation }: {projet : AppercuProj
                 src={projet?.images[0]?.url || "/medias/img-placeholder.jpg"}
                 width={projet?.images[0]?.width || 200}
                 height={projet?.images[0]?.height || 200}
+                alt={`apperçu de ${projet.titre}`}
               />
             </div>
             <div className="flex-grow">
@@ -25,10 +26,12 @@ export default function CarteProjet({ projet, animation }: {projet : AppercuProj
               <p className="leading-relaxed text-base text-blue-500 dark:text-blue-300">
                 {projet?.sommaire || "Erreur : sommaire non défini"}
               </p>
-              <a className="font-semibold text-lg mt-3 text-blue-600 dark:text-blue-400 inline-flex items-center">
-                En savoir plus
-                <BsArrowRight className="ml-2" size={20} />
-              </a>
+              <Link href={`/projets/${projet.slug}`}>
+                <a className="font-semibold text-lg mt-3 text-blue-600 dark:text-blue-400 inline-flex items-center">
+                  En savoir plus
+                  <BsArrowRight className="ml-2" size={20} />
+                </a>
+              </Link>
             </div>
           </div>
         </article>

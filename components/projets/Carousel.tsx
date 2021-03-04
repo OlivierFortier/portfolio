@@ -40,6 +40,7 @@ export default function Carousel({ images }: { images: ImageProjet[] }) {
           <SwiperSlide key={index}>
             <div className="flex justify-center">
               <Image
+                alt={`Photo ${index + 1} de ${images.length}`}
                 className="mx-auto object-cover max-w-full h-auto"
                 width={photo.width}
                 height={photo.height}

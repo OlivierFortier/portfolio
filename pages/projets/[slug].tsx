@@ -50,13 +50,13 @@ export default function Projet({ projet }: { projet: Projet }) {
           </ReactMarkdown>
         )}
 
-        <Link href="/projets">
-          <span className="flex my-6 lg:max-w-3xl lg:mx-auto">
+        <span className="flex my-6 lg:max-w-3xl lg:mx-auto">
+          <Link href="/projets">
             <a className="cursor-pointer font-semibold text-blue-600 p-2  border-blue-600 border-2 rounded transition-colors hover:bg-blue-600 hover:text-white">
               {"<"} Retour aux projets
             </a>
-          </span>
-        </Link>
+          </Link>
+        </span>
       </div>
     </section>
   );
