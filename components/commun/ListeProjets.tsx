@@ -17,7 +17,7 @@ export default function ListeProjets({ projets }: {projets: AppercuProjet[]; }) 
   });
 
   return (
-    <ul ref={ref} className="flex flex-wrap -m-4">
+    <ul ref={ref} className="justify-center flex flex-wrap -m-4">
       {trail.map((props, index) => (
         <CarteProjet
           animation={props}
