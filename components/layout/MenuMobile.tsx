@@ -21,7 +21,7 @@ export default function MenuMobile() {
   return (
     <div className="lg:hidden">
       <button
-        aria-label="Open Menu"
+        aria-label="Ouvrir le menu"
         title="Open Menu"
         className="text-blue-500 p-2 -mr-1 transition-all duration-200 rounded focus:outline-none focus:shadow-outline transform hover:scale-125 focus:ring-1"
         onClick={() => setIsMenuOpen(true)}
@@ -43,7 +43,7 @@ export default function MenuMobile() {
                     <Link href="/">
                       <a
                         onClick={() => setIsMenuOpen(false)}
-                        aria-label="Olivier"
+                        aria-label="Retour à la page d'accueil"
                         title="Olivier"
                         className="inline-flex items-center"
                       >
@@ -55,7 +55,7 @@ export default function MenuMobile() {
                   </div>
                   <div>
                     <button
-                      aria-label="Fermer menu"
+                      aria-label="Fermer le menu"
                       title="Fermer menu"
                       className="text-blue-500 p-2 -mt-2 -mr-2 transition-all transform duration-200 rounded hover:rotate-90 focus:ring-1 focus:outline-none focus:shadow-outline"
                       onClick={() => setIsMenuOpen(false)}
@@ -70,7 +70,7 @@ export default function MenuMobile() {
                       <Link href="/">
                         <a
                           onClick={() => setIsMenuOpen(false)}
-                          aria-label="Accueil"
+                          aria-label="Aller à la page d'accueil"
                           title="Accueil"
                           className={`${
                             router.pathname == "/" && "underline"
@@ -84,7 +84,7 @@ export default function MenuMobile() {
                       <Link href="/projets">
                         <a
                           onClick={() => setIsMenuOpen(false)}
-                          aria-label="Projets"
+                          aria-label="Aller à la page des projets"
                           title="Projets"
                           className={`${
                             router.pathname.includes("/projets") && "underline"
@@ -98,7 +98,7 @@ export default function MenuMobile() {
                       <Link href="/a-propos">
                         <a
                           onClick={() => setIsMenuOpen(false)}
-                          aria-label="À propos"
+                          aria-label="Aller à la page 'À propos'"
                           title="À propos"
                           className={`${
                             router.pathname == "/a-propos" && "underline"
@@ -113,7 +113,7 @@ export default function MenuMobile() {
                         onClick={() => setIsMenuOpen(false)}
                         href="https://www.linkedin.com/in/olivier-fortier/"
                         className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-blue-500 hover:bg-blue-700 focus:shadow-outline focus:outline-none"
-                        aria-label="Contact"
+                        aria-label="Me contacter par courriel"
                         title="Contact"
                       >
                         Contact <FiSend className="ml-4" />

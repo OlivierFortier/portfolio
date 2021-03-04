@@ -13,7 +13,7 @@ export default function Header() {
       <nav className="relative flex items-center justify-between">
         <Link href="/">
           <a
-            aria-label="Olivier"
+            aria-label="Retour à la page d'accueil"
             title="Olivier"
             className=" inline-flex items-center"
           >
@@ -31,7 +31,7 @@ export default function Header() {
           <li>
             <Link href="/">
               <a
-                aria-label="Accueil"
+                aria-label="Aller à la page d'accueil"
                 title="Accueil"
                 className={`${router.pathname == "/" && "underline"} font-medium tracking-wide transition-colors duration-200 dark:hover:text-blue-500 hover:text-blue-800`}
               >
@@ -42,7 +42,7 @@ export default function Header() {
           <li>
             <Link href="/projets">
               <a
-                aria-label="Projets"
+                aria-label="Aller à la page des projets"
                 title="Projets"
                 className={`${router.pathname.includes("/projets") && "underline"} font-medium tracking-wide transition-colors duration-200 dark:hover:text-blue-500  hover:text-blue-800`}
               >
@@ -53,7 +53,7 @@ export default function Header() {
           <li>
             <Link href="/a-propos">
               <a
-                aria-label="À propos"
+                aria-label="Aller à la page 'À propos'"
                 title="À propos"
                 className={`${router.pathname == "/a-propos" && "underline"} font-medium tracking-wide transition-colors duration-200 dark:hover:text-blue-500  hover:text-blue-800`}
               >
@@ -65,7 +65,7 @@ export default function Header() {
             <a
               href="mailto:olivier_fortier@outlook.com"
               className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-blue-500 hover:bg-blue-700 focus:shadow-outline focus:outline-none"
-              aria-label="Contact"
+              aria-label="Me contacter par courriel"
               title="Contact"
             >
               Contact

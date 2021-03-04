@@ -95,6 +95,7 @@ export default function index() {
               className="flex flex-col items-center justify-center flex-shrink-0 mt-6 space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 lg:ml-4 lg:mt-0 lg:justify-end"
             >
               <a
+              aria-label="Ajoutez moi sur LinkedIn!"
                 href="https://www.linkedin.com/in/olivier-fortier/"
                 className="cursor-pointer hover:text-white hover:bg-blue-600 transition-colors inline-flex items-center px-6 py-3 rounded border-blue-600 border-2 text-blue-600"
               >
@@ -106,6 +107,7 @@ export default function index() {
               </a>
 
               <a
+              aria-label="Consulter mon CV"
                 href="/medias/Olivier_Fortier_CV.pdf"
                 className="cursor-pointer hover:text-white hover:bg-blue-600 transition-colors inline-flex items-center px-5 py-3 rounded border-blue-600 border-2 text-blue-600"
               >

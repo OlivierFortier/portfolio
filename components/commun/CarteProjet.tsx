@@ -27,7 +27,7 @@ export default function CarteProjet({ projet, animation }: {projet : AppercuProj
                 {projet?.sommaire || "Erreur : sommaire non défini"}
               </p>
               <Link href={`/projets/${projet.slug}`}>
-                <a className="font-semibold text-lg mt-3 text-blue-600 dark:text-blue-400 inline-flex items-center">
+                <a aria-label={`En savoir plus sur le projet : ${projet.titre}`} className="font-semibold text-lg mt-3 text-blue-600 dark:text-blue-400 inline-flex items-center">
                   En savoir plus
                   <BsArrowRight className="ml-2" size={20} />
                 </a>

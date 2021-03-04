@@ -11,11 +11,12 @@ export default function Footer({theme, setDarkTheme, setLightTheme}) {
       <nav className="container px-5 pb-8 mx-auto flex items-center justify-evenly sm:flex-row flex-col">
         <h2 className="hover:text-blue-600 dark:hover:text-blue-500 transition-colors text-md text-blue-500 dark:text-blue-600  sm:py-2 sm:mt-0 mt-4">
           <Link href="/">
-            <a>© 2021 Olivier Fortier</a>
+            <a aria-label="Retour à la page d'accueil">© 2021 Olivier Fortier</a>
           </Link>
         </h2>
 
         <button
+        aria-label="changer de thème (jour/nuit)"
           onClick={() => {
             theme === "dark" ? setLightTheme() : setDarkTheme();
           }}
@@ -27,6 +28,7 @@ export default function Footer({theme, setDarkTheme, setLightTheme}) {
 
         <span className="inline-flex  sm:mt-0 mt-4 justify-center sm:justify-start">
           <a
+          aria-label="Connectez avec moi sur LinkedIn"
             href="https://www.linkedin.com/in/olivier-fortier/"
             className="hover:bg-blue-600 transition-colors px-2 rounded-full bg-blue-500 dark:bg-blue-900 dark:hover:bg-blue-500 h-10 w-10 flex justify-center items-center text-white dark:text-blue-400"
           >
@@ -34,6 +36,7 @@ export default function Footer({theme, setDarkTheme, setLightTheme}) {
           </a>
 
           <a
+          aria-label="Retrouvez tout mon code sur GitHub"
             href="https://github.com/OlivierFortier"
             className="hover:bg-blue-600 transition-colors px-2 rounded-full bg-blue-500 dark:bg-blue-900 dark:hover:bg-blue-500 h-10 w-10 flex justify-center items-center shadow-md ml-3 text-white dark:text-blue-400"
           >
@@ -41,6 +44,7 @@ export default function Footer({theme, setDarkTheme, setLightTheme}) {
           </a>
 
           <a
+          aria-label="Contactez moi par courriel"
             href="mailto:olivier_fortier@outlook.com"
             className="hover:bg-blue-600 transition-colors px-2 rounded-full bg-blue-500 dark:bg-blue-900 dark:hover:bg-blue-500 h-10 w-10 flex justify-center items-center shadow-md ml-3 text-white dark:text-blue-400"
           >
