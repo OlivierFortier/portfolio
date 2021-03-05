@@ -6,6 +6,7 @@ import { AppercuProjet } from "../../components/accueil/AppercuProjets";
 import { client } from "../../lib/api";
 import Carousel from "../../components/projets/Carousel";
 import Markdown from "markdown-to-jsx";
+import { useRouter } from "next/router";
 
 export type Projet = AppercuProjet & {
   lienUrlDuProjet: string;
@@ -17,6 +18,16 @@ export type Projet = AppercuProjet & {
 };
 
 export default function Projet({ projet }: { projet: Projet }) {
+  const router = useRouter();
+
+  if (router.isFallback) {
+    return (
+      <section className="flex justify-center items-center">
+        <h1>Chargement...</h1>
+      </section>
+    );
+  }
+
   return (
     <>
       <Head>
@@ -39,12 +50,20 @@ export default function Projet({ projet }: { projet: Projet }) {
           <div className="mb-4 transition-shadow duration-300 lg:mb-6 lg:max-w-3xl lg:mx-auto">
             <span className="flex justify-between text-blue-700 dark:text-blue-500">
               {projet.lienUrlDuProjet && (
-                <a aria-label="Lien vers le site du projet" className="break-words underline" href={projet.lienUrlDuProjet}>
+                <a
+                  aria-label="Lien vers le site du projet"
+                  className="break-words underline"
+                  href={projet.lienUrlDuProjet}
+                >
                   {"Voir le projet"}
                 </a>
               )}
               {projet.lienUrlDuCode && (
-                <a aria-label="Lien vers le répo GitHub du projet" className="break-words underline" href={projet.lienUrlDuCode}>
+                <a
+                  aria-label="Lien vers le répo GitHub du projet"
+                  className="break-words underline"
+                  href={projet.lienUrlDuCode}
+                >
                   {"Voir le code"}
                 </a>
               )}
@@ -139,6 +158,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   return {
     paths: projets.map(({ slug }) => ({ params: { slug } })),
-    fallback: false,
+    fallback: true,
   };
 };
