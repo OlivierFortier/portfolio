@@ -40,7 +40,7 @@ export default function Home({ projets }: ListeAppercuProjets) {
 export const getStaticProps: GetStaticProps = async (context) => {
   const requeteGql = gql`
     {
-      projets {
+      projets(orderBy: date_DESC) {
         titre
         sommaire
         images {

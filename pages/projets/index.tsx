@@ -35,7 +35,7 @@ export default function index({ projets }: ListeAppercuProjets) {
 export const getStaticProps: GetStaticProps = async (context) => {
   const requeteGql = gql`
     {
-      projets {
+      projets(orderBy: date_DESC) {
         titre
         sommaire
         images {
