@@ -21,7 +21,7 @@ export default function index({ projets }: ListeAppercuProjets) {
             Mes projets
           </h1>
           <p className="px-4 text-base sm:text-left text-blue-500 dark:text-blue-400 md:text-2xl mb-8">
-            Une collection de mes plus récents projets intéressants
+            La liste complète de mes projets
           </p>
           <div className="container px-5  mx-auto flex flex-wrap">
             <ListeProjets projets={projets} />
