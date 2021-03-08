@@ -1,8 +1,9 @@
 import Link from "next/link";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FiGithub, FiSend, FiMoon, FiSun } from "react-icons/fi";
+import { Theme } from "../../pages/_app";
 
-export default function Footer({theme, setDarkTheme, setLightTheme}) {
+export default function Footer({theme, setDarkTheme, setLightTheme} : {theme : Theme; setDarkTheme : ()=> void; setLightTheme: ()=> void;}) {
   
 
   return (
@@ -18,12 +19,11 @@ export default function Footer({theme, setDarkTheme, setLightTheme}) {
         <button
         aria-label="changer de thème (jour/nuit)"
           onClick={() => {
-            theme === "dark" ? setLightTheme() : setDarkTheme();
+            theme === "light" ? setDarkTheme() : setLightTheme();
           }}
           className="text-2xl mt-2 transform transition-transform hover:scale-125  from-yellow-400 to-yellow-800 dark:from-blue-400 dark:to-blue-800 bg-gradient-to-br text-yellow-300 dark:text-blue-400 h-12 w-12 p-2 rounded-full  flex justify-center items-center"
         >
-          {theme === "light" && <FiSun />}
-          {theme === "dark" && <FiMoon />}
+          {theme === "light" ? <FiSun/> : <FiMoon/>}
         </button>
 
         <span className="z-10 inline-flex  sm:mt-0 mt-4 justify-center sm:justify-start">
