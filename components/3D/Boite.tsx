@@ -1,10 +1,8 @@
-import  { useRef } from "react";
-import {  MeshProps, useFrame } from "react-three-fiber";
+import { useRef } from "react";
+import { MeshProps, useFrame } from "react-three-fiber";
 
-
-export default function Box(props) {
-
-    const mesh = useRef<MeshProps>();
+export default function Boite(props) {
+  const mesh = useRef<MeshProps>();
 
   useFrame(() => {
     mesh.current.rotation.x = mesh.current.rotation.y += 0.01;
@@ -12,8 +10,8 @@ export default function Box(props) {
 
   return (
     <mesh ref={mesh} {...props}>
-      <boxBufferGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial color={"hotpink"} />
+      <boxBufferGeometry attach="geometry" args={[1, 1, 1]} />
+      <meshStandardMaterial attach="material" color={"hotpink"} />
     </mesh>
   );
 }

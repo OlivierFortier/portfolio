@@ -6,10 +6,10 @@ export default function Footer({theme, setDarkTheme, setLightTheme}) {
   
 
   return (
-    <footer className="text-gray-600 body-font sm:max-w-lg mx-auto pt-6">
-      <hr className="h-0.5 w-10/12 sm:w-full mx-auto bg-blue-600 my-2 sm:mb-4" />
+    <footer className="z-10 text-gray-600 body-font sm:max-w-lg mx-auto pt-6">
+      <hr className="z-10 h-0.5 w-10/12 sm:w-full mx-auto bg-blue-600 my-2 sm:mb-4" />
       <nav className="container px-5 pb-8 mx-auto flex items-center justify-evenly sm:flex-row flex-col">
-        <h2 className="hover:text-blue-600 dark:hover:text-blue-500 transition-colors text-md text-blue-500 dark:text-blue-600  sm:py-2 sm:mt-0 mt-4">
+        <h2 className="z-10 hover:text-blue-600 dark:hover:text-blue-500 transition-colors text-md text-blue-500 dark:text-blue-600  sm:py-2 sm:mt-0 mt-4">
           <Link href="/">
             <a aria-label="Retour à la page d'accueil">© 2021 Olivier Fortier</a>
           </Link>
@@ -26,7 +26,7 @@ export default function Footer({theme, setDarkTheme, setLightTheme}) {
           {theme === "dark" && <FiMoon />}
         </button>
 
-        <span className="inline-flex  sm:mt-0 mt-4 justify-center sm:justify-start">
+        <span className="z-10 inline-flex  sm:mt-0 mt-4 justify-center sm:justify-start">
           <a
           aria-label="Connectez avec moi sur LinkedIn"
             href="https://www.linkedin.com/in/olivier-fortier/"
