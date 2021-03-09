@@ -46,7 +46,6 @@ export function Cube(props) {
         color="#FED234"
       />
       <boxBufferGeometry args={[1, 1, 1]} />
-      {/* <meshStandardMaterial color={"yellow"} /> */}
     </mesh>
   );
 }
@@ -69,7 +68,6 @@ export function Cone(props) {
         color="#00A3F5"
       />
       <coneBufferGeometry args={[0.5, 1, 50]} />
-      {/* <meshStandardMaterial color={"green"} /> */}
     </mesh>
   );
 }
@@ -92,7 +90,6 @@ export function Torus(props) {
         color="#0F7173"
       />
       <torusBufferGeometry args={[1, 0.4, 4, 6]} />
-      {/* <meshStandardMaterial color={"yellow"} /> */}
     </mesh>
   );
 }
@@ -114,7 +111,6 @@ export function Sphere(props) {
         color="#8E518D"
       />
       <sphereBufferGeometry args={[1, 50, 50]} />
-      {/* <meshStandardMaterial color="lightblue" /> */}
     </mesh>
   );
 }
