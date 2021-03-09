@@ -43,7 +43,7 @@ export function Cube(props) {
         attach="material"
         factor={0.6} // Strength, 0 disables the effect (default=1)
         speed={3} // Speed (default=1)
-        color="#fcf6bd"
+        color="#FED234"
       />
       <boxBufferGeometry args={[1, 1, 1]} />
       {/* <meshStandardMaterial color={"yellow"} /> */}
@@ -66,7 +66,7 @@ export function Cone(props) {
         attach="material"
         distort={0.6} // Strength, 0 disables the effect (default=1)
         speed={2.5} // Speed (default=1)
-        color="#a9def9"
+        color="#00A3F5"
       />
       <coneBufferGeometry args={[0.5, 1, 50]} />
       {/* <meshStandardMaterial color={"green"} /> */}
@@ -89,7 +89,7 @@ export function Torus(props) {
         attach="material"
         distort={0.6} // Strength, 0 disables the effect (default=1)
         speed={2.5} // Speed (default=1)
-        color="#d0f4de"
+        color="#0F7173"
       />
       <torusBufferGeometry args={[1, 0.4, 4, 6]} />
       {/* <meshStandardMaterial color={"yellow"} /> */}
@@ -111,7 +111,7 @@ export function Sphere(props) {
         attach="material"
         distort={0.6} // Strength, 0 disables the effect (default=1)
         speed={2.5} // Speed (default=1)
-        color="#ff99c8"
+        color="#8E518D"
       />
       <sphereBufferGeometry args={[1, 50, 50]} />
       {/* <meshStandardMaterial color="lightblue" /> */}
