@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { MeshProps, useFrame } from "react-three-fiber";
-import { Box, Sphere as S } from "@react-three/drei";
+import { MeshWobbleMaterial, MeshDistortMaterial } from "@react-three/drei";
 import { useControls } from "leva";
 
 export function Composition() {
@@ -20,9 +20,10 @@ export function Composition() {
 
   return (
     <group>
-       <Cube position={[-2.1,2.6,0]} />
-      <Sphere position={[-5.5,0,0]} />
-      <Cone position={position}/>
+      <Cube position={[-2.1, 4.6, -5]} />
+      <Sphere position={[-7.5, 0, -3]} />
+      <Torus position={[1.1, -4.3, -14.6]} />
+      <Cone position={[4.8, -1.9, 0]} />
     </group>
   );
 }
@@ -32,16 +33,20 @@ export function Cube(props) {
 
   const ref = mesh.current;
 
-  // const refMemo = useMemo(() => mesh.current, []);
-
   useFrame(() => {
     ref.rotation.x = ref.rotation.y += 0.01;
   });
 
   return (
     <mesh ref={mesh} {...props}>
+      <MeshWobbleMaterial
+        attach="material"
+        factor={0.6} // Strength, 0 disables the effect (default=1)
+        speed={3} // Speed (default=1)
+        color="#fcf6bd"
+      />
       <boxBufferGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial color={"yellow"} />
+      {/* <meshStandardMaterial color={"yellow"} /> */}
     </mesh>
   );
 }
@@ -51,16 +56,20 @@ export function Cone(props) {
 
   const ref = mesh.current;
 
-  // const refMemo = useMemo(() => mesh.current, []);
-
   useFrame(() => {
     ref.rotation.x = ref.rotation.y += 0.01;
   });
 
   return (
     <mesh ref={mesh} {...props}>
-      <coneBufferGeometry args={[1, 1, 50]} />
-      <meshStandardMaterial color={"green"} />
+      <MeshDistortMaterial
+        attach="material"
+        distort={0.6} // Strength, 0 disables the effect (default=1)
+        speed={2.5} // Speed (default=1)
+        color="#a9def9"
+      />
+      <coneBufferGeometry args={[0.5, 1, 50]} />
+      {/* <meshStandardMaterial color={"green"} /> */}
     </mesh>
   );
 }
@@ -70,16 +79,20 @@ export function Torus(props) {
 
   const ref = mesh.current;
 
-  // const refMemo = useMemo(() => mesh.current, []);
-
   useFrame(() => {
     ref.rotation.x = ref.rotation.y += 0.01;
   });
 
   return (
     <mesh ref={mesh} {...props}>
-      <torusBufferGeometry args={[1, 1, 10]} />
-      <meshStandardMaterial color={"yellow"} />
+      <MeshDistortMaterial
+        attach="material"
+        distort={0.6} // Strength, 0 disables the effect (default=1)
+        speed={2.5} // Speed (default=1)
+        color="#d0f4de"
+      />
+      <torusBufferGeometry args={[1, 0.4, 4, 6]} />
+      {/* <meshStandardMaterial color={"yellow"} /> */}
     </mesh>
   );
 }
@@ -88,17 +101,20 @@ export function Sphere(props) {
   const mesh = useRef<MeshProps>();
 
   const ref = mesh.current;
-
-  // const refMemo = useMemo(() => mesh.current, []);
-
   useFrame(() => {
     ref.rotation.x = ref.rotation.y += 0.01;
   });
 
   return (
     <mesh ref={mesh} {...props}>
+      <MeshDistortMaterial
+        attach="material"
+        distort={0.6} // Strength, 0 disables the effect (default=1)
+        speed={2.5} // Speed (default=1)
+        color="#ff99c8"
+      />
       <sphereBufferGeometry args={[1, 50, 50]} />
-      <meshStandardMaterial color="lightblue" />
+      {/* <meshStandardMaterial color="lightblue" /> */}
     </mesh>
   );
 }

@@ -1,10 +1,9 @@
-import { Canvas, MeshProps, useFrame } from "react-three-fiber";
-import { Cone, Sphere, Torus, Composition } from "./Formes";
+import { Canvas, MeshProps } from "react-three-fiber";
+import { Composition } from "./Formes";
 import {
   OrbitControls,
   Stars,
   PerspectiveCamera,
-  OrthographicCamera,
 } from "@react-three/drei";
 import { Theme } from "../../pages/_app";
 import { useControls } from "leva";
@@ -32,7 +31,7 @@ export default function Scene3D({ theme }: { theme: Theme }) {
 
       <directionalLight
         position={[0, 10, 0]}
-        intensity={1.5}
+        intensity={0.5}
         shadow-mapSize-width={1024}
         shadow-mapSize-height={1024}
         shadow-camera-far={50}
@@ -47,10 +46,6 @@ export default function Scene3D({ theme }: { theme: Theme }) {
 
 
      {theme === 'light' && <Composition />}
-
-      {/* <Sphere  args={[1,30,30]}>
-        <meshBasicMaterial attach="material" color="hotpink" />
-      </Sphere> */}
 
       {theme === "dark" && (
         <Stars
