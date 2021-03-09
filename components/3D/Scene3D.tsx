@@ -13,6 +13,8 @@ export default function Scene3D({ theme }: { theme: Theme }) {
   const NUM = 100;
   const formes = new Array(NUM).fill(null);
 
+  const {fov} = useControls({fov : 40})
+
   return (
     <Canvas
       colorManagement
@@ -26,7 +28,7 @@ export default function Scene3D({ theme }: { theme: Theme }) {
         left: 0,
       }}
     >
-      <PerspectiveCamera makeDefault position={[0, 0, 10]} fov={60}/>
+      <PerspectiveCamera makeDefault position={[0, 0, 10]} fov={fov}/>
 
       <directionalLight
         position={[0, 10, 0]}

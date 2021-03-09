@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { MeshProps, useFrame } from "react-three-fiber";
 import { Box, Sphere as S } from "@react-three/drei";
 import { useControls } from "leva";
@@ -20,9 +20,9 @@ export function Composition() {
 
   return (
     <group>
-       {/* <Cube position={position} /> */}
-       {/* <Boite position={position} scale={[1, 1, 1]} /> */}
-      <Sphere position={position} />
+       <Cube position={[-2.1,2.6,0]} />
+      <Sphere position={[-5.5,0,0]} />
+      <Cone position={position}/>
     </group>
   );
 }
@@ -30,16 +30,12 @@ export function Composition() {
 export function Cube(props) {
   const mesh = useRef<MeshProps>();
 
-  let refUtile = false;
+  const ref = mesh.current;
 
-  // attendre jusqu'a temps que la ref soit utile et non null
-  useEffect(()=>{
-    mesh != undefined && mesh != null && (refUtile = true);
-  },[mesh])
+  // const refMemo = useMemo(() => mesh.current, []);
 
-  // animer quand la ref est utile
- refUtile && useFrame(() => {
-    mesh.current.rotation.x = mesh.current.rotation.y += 0.01;
+  useFrame(() => {
+    ref.rotation.x = ref.rotation.y += 0.01;
   });
 
   return (
@@ -53,22 +49,18 @@ export function Cube(props) {
 export function Cone(props) {
   const mesh = useRef<MeshProps>();
 
-  let refUtile = false;
+  const ref = mesh.current;
 
-  // attendre jusqu'a temps que la ref soit utile et non null
-  useEffect(()=>{
-    mesh != undefined && mesh != null && (refUtile = true);
-  },[mesh])
+  // const refMemo = useMemo(() => mesh.current, []);
 
-  // animer quand la ref est utile
- refUtile && useFrame(() => {
-    mesh.current.rotation.x = mesh.current.rotation.y += 0.01;
+  useFrame(() => {
+    ref.rotation.x = ref.rotation.y += 0.01;
   });
 
   return (
     <mesh ref={mesh} {...props}>
-      <coneBufferGeometry args={[1, 1, 30]} />
-      <meshStandardMaterial color={"yellow"} />
+      <coneBufferGeometry args={[1, 1, 50]} />
+      <meshStandardMaterial color={"green"} />
     </mesh>
   );
 }
@@ -76,17 +68,14 @@ export function Cone(props) {
 export function Torus(props) {
   const mesh = useRef<MeshProps>();
 
-  let refUtile = false;
+  const ref = mesh.current;
 
-  // attendre jusqu'a temps que la ref soit utile et non null
-  useEffect(()=>{
-    mesh != undefined && mesh != null && (refUtile = true);
-  },[mesh])
+  // const refMemo = useMemo(() => mesh.current, []);
 
-  // animer quand la ref est utile
- refUtile && useFrame(() => {
-    mesh.current.rotation.x = mesh.current.rotation.y += 0.01;
+  useFrame(() => {
+    ref.rotation.x = ref.rotation.y += 0.01;
   });
+
   return (
     <mesh ref={mesh} {...props}>
       <torusBufferGeometry args={[1, 1, 10]} />
@@ -98,16 +87,12 @@ export function Torus(props) {
 export function Sphere(props) {
   const mesh = useRef<MeshProps>();
 
-  let refUtile = false;
+  const ref = mesh.current;
 
-  // attendre jusqu'a temps que la ref soit utile et non null
-  useEffect(()=>{
-    mesh != undefined && mesh != null && (refUtile = true);
-  },[mesh])
+  // const refMemo = useMemo(() => mesh.current, []);
 
-  // animer quand la ref est utile
- refUtile && useFrame(() => {
-    mesh.current.rotation.x = mesh.current.rotation.y += 0.01;
+  useFrame(() => {
+    ref.rotation.x = ref.rotation.y += 0.01;
   });
 
   return (
