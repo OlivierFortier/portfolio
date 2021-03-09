@@ -1,11 +1,12 @@
 import dynamic from "next/dynamic";
-import { Canvas } from "react-three-fiber";
+import { Canvas, MeshProps, useFrame } from "react-three-fiber";
 import Boite from "./Boite";
-import { Cone, Sphere, Torus } from "./Formes";
-import { OrbitControls, Stars } from "@react-three/drei";
+import { Cone, Sphere, Torus, Composition  } from "./Formes";
+import { OrbitControls, Stars, } from "@react-three/drei";
 import { Theme } from "../../pages/_app";
+import { useRef } from "react";
 
-export default function Scene3D({ theme } : {theme : Theme}) {
+export default function Scene3D({ theme }: { theme: Theme }) {
   const NUM = 100;
   const formes = new Array(NUM).fill(null);
 
@@ -21,6 +22,12 @@ export default function Scene3D({ theme } : {theme : Theme}) {
     >
       <ambientLight />
       <pointLight position={[10, 10, 10]} />
+
+      <Composition />
+
+      {/* <Sphere  args={[1,30,30]}>
+        <meshBasicMaterial attach="material" color="hotpink" />
+      </Sphere> */}
 
       {theme === "dark" && (
         <Stars
