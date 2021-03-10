@@ -31,7 +31,7 @@ export default function Scene3D({ theme }: { theme: Theme }) {
 
       <directionalLight
         position={[0, 10, 0]}
-        intensity={0.5}
+        intensity={0.2}
         shadow-mapSize-width={1024}
         shadow-mapSize-height={1024}
         shadow-camera-far={50}
@@ -41,8 +41,8 @@ export default function Scene3D({ theme }: { theme: Theme }) {
         shadow-camera-bottom={-10}
       />
       <ambientLight intensity={0.3} />
-      <pointLight position={[-10, 0, -20]} />
-      <pointLight position={[0, -10, 0]} />
+      {/* <pointLight intensity={0.3} position={[-10, 0, -20]} />
+      <pointLight intensity={0.3} position={[0, -10, 0]} /> */}
 
 
      {theme === 'light' && <Composition />}

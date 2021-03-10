@@ -4,7 +4,7 @@
 //     },
 //   }
 
-const withTM = require('next-transpile-modules')(['@react-three/drei', 'three'])
+const withTM = require('next-transpile-modules')(['@react-three/drei', 'three', 'react-spring/three'])
 
 module.exports = withTM({
   images: {
