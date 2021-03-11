@@ -109,6 +109,20 @@ export default function MenuMobile() {
                       </Link>
                     </li>
                     <li>
+                      <Link href="/bonus">
+                        <a
+                          onClick={() => setIsMenuOpen(false)}
+                          aria-label="Aller à la page bonus"
+                          title="Bonus"
+                          className={`${
+                            router.pathname == "/bonus" && "underline"
+                          } font-medium tracking-wide transition-colors duration-200 hover:text-blue-400`}
+                        >
+                          Bonus
+                        </a>
+                      </Link>
+                    </li>
+                    <li>
                       <a
                         onClick={() => setIsMenuOpen(false)}
                         href="https://www.linkedin.com/in/olivier-fortier/"

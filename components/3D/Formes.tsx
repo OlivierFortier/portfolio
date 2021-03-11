@@ -21,7 +21,7 @@ export function Composition() {
 
   return (
     <group>
-      <TransformControls>
+      
         <Dodecagone
           factor={0.6}
           speed={2}
@@ -35,20 +35,21 @@ export function Composition() {
           inverser={true}
           valRotation={0.001}
         />
-      </TransformControls>
-      <Cube
-        position={[3.1, 1.4, 1]}
-        delay={650}
-        args={[1, 1, 1]}
-        opacity={0.3}
-        factor={0.6}
-        speed={3}
-        color="#908e00"
-        minRange={1.23}
-        maxRange={0.5}
-        inverser={true}
-        valRotation={-0.003}
-      />
+     
+        <Cube
+          position={[3.1, 1.4, 1]}
+          delay={650}
+          args={[1, 1, 1]}
+          opacity={0.3}
+          factor={0.6}
+          speed={3}
+          color="#908e00"
+          minRange={1.23}
+          maxRange={0.5}
+          inverser={true}
+          valRotation={-0.003}
+        />
+     
       <Cube
         position={[-2.1, 2.6, -1]}
         delay={0}

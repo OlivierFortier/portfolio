@@ -1,5 +1,6 @@
 import { Canvas, MeshProps } from "react-three-fiber";
 import { Composition } from "./Formes";
+import {useRouter} from 'next/router'
 import {
   OrbitControls,
   Stars,
@@ -9,15 +10,12 @@ import { Theme } from "../../pages/_app";
 import { useControls } from "leva";
 
 export default function Scene3D({ theme }: { theme: Theme }) {
-  const NUM = 100;
-  const formes = new Array(NUM).fill(null);
-
-  const {fov} = useControls({fov : 40})
+ 
+  const router = useRouter();
 
   return (
     <Canvas
       colorManagement
-      // camera={{position: [0,0,10], fov: 60}}
       shadowMap
       style={{
         height: "100%",
@@ -27,7 +25,7 @@ export default function Scene3D({ theme }: { theme: Theme }) {
         left: 0,
       }}
     >
-      <PerspectiveCamera makeDefault position={[0, 0, 10]} fov={fov}/>
+      <PerspectiveCamera makeDefault position={[0, 0, 10]} fov={40}/>
 
       <directionalLight
         position={[0, 10, 0]}
@@ -44,6 +42,7 @@ export default function Scene3D({ theme }: { theme: Theme }) {
       {/* <pointLight intensity={0.3} position={[-10, 0, -20]} />
       <pointLight intensity={0.3} position={[0, -10, 0]} /> */}
 
+     {router.pathname === '/bonus' && <OrbitControls/>}
 
      {theme === 'light' && <Composition />}
 
