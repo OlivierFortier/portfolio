@@ -3,7 +3,14 @@ import { Composition } from "./Formes";
 import { useRouter } from "next/router";
 import { OrbitControls, Stars, PerspectiveCamera } from "@react-three/drei";
 import { Theme } from "../../pages/_app";
-import { useControls } from "leva";
+// import { useControls } from "leva";
+import {softShadows} from '@react-three/drei'
+
+//TODO : gestion de leva pour bonus
+// TODO : afficher instruction HTML avec drei pour formes fun
+//TODO ? : importation de modèles 3D
+
+softShadows();
 
 export default function Scene3D({ theme }: { theme: Theme }) {
   const router = useRouter();
@@ -27,6 +34,7 @@ export default function Scene3D({ theme }: { theme: Theme }) {
       <directionalLight
         position={[0, 10, 0]}
         intensity={0.2}
+        castShadow
         shadow-mapSize-width={1024}
         shadow-mapSize-height={1024}
         shadow-camera-far={50}
@@ -44,6 +52,15 @@ export default function Scene3D({ theme }: { theme: Theme }) {
       <OrbitControls />}
 
       {theme === "light" && <Composition />}
+
+      {
+        router.pathname ==="/bonus" &&
+        <mesh receiveShadow rotation-x={-Math.PI / 2} position-y={-5.7}>
+          <planeBufferGeometry args={[100,100, 4 ,4 ]} />
+          {/* <meshStandardMaterial color="#5ad3e9"/> */}
+          <shadowMaterial attach="material" opacity={0.5} />
+        </mesh>
+      }
 
       {theme === "dark" && (
         <Stars

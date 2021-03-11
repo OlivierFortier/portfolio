@@ -1,12 +1,12 @@
-import { useMemo, useRef, useState } from "react";
+import {  useRef, useState } from "react";
 import { MeshProps, useFrame } from "react-three-fiber";
 import {
   MeshWobbleMaterial,
   MeshDistortMaterial,
-  TransformControls,
 } from "@react-three/drei";
-import { useControls } from "leva";
+// import { useControls } from "leva";
 import { a, useSpring } from "react-spring/three";
+
 
 export function Composition() {
   // const { position } = useControls({
@@ -171,7 +171,7 @@ export function Cube({
   });
 
   return (
-    <a.mesh ref={mesh} position={position} {...spring}>
+    <a.mesh ref={mesh} castShadow receiveShadow position={position} {...spring}>
       {
         //@ts-ignore
         <MeshWobbleMaterial
@@ -224,7 +224,7 @@ export function Cone({
   });
 
   return (
-    <a.mesh ref={mesh} position={position} {...spring}>
+    <a.mesh ref={mesh} castShadow receiveShadow position={position} {...spring}>
       {
         //@ts-ignore
         <MeshWobbleMaterial
@@ -277,7 +277,7 @@ export function Dodecagone({
   });
 
   return (
-    <a.mesh ref={mesh} position={position} {...spring}>
+    <a.mesh ref={mesh} castShadow receiveShadow position={position} {...spring}>
       {
         //@ts-ignore
         <MeshWobbleMaterial
@@ -330,7 +330,7 @@ export function Torus({
   });
 
   return (
-    <a.mesh ref={mesh} position={position} {...spring}>
+    <a.mesh ref={mesh} castShadow receiveShadow position={position} {...spring}>
       {
         //@ts-ignore
         <MeshDistortMaterial
@@ -383,7 +383,7 @@ export function Sphere({
   });
 
   return (
-    <a.mesh ref={mesh} position={position} {...spring}>
+    <a.mesh ref={mesh} castShadow receiveShadow position={position} {...spring}>
       {
         //@ts-ignore
         <MeshDistortMaterial
