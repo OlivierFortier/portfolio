@@ -1,6 +1,10 @@
 import { useMemo, useRef, useState } from "react";
 import { MeshProps, useFrame } from "react-three-fiber";
-import { MeshWobbleMaterial, MeshDistortMaterial, TransformControls } from "@react-three/drei";
+import {
+  MeshWobbleMaterial,
+  MeshDistortMaterial,
+  TransformControls,
+} from "@react-three/drei";
 import { useControls } from "leva";
 import { a, useSpring } from "react-spring/three";
 
@@ -21,35 +25,34 @@ export function Composition() {
 
   return (
     <group>
-      
-        <Dodecagone
-          factor={0.6}
-          speed={2}
-          delay={1000}
-          color="#880f0f"
-          opacity={0.2}
-          position={[-7.5, 1.3, -3]}
-          args={[1.5, 0]}
-          minRange={1.1}
-          maxRange={1.1}
-          inverser={true}
-          valRotation={0.001}
-        />
-     
-        <Cube
-          position={[3.1, 1.4, 1]}
-          delay={650}
-          args={[1, 1, 1]}
-          opacity={0.3}
-          factor={0.6}
-          speed={3}
-          color="#908e00"
-          minRange={1.23}
-          maxRange={0.5}
-          inverser={true}
-          valRotation={-0.003}
-        />
-     
+      <Dodecagone
+        factor={0.6}
+        speed={2}
+        delay={1000}
+        color="#880f0f"
+        opacity={0.2}
+        position={[-7.5, 1.3, -3]}
+        args={[1.5, 0]}
+        minRange={1.1}
+        maxRange={1.1}
+        inverser={true}
+        valRotation={0.001}
+      />
+
+      <Cube
+        position={[3.1, 1.4, 1]}
+        delay={650}
+        args={[1, 1, 1]}
+        opacity={0.3}
+        factor={0.6}
+        speed={3}
+        color="#908e00"
+        minRange={1.23}
+        maxRange={0.5}
+        inverser={true}
+        valRotation={-0.003}
+      />
+
       <Cube
         position={[-2.1, 2.6, -1]}
         delay={0}
@@ -113,7 +116,7 @@ export function Composition() {
         inverser={false}
         valRotation={-0.005}
       />
-       <Cone
+      <Cone
         args={[1, 1, 3]}
         color="#772828"
         opacity={0.4}
@@ -164,17 +167,20 @@ export function Cube({
   });
 
   useFrame(() => {
-   if(ref) ref.rotation.x = ref.rotation.y = ref.rotation.z += valRotation;
+    if (ref) ref.rotation.x = ref.rotation.y = ref.rotation.z += valRotation;
   });
 
   return (
     <a.mesh ref={mesh} position={position} {...spring}>
-      <MeshWobbleMaterial
-        opacity={opacity}
-        factor={factor}
-        speed={speed}
-        color={color}
-      />
+      {
+        //@ts-ignore
+        <MeshWobbleMaterial
+          opacity={opacity}
+          factor={factor}
+          speed={speed}
+          color={color}
+        />
+      }
       <boxBufferGeometry args={args} />
     </a.mesh>
   );
@@ -214,17 +220,20 @@ export function Cone({
   });
 
   useFrame(() => {
-    if(ref) ref.rotation.x = ref.rotation.y = ref.rotation.z += valRotation;
+    if (ref) ref.rotation.x = ref.rotation.y = ref.rotation.z += valRotation;
   });
 
   return (
     <a.mesh ref={mesh} position={position} {...spring}>
-      <MeshWobbleMaterial
-        opacity={opacity}
-        factor={factor}
-        speed={speed}
-        color={color}
-      />
+      {
+        //@ts-ignore
+        <MeshWobbleMaterial
+          opacity={opacity}
+          factor={factor}
+          speed={speed}
+          color={color}
+        />
+      }
       <coneBufferGeometry args={args} />
     </a.mesh>
   );
@@ -264,17 +273,20 @@ export function Dodecagone({
   });
 
   useFrame(() => {
-    if(ref) ref.rotation.x = ref.rotation.y = ref.rotation.z += valRotation;
+    if (ref) ref.rotation.x = ref.rotation.y = ref.rotation.z += valRotation;
   });
 
   return (
     <a.mesh ref={mesh} position={position} {...spring}>
-      <MeshWobbleMaterial
-        opacity={opacity}
-        factor={factor}
-        speed={speed}
-        color={color}
-      />
+      {
+        //@ts-ignore
+        <MeshWobbleMaterial
+          opacity={opacity}
+          factor={factor}
+          speed={speed}
+          color={color}
+        />
+      }
       <dodecahedronGeometry args={args} />
     </a.mesh>
   );
@@ -314,17 +326,20 @@ export function Torus({
   });
 
   useFrame(() => {
-    if(ref) ref.rotation.x = ref.rotation.y = ref.rotation.z += valRotation;
+    if (ref) ref.rotation.x = ref.rotation.y = ref.rotation.z += valRotation;
   });
 
   return (
     <a.mesh ref={mesh} position={position} {...spring}>
-      <MeshDistortMaterial
-        opacity={opacity}
-        distort={factor}
-        speed={speed}
-        color={color}
-      />
+      {
+        //@ts-ignore
+        <MeshDistortMaterial
+          opacity={opacity}
+          distort={factor}
+          speed={speed}
+          color={color}
+        />
+      }
       <torusBufferGeometry args={args} />
     </a.mesh>
   );
@@ -364,17 +379,20 @@ export function Sphere({
   });
 
   useFrame(() => {
-    if(ref) ref.rotation.x = ref.rotation.y = ref.rotation.z += valRotation;
+    if (ref) ref.rotation.x = ref.rotation.y = ref.rotation.z += valRotation;
   });
 
   return (
     <a.mesh ref={mesh} position={position} {...spring}>
-      <MeshDistortMaterial
-        opacity={opacity}
-        distort={factor}
-        speed={speed}
-        color={color}
-      />
+      {
+        //@ts-ignore
+        <MeshDistortMaterial
+          opacity={opacity}
+          distort={factor}
+          speed={speed}
+          color={color}
+        />
+      }
       <sphereBufferGeometry args={args} />
     </a.mesh>
   );

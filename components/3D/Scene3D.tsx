@@ -1,16 +1,11 @@
 import { Canvas, MeshProps } from "react-three-fiber";
 import { Composition } from "./Formes";
-import {useRouter} from 'next/router'
-import {
-  OrbitControls,
-  Stars,
-  PerspectiveCamera,
-} from "@react-three/drei";
+import { useRouter } from "next/router";
+import { OrbitControls, Stars, PerspectiveCamera } from "@react-three/drei";
 import { Theme } from "../../pages/_app";
 import { useControls } from "leva";
 
 export default function Scene3D({ theme }: { theme: Theme }) {
- 
   const router = useRouter();
 
   return (
@@ -25,8 +20,10 @@ export default function Scene3D({ theme }: { theme: Theme }) {
         left: 0,
       }}
     >
-      <PerspectiveCamera makeDefault position={[0, 0, 10]} fov={40}/>
-
+      {
+        //@ts-ignore
+        <PerspectiveCamera makeDefault position={[0, 0, 10]} fov={40} />
+      }
       <directionalLight
         position={[0, 10, 0]}
         intensity={0.2}
@@ -42,9 +39,11 @@ export default function Scene3D({ theme }: { theme: Theme }) {
       {/* <pointLight intensity={0.3} position={[-10, 0, -20]} />
       <pointLight intensity={0.3} position={[0, -10, 0]} /> */}
 
-     {router.pathname === '/bonus' && <OrbitControls/>}
+      {router.pathname === "/bonus" && 
+      //@ts-ignore
+      <OrbitControls />}
 
-     {theme === 'light' && <Composition />}
+      {theme === "light" && <Composition />}
 
       {theme === "dark" && (
         <Stars
