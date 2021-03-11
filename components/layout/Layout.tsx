@@ -9,7 +9,7 @@ export default function Layout({
   setLightTheme,
 }) {
   return (
-    <div className="relative bg-gray-50 dark:bg-gray-900">
+    <div className="relative bg-gray-100 dark:bg-gray-900">
       <Scene3D  theme={theme}/>
 
       <Header />
