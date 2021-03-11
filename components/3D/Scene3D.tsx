@@ -9,6 +9,7 @@ import {softShadows} from '@react-three/drei'
 //TODO : gestion de leva pour bonus
 // TODO : afficher instruction HTML avec drei pour formes fun
 //TODO ? : importation de modèles 3D
+// TODO : animation d'intro et lazy load la 3D ?
 
 softShadows();
 
