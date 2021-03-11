@@ -57,7 +57,7 @@ export default function Hero({refPourScroll}) {
             </h2>
           </div>
           <div className="flex flex-col items-center md:flex-row">
-              <a aria-label="Dérouler jusqu'au bas de la page rapidement" onClick={()=> scrollToAppercu(refPourScroll)} className="cursor-pointer text-lg inline-flex items-center justify-center w-full h-12 px-6 mb-3 font-medium tracking-wide text-blue-600 dark:text-blue-400 transition duration-200 rounded shadow-md md:w-auto md:mr-4 md:mb-0 border-2 border-blue-600 dark:border-blue-400  hover:bg-blue-600 dark:hover:bg-blue-400 dark:hover:text-blue-800 hover:text-white focus:shadow-outline focus:outline-none">
+              <a aria-label="Dérouler jusqu'au bas de la page rapidement" onClick={()=> scrollToAppercu(refPourScroll)} className="bg-gray-100 dark:bg-transparent cursor-pointer text-lg inline-flex items-center justify-center w-full h-12 px-6 mb-3 font-medium tracking-wide text-blue-600 dark:text-blue-400 transition duration-200 rounded shadow-md md:w-auto md:mr-4 md:mb-0 border-2 border-blue-600 dark:border-blue-400  hover:bg-blue-600 dark:hover:bg-blue-400 dark:hover:text-blue-800 hover:text-white focus:shadow-outline focus:outline-none">
                 En savoir plus 👇
               </a>
           </div>

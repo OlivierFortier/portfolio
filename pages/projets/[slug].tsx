@@ -96,7 +96,7 @@ export default function Projet({ projet }: { projet: Projet }) {
             <Link href="/projets">
               <a
                 aria-label="Retourner à la liste des projets"
-                className="cursor-pointer font-semibold text-blue-600 p-2  border-blue-600 border-2 rounded transition-colors hover:bg-blue-600 hover:text-white"
+                className="bg-gray-100 dark:bg-transparent cursor-pointer font-semibold text-blue-600 p-2  border-blue-600 border-2 rounded transition-colors hover:bg-blue-600 dark:hover:bg-blue-600 hover:text-white"
               >
                 {"<"} Retour aux projets
               </a>
