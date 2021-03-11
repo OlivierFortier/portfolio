@@ -7,7 +7,7 @@ export default function Footer({theme, setDarkTheme, setLightTheme} : {theme : T
   
 
   return (
-    <footer className="z-10 text-gray-600 body-font sm:max-w-lg mx-auto pt-6">
+    <footer className="absolute bottom-0 left-0 right-0 z-10 text-gray-600 body-font sm:max-w-lg mx-auto pt-6">
       <hr className="z-10 h-0.5 w-10/12 sm:w-full mx-auto bg-blue-600 my-2 sm:mb-4" />
       <nav className="container px-5 pb-8 mx-auto flex items-center justify-evenly sm:flex-row flex-col">
         <h2 className="z-10 hover:text-blue-600 dark:hover:text-blue-500 transition-colors text-md text-blue-500 dark:text-blue-600  sm:py-2 sm:mt-0 mt-4">

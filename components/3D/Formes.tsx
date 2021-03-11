@@ -1,19 +1,18 @@
-import { useRef, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { MeshProps, useFrame } from "react-three-fiber";
-import { MeshWobbleMaterial, MeshDistortMaterial } from "@react-three/drei";
+import { MeshWobbleMaterial, MeshDistortMaterial, TransformControls } from "@react-three/drei";
 import { useControls } from "leva";
 import { a, useSpring } from "react-spring/three";
-import { getRandomFloat } from "../../lib/helpers";
 
 export function Composition() {
-  const { position } = useControls({
-    position: {
-      value: [0, 0, 0],
-      min: [-20, -20, -20],
-      max: [20, 20, 20],
-      step: 0.1,
-    },
-  });
+  // const { position } = useControls({
+  //   position: {
+  //     value: [0, 0, 0],
+  //     min: [-20, -20, -20],
+  //     max: [20, 20, 20],
+  //     step: 0.1,
+  //   },
+  // });
 
   // Avec caméra perspective
   // positions X , de -8 à 8
@@ -22,19 +21,21 @@ export function Composition() {
 
   return (
     <group>
-      <Dodecagone
-        factor={0.6}
-        speed={2}
-        delay={1000}
-        color="#880f0f"
-        opacity={0.2}
-        position={[-7.5, 1.3, -3]}
-        args={[1.5, 0]}
-        minRange={1.1}
-        maxRange={1.1}
-        inverser={true}
-        valRotation={0.001}
-      />
+      <TransformControls>
+        <Dodecagone
+          factor={0.6}
+          speed={2}
+          delay={1000}
+          color="#880f0f"
+          opacity={0.2}
+          position={[-7.5, 1.3, -3]}
+          args={[1.5, 0]}
+          minRange={1.1}
+          maxRange={1.1}
+          inverser={true}
+          valRotation={0.001}
+        />
+      </TransformControls>
       <Cube
         position={[3.1, 1.4, 1]}
         delay={650}
@@ -162,7 +163,7 @@ export function Cube({
   });
 
   useFrame(() => {
-    ref.rotation.x = ref.rotation.y = ref.rotation.z += valRotation;
+   if(ref) ref.rotation.x = ref.rotation.y = ref.rotation.z += valRotation;
   });
 
   return (
@@ -212,7 +213,7 @@ export function Cone({
   });
 
   useFrame(() => {
-    ref.rotation.x = ref.rotation.y = ref.rotation.z += valRotation;
+    if(ref) ref.rotation.x = ref.rotation.y = ref.rotation.z += valRotation;
   });
 
   return (
@@ -262,7 +263,7 @@ export function Dodecagone({
   });
 
   useFrame(() => {
-    ref.rotation.x = ref.rotation.y = ref.rotation.z += valRotation;
+    if(ref) ref.rotation.x = ref.rotation.y = ref.rotation.z += valRotation;
   });
 
   return (
@@ -312,7 +313,7 @@ export function Torus({
   });
 
   useFrame(() => {
-    ref.rotation.x = ref.rotation.y = ref.rotation.z += valRotation;
+    if(ref) ref.rotation.x = ref.rotation.y = ref.rotation.z += valRotation;
   });
 
   return (
@@ -362,7 +363,7 @@ export function Sphere({
   });
 
   useFrame(() => {
-    ref.rotation.x = ref.rotation.y = ref.rotation.z += valRotation;
+    if(ref) ref.rotation.x = ref.rotation.y = ref.rotation.z += valRotation;
   });
 
   return (
