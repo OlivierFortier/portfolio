@@ -195,7 +195,7 @@ export function Forme({
   const [descend, setDescend] = useState(inverser);
 
   // animation flottante haut/bas
-  const spring = useSpring({
+  const animFloat = useSpring({
     from: { position: [position[0], position[1] - minRange, position[2]] },
     to: { position: [position[0], position[1] + maxRange, position[2]] },
     reverse: descend,
@@ -203,6 +203,10 @@ export function Forme({
     config: { friction: friction, tension: tension, mass: mass, clamp: clamp },
     delay: delay,
   });
+
+  const animScale = useSpring({
+    scale: actif ? [1.5,1.5,1.5] : [1,1,1]
+  })
 
   // animation constante de rotation dans tous les axes
   useFrame(() => {
@@ -232,12 +236,13 @@ export function Forme({
       onPointerUp={() => onClick && onClick()}
       onPointerOver={() => hoverIn && hoverIn()}
       onPointerOut={() => hoverOut && hoverOut()}
-      scale={actif ? [1.5, 1.5, 1.5] : [1, 1, 1]}
+      // scale={actif ? [1.5, 1.5, 1.5] : [1, 1, 1]}
       ref={mesh}
       castShadow
       receiveShadow
       position={position}
-      {...spring}
+      {...animFloat}
+      {...animScale}
     >
       {
         typeForme !== "cube" && typeForme !== "dodecagone" ? 
