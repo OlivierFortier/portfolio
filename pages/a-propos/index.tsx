@@ -39,7 +39,7 @@ export default function index() {
           content="Olivier Fortier - En savoir plus sur mes intérêts, et mes compétences."
         />
       </Head>
-      <div className="max-w-xs mx-auto md:max-w-2xl lg:max-w-4xl xl:max-w-4xl">
+      <div className="pb-48 sm:pb-28 max-w-xs mx-auto md:max-w-2xl lg:max-w-4xl xl:max-w-4xl">
         <section className="body-font py-8 sm:py-14">
           <h1 className="px-4 mb-4 md:mb-16 font-sans text-4xl font-bold tracking-tight text-blue-600 dark:text-blue-500 sm:text-6xl sm:leading-none">
             Qui suis-je?

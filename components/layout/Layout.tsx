@@ -14,7 +14,7 @@ export default function Layout({
 
       <Header />
 
-      <main className="relative h-full pb-48 sm:pb-28">{children}</main>
+      <main className="relative h-full">{children}</main>
 
       <Footer
         theme={theme}

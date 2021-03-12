@@ -24,7 +24,7 @@ export default function Home({ projets }: ListeAppercuProjets) {
           content="Olivier Fortier - Développeur web, futur ingénieur logiciel et consultant à vôtre service. Je vous aide à trouver la bonne solution multimédia, mobile , et web !"
         />
       </Head>
-      <div className="max-w-xs mx-auto md:max-w-2xl lg:max-w-4xl xl:max-w-7xl">
+      <div className="pb-48 sm:pb-28 max-w-xs mx-auto md:max-w-2xl lg:max-w-4xl xl:max-w-7xl">
         <Hero refPourScroll={refElScroll} />
 
         <Perso />

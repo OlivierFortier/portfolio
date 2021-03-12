@@ -15,7 +15,7 @@ export default function index({ projets }: ListeAppercuProjets) {
           content="Olivier Fortier - Liste de tous mes projets intéressants, personnels ou autres."
         />
       </Head>
-      <div className="max-w-xs mx-auto md:max-w-2xl lg:max-w-4xl xl:max-w-7xl">
+      <div className="pb-48 sm:pb-28 max-w-xs mx-auto md:max-w-2xl lg:max-w-4xl xl:max-w-7xl">
         <section className=" text-gray-600 body-font py-8 sm:py-14">
           <h1 className="px-4 sm:text-left mb-6 font-sans text-4xl font-bold tracking-tight text-blue-600 dark:text-blue-400 sm:text-6xl sm:leading-none">
             Mes projets

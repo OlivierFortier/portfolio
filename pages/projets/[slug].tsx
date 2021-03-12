@@ -37,7 +37,7 @@ export default function Projet({ projet }: { projet: Projet }) {
           content={`Olivier Fortier - projet : ${projet.titre} - ${projet.sommaire} `}
         />
       </Head>
-      <section className="px-4 py-14 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 ">
+      <section className="pb-48 sm:pb-28 px-4 py-14 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 ">
         <div className="mx-auto  lg:max-w-4xl">
           <div className="max-w-xl mb-10   lg:max-w-4xl md:mb-12">
             <h1 className="max-w-lg mb-6 font-sans text-4xl font-bold leading-none tracking-tight dark:text-blue-400 text-blue-600 sm:text-6xl ">
