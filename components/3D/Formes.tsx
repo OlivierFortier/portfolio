@@ -19,6 +19,10 @@ export function Composition({ router }) {
   function cliquerDodecagone() {
     setTexte("pouf !");
   }
+  
+  function hoverDdcgn() {
+    setDdcgnHover(!ddcgnHover);
+  }
 
   return (
     <group>
@@ -26,6 +30,8 @@ export function Composition({ router }) {
         typeForme="dodecagone"
         onClick={cliquerDodecagone}
         actif={ddcgnHover}
+        hoverIn={hoverDdcgn}
+        hoverOut={hoverDdcgn}
         factor={0.6}
         speed={2}
         delay={1000}
@@ -240,6 +246,7 @@ export function Forme({
       onPointerUp={() => onClick && onClick()}
       onPointerOver={() => hoverIn && hoverIn()}
       onPointerOut={() => hoverOut && hoverOut()}
+      scale={actif ? [1.5,1.5,1.5] : [1,1,1]}
       ref={mesh}
       castShadow
       receiveShadow
