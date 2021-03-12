@@ -204,6 +204,7 @@ export function Forme({
     delay: delay,
   });
 
+  // animation d'échelle
   const animScale = useSpring({
     scale: actif ? [1.5,1.5,1.5] : [1,1,1]
   })
@@ -236,7 +237,6 @@ export function Forme({
       onPointerUp={() => onClick && onClick()}
       onPointerOver={() => hoverIn && hoverIn()}
       onPointerOut={() => hoverOut && hoverOut()}
-      // scale={actif ? [1.5, 1.5, 1.5] : [1, 1, 1]}
       ref={mesh}
       castShadow
       receiveShadow
