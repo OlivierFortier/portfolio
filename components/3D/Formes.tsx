@@ -8,30 +8,18 @@ import {
 import { a, useSpring } from "react-spring/three";
 
 export function Composition({ router }) {
-  // Avec caméra perspective
-  // positions X , de -8 à 8
-  // positions Y , de 4 à -4
-  // positions Z, de -6 à 6
 
-  const [texte, setTexte] = useState<string>("");
+  const [texteSphere, setTexteSphere] = useState<string>("");
   const [ddcgnHover, setDdcgnHover] = useState(false);
-
-  function cliquerDodecagone() {
-    setTexte("pouf !");
-  }
-  
-  function hoverDdcgn() {
-    setDdcgnHover(!ddcgnHover);
-  }
 
   return (
     <group>
       <Forme
         typeForme="dodecagone"
-        onClick={cliquerDodecagone}
+        onClick={()=>setTexteSphere('pouf !')}
         actif={ddcgnHover}
-        hoverIn={hoverDdcgn}
-        hoverOut={hoverDdcgn}
+        hoverIn={()=>setDdcgnHover(true)}
+        hoverOut={()=>setDdcgnHover(false)}
         factor={0.6}
         speed={2}
         delay={1000}
@@ -104,7 +92,7 @@ export function Composition({ router }) {
         {router.pathname === "/bonus" && (
           <Html distanceFactor={10} transform sprite>
             <h1 className="text-blue-600 transition-all animate-bounce transform hover:scale-125">
-              {texte}
+              {texteSphere}
             </h1>
           </Html>
         )}
