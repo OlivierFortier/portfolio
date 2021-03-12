@@ -1,4 +1,4 @@
-import { ReactNode, useRef, useState } from "react";
+import { ReactNode, useMemo, useRef, useState } from "react";
 import { MeshProps, useFrame } from "react-three-fiber";
 import {
   MeshWobbleMaterial,
@@ -14,7 +14,7 @@ export function Composition({ router }) {
   // positions Z, de -6 à 6
 
   const [texte, setTexte] = useState<string>("");
-  const [ddcgnActif, setDdcgnActif] = useState(false);
+  const [ddcgnHover, setDdcgnHover] = useState(false);
 
   function cliquerDodecagone() {
     setTexte("pouf !");
@@ -22,9 +22,10 @@ export function Composition({ router }) {
 
   return (
     <group>
-      <Dodecagone
+      <Forme
+        typeForme="dodecagone"
         onClick={cliquerDodecagone}
-        actif={ddcgnActif}
+        actif={ddcgnHover}
         factor={0.6}
         speed={2}
         delay={1000}
@@ -38,7 +39,8 @@ export function Composition({ router }) {
         valRotation={0.001}
       />
 
-      <Cube
+      <Forme
+        typeForme="cube"
         position={[3.1, 1.4, 1]}
         delay={650}
         args={[1, 1, 1]}
@@ -52,7 +54,22 @@ export function Composition({ router }) {
         valRotation={-0.003}
       />
 
-      <Cube
+      <Forme
+        typeForme="dodecagone"
+        position={[-2.1, 2.6, -1]}
+        delay={0}
+        args={[1.5, 0]}
+        opacity={0.2}
+        factor={0.6}
+        speed={3}
+        color="#7e1399"
+        minRange={1.5}
+        maxRange={1.5}
+        valRotation={0.003}
+      ></Forme>
+
+      <Forme
+        typeForme="cube"
         position={[-2.1, 2.6, -1]}
         delay={0}
         args={[1, 1, 1]}
@@ -63,8 +80,9 @@ export function Composition({ router }) {
         minRange={1.5}
         maxRange={1.5}
         valRotation={0.003}
-      ></Cube>
-      <Sphere
+      ></Forme>
+      <Forme
+        typeForme="sphere"
         factor={0.6}
         speed={2}
         delay={2000}
@@ -84,8 +102,9 @@ export function Composition({ router }) {
             </h1>
           </Html>
         )}
-      </Sphere>
-      <Sphere
+      </Forme>
+      <Forme
+        typeForme="sphere"
         factor={0.3}
         speed={3}
         delay={100}
@@ -106,8 +125,9 @@ export function Composition({ router }) {
             </p>
           </Html>
         )}
-      </Sphere>
-      <Torus
+      </Forme>
+      <Forme
+        typeForme="torus"
         color="#0d7237"
         args={[1, 0.4, 4, 6]}
         factor={0.4}
@@ -119,7 +139,8 @@ export function Composition({ router }) {
         maxRange={1.2}
         valRotation={-0.007}
       />
-      <Cone
+      <Forme
+        typeForme="cone"
         args={[0.7, 1, 3]}
         color="#0271a8"
         opacity={0.4}
@@ -132,7 +153,8 @@ export function Composition({ router }) {
         inverser={false}
         valRotation={-0.005}
       />
-      <Cone
+      <Forme
+        typeForme="cone"
         args={[1, 1, 3]}
         color="#772828"
         opacity={0.4}
@@ -149,142 +171,38 @@ export function Composition({ router }) {
   );
 }
 
-export function Cube({
+export function Forme({
+  typeForme = "cube",
   children,
   position,
-  color,
+  color='#438329',
   delay = 0,
-  speed,
-  factor,
-  opacity,
+  speed= 2.5,
+  factor= 0.7,
+  opacity = 1,
   args,
-  minRange,
-  maxRange,
+  minRange= 0.7,
+  maxRange= 0.7,
   clamp = true,
   friction = 45,
   tension = 26,
   mass = 30,
   inverser = false,
-  valRotation,
-}: PropsForme) {
-  const mesh = useRef<MeshProps>();
-
-  const ref = mesh.current;
-
-  const [descend, setDescend] = useState(inverser);
-
-  // animation haut bas
-  const spring = useSpring({
-    from: { position: [position[0], position[1] - minRange, position[2]] },
-    to: { position: [position[0], position[1] + maxRange, position[2]] },
-    reverse: descend,
-    onRest: () => setDescend(!descend),
-    config: { friction: friction, tension: tension, mass: mass, clamp: clamp },
-    delay: delay,
-  });
-
-  useFrame(() => {
-    if (ref) ref.rotation.x = ref.rotation.y = ref.rotation.z += valRotation;
-  });
-
-  return (
-    <a.mesh ref={mesh} castShadow receiveShadow position={position} {...spring}>
-      {
-        //@ts-ignore
-        <MeshWobbleMaterial
-          opacity={opacity}
-          factor={factor}
-          speed={speed}
-          color={color}
-        />
-      }
-      {children}
-      <boxBufferGeometry args={args} />
-    </a.mesh>
-  );
-}
-
-export function Cone({
-  children,
-  position,
-  color,
-  delay = 0,
-  speed,
-  factor,
-  opacity,
-  args,
-  minRange,
-  maxRange,
-  clamp = true,
-  friction = 45,
-  tension = 26,
-  mass = 30,
-  inverser = false,
-  valRotation,
-}: PropsForme) {
-  const mesh = useRef<MeshProps>();
-
-  const ref = mesh.current;
-
-  const [descend, setDescend] = useState(inverser);
-
-  // animation haut bas
-  const spring = useSpring({
-    from: { position: [position[0], position[1] - minRange, position[2]] },
-    to: { position: [position[0], position[1] + maxRange, position[2]] },
-    reverse: descend,
-    onRest: () => setDescend(!descend),
-    config: { friction: friction, tension: tension, mass: mass, clamp: clamp },
-    delay: delay,
-  });
-
-  useFrame(() => {
-    if (ref) ref.rotation.x = ref.rotation.y = ref.rotation.z += valRotation;
-  });
-
-  return (
-    <a.mesh ref={mesh} castShadow receiveShadow position={position} {...spring}>
-      {
-        //@ts-ignore
-        <MeshWobbleMaterial
-          opacity={opacity}
-          factor={factor}
-          speed={speed}
-          color={color}
-        />
-      }
-      {children}
-      <coneBufferGeometry args={args} />
-    </a.mesh>
-  );
-}
-
-export function Dodecagone({
+  valRotation= 0.01,
+  actif = false,
+  hoverIn,
+  hoverOut,
   onClick,
-  children,
-  position,
-  color,
-  delay = 0,
-  speed,
-  factor,
-  opacity,
-  args,
-  minRange,
-  maxRange,
-  clamp = true,
-  friction = 45,
-  tension = 26,
-  mass = 30,
-  inverser = false,
-  valRotation,
-}: PropsForme & { actif?: boolean }) {
+}: PropsForme) {
+  
+  // obtention de référence à l'élément pour le manipuler
   const mesh = useRef<MeshProps>();
-
   const ref = mesh.current;
 
+  // état de la direction de l'animation
   const [descend, setDescend] = useState(inverser);
 
-  // animation haut bas
+  // animation flottante haut/bas
   const spring = useSpring({
     from: { position: [position[0], position[1] - minRange, position[2]] },
     to: { position: [position[0], position[1] + maxRange, position[2]] },
@@ -294,163 +212,70 @@ export function Dodecagone({
     delay: delay,
   });
 
+  // animation constante de rotation dans tous les axes
   useFrame(() => {
     if (ref) ref.rotation.x = ref.rotation.y = ref.rotation.z += valRotation;
   });
+
+  // retourner une forme selon le type passé en props
+  const forme = useMemo(() => {
+    switch (typeForme) {
+      case "cube":
+        return <boxBufferGeometry args={args} />;
+      case "sphere":
+        return <sphereBufferGeometry args={args} />;
+      case "cone":
+        return <coneBufferGeometry args={args} />;
+      case "torus":
+        return <torusBufferGeometry args={args} />;
+      case "dodecagone":
+        return <dodecahedronBufferGeometry args={args} />;
+      default:
+        return <boxBufferGeometry args={args} />;
+    }
+  }, []);
 
   return (
     <a.mesh
-      onClick={() => onClick()}
+      onPointerUp={() => onClick && onClick()}
+      onPointerOver={() => hoverIn && hoverIn()}
+      onPointerOut={() => hoverOut && hoverOut()}
       ref={mesh}
       castShadow
       receiveShadow
       position={position}
       {...spring}
     >
-      {
-        //@ts-ignore
-        <MeshWobbleMaterial
-          opacity={opacity}
-          factor={factor}
-          speed={speed}
-          color={color}
-        />
+      { //@ts-ignore
+        <MeshWobbleMaterial opacity={opacity} factor={factor} speed={speed} color={color} />
       }
       {children}
-      <dodecahedronGeometry args={args} />
-    </a.mesh>
-  );
-}
-
-export function Torus({
-  children,
-  position,
-  color,
-  delay = 0,
-  speed,
-  factor,
-  opacity,
-  args,
-  minRange,
-  maxRange,
-  clamp = true,
-  friction = 45,
-  tension = 26,
-  mass = 30,
-  valRotation,
-  inverser = false,
-}: PropsForme) {
-  const mesh = useRef<MeshProps>();
-
-  const ref = mesh.current;
-
-  const [descend, setDescend] = useState(inverser);
-
-  // animation haut bas
-  const spring = useSpring({
-    from: { position: [position[0], position[1] - minRange, position[2]] },
-    to: { position: [position[0], position[1] + maxRange, position[2]] },
-    reverse: descend,
-    onRest: () => setDescend(!descend),
-    config: { friction: friction, tension: tension, mass: mass, clamp: clamp },
-    delay: delay,
-  });
-
-  useFrame(() => {
-    if (ref) ref.rotation.x = ref.rotation.y = ref.rotation.z += valRotation;
-  });
-
-  return (
-    <a.mesh ref={mesh} castShadow receiveShadow position={position} {...spring}>
-      {
-        //@ts-ignore
-        <MeshDistortMaterial
-          opacity={opacity}
-          distort={factor}
-          speed={speed}
-          color={color}
-        />
-      }
-      {children}
-      <torusBufferGeometry args={args} />
-    </a.mesh>
-  );
-}
-
-export function Sphere({
-  children,
-  position,
-  color,
-  delay = 0,
-  speed,
-  factor,
-  opacity,
-  args,
-  minRange,
-  maxRange,
-  clamp = true,
-  friction = 45,
-  tension = 26,
-  mass = 30,
-  valRotation,
-  inverser = false,
-}: PropsForme) {
-  const mesh = useRef<MeshProps>();
-
-  const ref = mesh.current;
-
-  const [descend, setDescend] = useState(inverser);
-
-  // animation haut bas
-  const spring = useSpring({
-    from: { position: [position[0], position[1] - minRange, position[2]] },
-    to: { position: [position[0], position[1] + maxRange, position[2]] },
-    reverse: descend,
-    onRest: () => setDescend(!descend),
-    config: { friction: friction, tension: tension, mass: mass, clamp: clamp },
-    delay: delay,
-  });
-
-  useFrame(() => {
-    if (ref) ref.rotation.x = ref.rotation.y = ref.rotation.z += valRotation;
-  });
-
-  return (
-    <a.mesh ref={mesh} castShadow receiveShadow position={position} {...spring}>
-      {
-        //@ts-ignore
-        <MeshDistortMaterial
-          opacity={opacity}
-          distort={factor}
-          speed={speed}
-          color={color}
-        />
-      }
-      {children}
-      <sphereBufferGeometry args={args} />
+      {forme}
     </a.mesh>
   );
 }
 
 type PropsForme = {
+  /** type possible de la forme */
+  typeForme: "sphere" | "cube" | "cone" | "dodecagone" | "torus";
   /**position de la forme X Y Z */
-  position: number[];
+  position: [number,number,number];
   /** couleur de la forme , string , hex, rgb */
-  color: string;
+  color?: string;
   /** opacité de la forme entre 0 et 1 */
-  opacity: number;
+  opacity?: number;
   /** vitesse de l'animation de wobble ou distortion */
-  speed: number;
+  speed?: number;
   /** facteur de puissance de la distortion */
-  factor: number;
+  factor?: number;
   /** délai de l'animation de position, en MS */
-  delay: number;
+  delay?: number;
   /** constructeur de la forme */
-  args: number[];
+  args?: number[];
   /** valeur minimale de l'animation de pos y */
-  minRange: number;
+  minRange?: number;
   /** valeur maximale de l'animation de pos y */
-  maxRange: number;
+  maxRange?: number;
   /** masse de la forme */
   mass?: number;
   /** la force énergétique du spring */
@@ -467,4 +292,10 @@ type PropsForme = {
   children?: ReactNode;
   /** fonction à exécuter au clic de la forme */
   onClick?: () => void;
+  /** état actif ou non de l'élément */
+  actif?: boolean;
+  /** fonction a exécuter lors du survol de la forme */
+  hoverIn?: () => void;
+  /** fonction à exécuter quand on cesse de survoler la forme */
+  hoverOut?: () => void;
 };
