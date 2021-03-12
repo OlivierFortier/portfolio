@@ -26,7 +26,6 @@ export default function Scene3D({ theme }: { theme: Theme }) {
         position: "fixed",
         top: 0,
         left: 0,
-        // zIndex: 100
       }}
     >
       {
