@@ -54,19 +54,7 @@ export function Composition() {
         minRange={1.5}
         maxRange={1.5}
         valRotation={0.003}
-      >
-        <Html
-          // prepend
-          // center
-          // fullscreen
-          distanceFactor={10} // If set (default: undefined), children will be scaled by this factor, and also by distance to a PerspectiveCamera / zoom by a OrthographicCamera.
-          transform
-          sprite
-        >
-          <h1>hello</h1>
-          <p>world</p>
-        </Html>
-      </Cube>
+      ></Cube>
       <Sphere
         factor={0.6}
         speed={2}
@@ -92,7 +80,12 @@ export function Composition() {
         maxRange={0.7}
         inverser={false}
         valRotation={0.007}
-      />
+      >
+        <Html distanceFactor={10} transform sprite >
+          <h1 className="text-blue-600">Amusez-vous !</h1>
+          <p className="w-3/4 text-blue-600">Déplacez-vous, interagissez, et expérimentez dans cet espace 3D</p>
+        </Html>
+      </Sphere>
       <Torus
         color="#0d7237"
         args={[1, 0.4, 4, 6]}
@@ -239,6 +232,7 @@ export function Cone({
           color={color}
         />
       }
+      {children}
       <coneBufferGeometry args={args} />
     </a.mesh>
   );
@@ -293,6 +287,7 @@ export function Dodecagone({
           color={color}
         />
       }
+      {children}
       <dodecahedronGeometry args={args} />
     </a.mesh>
   );
@@ -347,6 +342,7 @@ export function Torus({
           color={color}
         />
       }
+      {children}
       <torusBufferGeometry args={args} />
     </a.mesh>
   );
@@ -401,6 +397,7 @@ export function Sphere({
           color={color}
         />
       }
+      {children}
       <sphereBufferGeometry args={args} />
     </a.mesh>
   );

@@ -3,10 +3,9 @@ import { Composition } from "./Formes";
 import { useRouter } from "next/router";
 import { OrbitControls, Stars, PerspectiveCamera } from "@react-three/drei";
 import { Theme } from "../../pages/_app";
-import {softShadows} from '@react-three/drei'
+import { softShadows, Html } from "@react-three/drei";
 
-// TODO : afficher instruction HTML avec drei pour formes fun
-//TODO ? : importation de modèles 3D
+//TODO: on-click sur les formes pour interaction
 // TODO : animation d'intro et lazy load la 3D ?
 // TODO : zoom-out le groupe lors d'arrivée page bonus
 
@@ -47,30 +46,40 @@ export default function Scene3D({ theme }: { theme: Theme }) {
       {/* <pointLight intensity={0.3} position={[-10, 0, -20]} />
       <pointLight intensity={0.3} position={[0, -10, 0]} /> */}
 
-      {router.pathname === "/bonus" && 
-      //@ts-ignore
-      <OrbitControls />}
+      {router.pathname === "/bonus" && (
+        //@ts-ignore
+        <OrbitControls />
+      )}
 
       {theme === "light" && <Composition />}
 
-      {
-        router.pathname ==="/bonus" &&
+      {router.pathname === "/bonus" && theme === "light" && (
         <mesh receiveShadow rotation-x={-Math.PI / 2} position-y={-5.7}>
-          <planeBufferGeometry args={[100,100, 4 ,4 ]} />
-          {/* <meshStandardMaterial color="#5ad3e9"/> */}
+          <planeBufferGeometry args={[100, 100, 4, 4]} />
           <shadowMaterial attach="material" opacity={0.5} />
         </mesh>
-      }
+      )}
 
       {theme === "dark" && (
-        <Stars
-          radius={100} // Radius of the inner sphere (default=100)
-          depth={50} // Depth of area where stars should fit (default=50)
-          count={5000} // Amount of stars (default=5000)
-          factor={4} // Size factor (default=4)
-          saturation={0} // Saturation 0-1 (default=0)
-          fade // Faded dots (default=false)
-        />
+        <group>
+          <Stars
+            radius={100}
+            depth={50} 
+            count={5000} 
+            factor={4} 
+            saturation={0} 
+            fade 
+          />
+          {router.pathname === "/bonus" && (
+          <mesh position={[0, 2, 0]}>
+            <Html transform distanceFactor={10}>
+              <h1 className="text-blue-500">
+                Amusez-vous parmis les étoiles!
+              </h1>
+            </Html>
+          </mesh>
+          )}
+        </group>
       )}
     </Canvas>
   );
