@@ -51,7 +51,7 @@ export default function Scene3D({ theme }: { theme: Theme }) {
         <OrbitControls />
       )}
 
-      {theme === "light" && <Composition />}
+      {theme === "light" && <Composition router={router}/>}
 
       {router.pathname === "/bonus" && theme === "light" && (
         <mesh receiveShadow rotation-x={-Math.PI / 2} position-y={-5.7}>

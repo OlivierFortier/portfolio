@@ -7,7 +7,7 @@ import {
 } from "@react-three/drei";
 import { a, useSpring } from "react-spring/three";
 
-export function Composition() {
+export function Composition({ router }) {
   // Avec caméra perspective
   // positions X , de -8 à 8
   // positions Y , de 4 à -4
@@ -77,9 +77,13 @@ export function Composition() {
         inverser={true}
         valRotation={-0.01}
       >
-        <Html distanceFactor={10} transform sprite>
-          <h1 className="text-blue-600 transition-all animate-bounce transform hover:scale-125">{texte}</h1>
-        </Html>
+        {router.pathname === "/bonus" && (
+          <Html distanceFactor={10} transform sprite>
+            <h1 className="text-blue-600 transition-all animate-bounce transform hover:scale-125">
+              {texte}
+            </h1>
+          </Html>
+        )}
       </Sphere>
       <Sphere
         factor={0.3}
@@ -94,12 +98,14 @@ export function Composition() {
         inverser={false}
         valRotation={0.007}
       >
-        <Html distanceFactor={10} transform sprite>
-          <h1 className="text-blue-600">Amusez-vous !</h1>
-          <p className="w-3/4 text-blue-600">
-            Déplacez-vous, interagissez, et expérimentez dans cet espace 3D
-          </p>
-        </Html>
+        {router.pathname === "/bonus" && (
+          <Html distanceFactor={10} transform sprite>
+            <h1 className="text-blue-600">Amusez-vous !</h1>
+            <p className="w-3/4 text-blue-600">
+              Déplacez-vous, interagissez, et expérimentez dans cet espace 3D
+            </p>
+          </Html>
+        )}
       </Sphere>
       <Torus
         color="#0d7237"
@@ -271,7 +277,7 @@ export function Dodecagone({
   mass = 30,
   inverser = false,
   valRotation,
-}: PropsForme & {actif?: boolean}) {
+}: PropsForme & { actif?: boolean }) {
   const mesh = useRef<MeshProps>();
 
   const ref = mesh.current;
@@ -294,7 +300,7 @@ export function Dodecagone({
 
   return (
     <a.mesh
-      onClick={()=> onClick()}
+      onClick={() => onClick()}
       ref={mesh}
       castShadow
       receiveShadow
