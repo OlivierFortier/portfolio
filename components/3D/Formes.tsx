@@ -13,9 +13,18 @@ export function Composition() {
   // positions Y , de 4 à -4
   // positions Z, de -6 à 6
 
+  const [texte, setTexte] = useState<string>("");
+  const [ddcgnActif, setDdcgnActif] = useState(false);
+
+  function cliquerDodecagone() {
+    setTexte("pouf !");
+  }
+
   return (
     <group>
       <Dodecagone
+        onClick={cliquerDodecagone}
+        actif={ddcgnActif}
         factor={0.6}
         speed={2}
         delay={1000}
@@ -67,7 +76,11 @@ export function Composition() {
         maxRange={0.7}
         inverser={true}
         valRotation={-0.01}
-      />
+      >
+        <Html distanceFactor={10} transform sprite>
+          <h1 className="text-blue-600 transition-all animate-bounce transform hover:scale-125">{texte}</h1>
+        </Html>
+      </Sphere>
       <Sphere
         factor={0.3}
         speed={3}
@@ -81,9 +94,11 @@ export function Composition() {
         inverser={false}
         valRotation={0.007}
       >
-        <Html distanceFactor={10} transform sprite >
+        <Html distanceFactor={10} transform sprite>
           <h1 className="text-blue-600">Amusez-vous !</h1>
-          <p className="w-3/4 text-blue-600">Déplacez-vous, interagissez, et expérimentez dans cet espace 3D</p>
+          <p className="w-3/4 text-blue-600">
+            Déplacez-vous, interagissez, et expérimentez dans cet espace 3D
+          </p>
         </Html>
       </Sphere>
       <Torus
@@ -239,6 +254,7 @@ export function Cone({
 }
 
 export function Dodecagone({
+  onClick,
   children,
   position,
   color,
@@ -255,7 +271,7 @@ export function Dodecagone({
   mass = 30,
   inverser = false,
   valRotation,
-}: PropsForme) {
+}: PropsForme & {actif?: boolean}) {
   const mesh = useRef<MeshProps>();
 
   const ref = mesh.current;
@@ -277,7 +293,14 @@ export function Dodecagone({
   });
 
   return (
-    <a.mesh ref={mesh} castShadow receiveShadow position={position} {...spring}>
+    <a.mesh
+      onClick={()=> onClick()}
+      ref={mesh}
+      castShadow
+      receiveShadow
+      position={position}
+      {...spring}
+    >
       {
         //@ts-ignore
         <MeshWobbleMaterial
@@ -436,4 +459,6 @@ type PropsForme = {
   valRotation: number;
   /** composants enfant de la forme */
   children?: ReactNode;
+  /** fonction à exécuter au clic de la forme */
+  onClick?: () => void;
 };
