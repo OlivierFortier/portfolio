@@ -1,23 +1,13 @@
-import {  useRef, useState } from "react";
+import { ReactNode, useRef, useState } from "react";
 import { MeshProps, useFrame } from "react-three-fiber";
 import {
   MeshWobbleMaterial,
   MeshDistortMaterial,
+  Html,
 } from "@react-three/drei";
-// import { useControls } from "leva";
 import { a, useSpring } from "react-spring/three";
 
-
 export function Composition() {
-  // const { position } = useControls({
-  //   position: {
-  //     value: [0, 0, 0],
-  //     min: [-20, -20, -20],
-  //     max: [20, 20, 20],
-  //     step: 0.1,
-  //   },
-  // });
-
   // Avec caméra perspective
   // positions X , de -8 à 8
   // positions Y , de 4 à -4
@@ -64,7 +54,19 @@ export function Composition() {
         minRange={1.5}
         maxRange={1.5}
         valRotation={0.003}
-      />
+      >
+        <Html
+          // prepend
+          // center
+          // fullscreen
+          distanceFactor={10} // If set (default: undefined), children will be scaled by this factor, and also by distance to a PerspectiveCamera / zoom by a OrthographicCamera.
+          transform
+          sprite
+        >
+          <h1>hello</h1>
+          <p>world</p>
+        </Html>
+      </Cube>
       <Sphere
         factor={0.6}
         speed={2}
@@ -134,6 +136,7 @@ export function Composition() {
 }
 
 export function Cube({
+  children,
   position,
   color,
   delay = 0,
@@ -181,12 +184,14 @@ export function Cube({
           color={color}
         />
       }
+      {children}
       <boxBufferGeometry args={args} />
     </a.mesh>
   );
 }
 
 export function Cone({
+  children,
   position,
   color,
   delay = 0,
@@ -240,6 +245,7 @@ export function Cone({
 }
 
 export function Dodecagone({
+  children,
   position,
   color,
   delay = 0,
@@ -293,6 +299,7 @@ export function Dodecagone({
 }
 
 export function Torus({
+  children,
   position,
   color,
   delay = 0,
@@ -346,6 +353,7 @@ export function Torus({
 }
 
 export function Sphere({
+  children,
   position,
   color,
   delay = 0,
@@ -429,4 +437,6 @@ type PropsForme = {
   inverser?: boolean;
   /** valeur positive ou négative pour l'animation de rotation de la forme */
   valRotation: number;
+  /** composants enfant de la forme */
+  children?: ReactNode;
 };

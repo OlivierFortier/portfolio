@@ -1,15 +1,14 @@
-import { Canvas, MeshProps } from "react-three-fiber";
+import { Canvas } from "react-three-fiber";
 import { Composition } from "./Formes";
 import { useRouter } from "next/router";
 import { OrbitControls, Stars, PerspectiveCamera } from "@react-three/drei";
 import { Theme } from "../../pages/_app";
-// import { useControls } from "leva";
 import {softShadows} from '@react-three/drei'
 
-//TODO : gestion de leva pour bonus
 // TODO : afficher instruction HTML avec drei pour formes fun
 //TODO ? : importation de modèles 3D
 // TODO : animation d'intro et lazy load la 3D ?
+// TODO : zoom-out le groupe lors d'arrivée page bonus
 
 softShadows();
 
