@@ -8,7 +8,6 @@ import {
 import { a, useSpring } from "react-spring/three";
 
 export function Composition({ router }) {
-
   const [texteSphere, setTexteSphere] = useState<string>("");
   const [ddcgnHover, setDdcgnHover] = useState(false);
 
@@ -16,10 +15,10 @@ export function Composition({ router }) {
     <group>
       <Forme
         typeForme="dodecagone"
-        onClick={()=>setTexteSphere('pouf !')}
+        onClick={() => setTexteSphere("pouf !")}
         actif={ddcgnHover}
-        hoverIn={()=>setDdcgnHover(true)}
-        hoverOut={()=>setDdcgnHover(false)}
+        hoverIn={() => setDdcgnHover(true)}
+        hoverOut={() => setDdcgnHover(false)}
         factor={0.6}
         speed={2}
         delay={1000}
@@ -169,26 +168,25 @@ export function Forme({
   typeForme = "cube",
   children,
   position,
-  color='#438329',
+  color = "#438329",
   delay = 0,
-  speed= 2.5,
-  factor= 0.7,
+  speed = 2.5,
+  factor = 0.7,
   opacity = 1,
   args,
-  minRange= 0.7,
-  maxRange= 0.7,
+  minRange = 0.7,
+  maxRange = 0.7,
   clamp = true,
   friction = 45,
   tension = 26,
   mass = 30,
   inverser = false,
-  valRotation= 0.01,
+  valRotation = 0.01,
   actif = false,
   hoverIn,
   hoverOut,
   onClick,
 }: PropsForme) {
-  
   // obtention de référence à l'élément pour le manipuler
   const mesh = useRef<MeshProps>();
   const ref = mesh.current;
@@ -234,15 +232,22 @@ export function Forme({
       onPointerUp={() => onClick && onClick()}
       onPointerOver={() => hoverIn && hoverIn()}
       onPointerOut={() => hoverOut && hoverOut()}
-      scale={actif ? [1.5,1.5,1.5] : [1,1,1]}
+      scale={actif ? [1.5, 1.5, 1.5] : [1, 1, 1]}
       ref={mesh}
       castShadow
       receiveShadow
       position={position}
       {...spring}
     >
-      { //@ts-ignore
-        <MeshWobbleMaterial opacity={opacity} factor={factor} speed={speed} color={color} />
+      {
+        typeForme !== "cube" && typeForme !== "dodecagone" ? 
+        ( //@ts-ignore
+          <MeshDistortMaterial opacity={opacity} distort={factor} speed={speed} color={color} /> 
+        ) 
+        : 
+        ( //@ts-ignore
+          <MeshWobbleMaterial opacity={opacity} factor={factor} speed={speed} color={color} />
+        )
       }
       {children}
       {forme}
@@ -254,7 +259,7 @@ type PropsForme = {
   /** type possible de la forme */
   typeForme: "sphere" | "cube" | "cone" | "dodecagone" | "torus";
   /**position de la forme X Y Z */
-  position: [number,number,number];
+  position: [number, number, number];
   /** couleur de la forme , string , hex, rgb */
   color?: string;
   /** opacité de la forme entre 0 et 1 */
