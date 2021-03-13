@@ -48,10 +48,10 @@ export function Composition({ router }) {
       />
 
       <Forme
-        typeForme="dodecagone"
+        typeForme="cube"
         position={[-2.1, 2.6, -1]}
         delay={0}
-        args={[1.5, 0]}
+        args={[1,1,1]}
         opacity={0.2}
         factor={0.6}
         speed={3}
@@ -131,6 +131,34 @@ export function Composition({ router }) {
         minRange={1.2}
         maxRange={1.2}
         valRotation={-0.007}
+      />
+       <Forme
+        typeForme="torus"
+        color="#32083f"
+        args={[1, 0.4, 4, 6]}
+        factor={0.4}
+        delay={2250}
+        opacity={0.7}
+        speed={2.5}
+        position={[-15, 2.9, -25]}
+        minRange={2.2}
+        maxRange={1.2}
+        inverser={true}
+        valRotation={0.007}
+      />
+      <Forme
+        typeForme="torusknot"
+        color="#052710"
+        // args={[1, 0.4, 4, 6]}
+        factor={0.4}
+        delay={1050}
+        opacity={0.4}
+        speed={2.5}
+        position={[-9,-2.9, -10]}
+        minRange={0.8}
+        maxRange={0.3}
+        inverser={false}
+        valRotation={0.010}
       />
       <Forme
         typeForme="cone"
@@ -225,6 +253,8 @@ export function Forme({
         return <coneBufferGeometry args={args} />;
       case "torus":
         return <torusBufferGeometry args={args} />;
+      case "torusknot":
+        return <torusKnotBufferGeometry args={args} />;
       case "dodecagone":
         return <dodecahedronBufferGeometry args={args} />;
       default:
@@ -262,7 +292,7 @@ export function Forme({
 
 type PropsForme = {
   /** type possible de la forme */
-  typeForme: "sphere" | "cube" | "cone" | "dodecagone" | "torus";
+  typeForme: "sphere" | "cube" | "cone" | "dodecagone" | "torus" | "torusknot";
   /**position de la forme X Y Z */
   position: [number, number, number];
   /** couleur de la forme , string , hex, rgb */

@@ -37,14 +37,14 @@ export default function Scene3D({ theme }: { theme: Theme }) {
         shadow-mapSize-width={1024}
         shadow-mapSize-height={1024}
         shadow-camera-far={50}
-        shadow-camera-left={-10}
+        shadow-camera-left={-30}
         shadow-camera-right={10}
-        shadow-camera-top={10}
+        shadow-camera-top={30}
         shadow-camera-bottom={-10}
       />
-      <ambientLight intensity={0.3} />
-      {/* <pointLight intensity={0.3} position={[-10, 0, -20]} />
-      <pointLight intensity={0.3} position={[0, -10, 0]} /> */}
+      <ambientLight  intensity={0.3} />
+      {/* <pointLight intensity={0.3} position={[-10, 0, -20]} /> */}
+      {/* <pointLight intensity={0.3} position={[0, -10, 0]} />*/}
 
       {router.pathname === "/bonus" && (
         //@ts-ignore
@@ -55,8 +55,9 @@ export default function Scene3D({ theme }: { theme: Theme }) {
 
       {router.pathname === "/bonus" && theme === "light" && (
         <mesh receiveShadow rotation-x={-Math.PI / 2} position-y={-5.7}>
-          <planeBufferGeometry args={[100, 100, 4, 4]} />
-          <shadowMaterial attach="material" opacity={0.5} />
+          <planeBufferGeometry args={[100, 100, 10, 10]} />
+          <shadowMaterial opacity={0.5} />
+          {/* <meshStandardMaterial color="red"/> */}
         </mesh>
       )}
 
