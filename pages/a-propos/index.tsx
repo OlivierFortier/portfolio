@@ -6,7 +6,7 @@ import { GetStaticProps } from "next";
 import { gql } from "graphql-request";
 import { client } from "../../lib/api";
 
-export default function index({pageAPropos} : {pageProps : PageAPropos}) {
+export default function index({pageAPropos} : {pageAPropos : PageAPropos}) {
   // animation d'entrée du fond bleu
   const growRight = useSpring({
     config: {
