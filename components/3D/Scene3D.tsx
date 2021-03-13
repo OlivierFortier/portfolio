@@ -14,8 +14,14 @@ export default function Scene3D({ theme }: { theme: Theme }) {
   const router = useRouter();
 
   const animEntree = useSpring({
-    from: { scale: [0,0,0] },
-    to: { scale: [1,1,1] },
+    from: { scale: [0,0,0], opacity: 0 },
+    to: { scale: [1,1,1], opacity: 1 },
+    delay: 500,
+    config: {
+      mass : 5,
+      friction: 40,
+      tension : 20
+    }
   });
 
   return (
