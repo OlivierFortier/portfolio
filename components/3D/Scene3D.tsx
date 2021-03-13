@@ -5,7 +5,6 @@ import { OrbitControls, Stars, PerspectiveCamera } from "@react-three/drei";
 import { Theme } from "../../pages/_app";
 import { softShadows, Html } from "@react-three/drei";
 
-//TODO: on-click sur les formes pour interaction
 // TODO : animation d'intro et lazy load la 3D ?
 // TODO : zoom-out le groupe lors d'arrivée page bonus
 
@@ -44,7 +43,7 @@ export default function Scene3D({ theme }: { theme: Theme }) {
       />
       <ambientLight  intensity={0.3} />
       {/* <pointLight intensity={0.3} position={[-10, 0, -20]} /> */}
-      {/* <pointLight intensity={0.3} position={[0, -10, 0]} />*/}
+      <pointLight intensity={0.3} position={[0, -10, 0]} />
 
       {router.pathname === "/bonus" && (
         //@ts-ignore

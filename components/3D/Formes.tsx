@@ -1,15 +1,61 @@
-import { ReactNode, useMemo, useRef, useState } from "react";
+import { ReactNode, useEffect, useMemo, useRef, useState } from "react";
 import { MeshProps, useFrame } from "react-three-fiber";
-import {
-  MeshWobbleMaterial,
-  MeshDistortMaterial,
-  Html,
-} from "@react-three/drei";
+import { MeshWobbleMaterial, MeshDistortMaterial, Html, } from "@react-three/drei";
 import { a, useSpring } from "react-spring/three";
+import { FaWindowClose} from 'react-icons/fa'
+import type { PropsForme } from "../../lib/types";
 
 export function Composition({ router }) {
+  // gestion des états des formes
   const [texteSphere, setTexteSphere] = useState<string>("");
   const [ddcgnHover, setDdcgnHover] = useState(false);
+  const [cubeHover, setCubeHover] = useState(false);
+  const [modalActif, setModalActif] = useState(true);
+  const [sphereHover, setSphereHover] = useState(false);
+  const [etatCube, setEtatCube] = useState({
+    color : "#908e00",
+    speed : -0.003
+  });
+  const [etatSphere,setEtatSphere] = useState({
+    args : [1, 50, 50],
+    factor : 0.3,
+    speed: 3
+  });
+
+  // animation de clic de la sphere verte
+  function exploserSphere() {
+    setEtatSphere({
+      args: [1, 2, 3],
+      factor: 1,
+      speed: 5,
+    });
+    setTimeout(() => {
+      setEtatSphere({
+        args: [1, 50, 50],
+        factor: 0.3,
+        speed: 3,
+      });
+    }, 550);
+  }
+
+  // petite animation du cube jaune lors du clic
+  function tournerCouleurCube() {
+    setEtatCube({
+      color: "#26008fe",
+      speed: -0.03
+    })
+    setTimeout(()=>{
+      setEtatCube({
+        color: "#908e00",
+        speed: -0.003
+      })
+    },250)
+  }
+
+  // afficher un pointeur si on survole une forme interactive
+  useEffect(() => {
+    document.body.style.cursor = ddcgnHover || cubeHover || sphereHover ? 'pointer' : 'auto'
+  }, [ddcgnHover, cubeHover, sphereHover])
 
   return (
     <group>
@@ -34,32 +80,22 @@ export function Composition({ router }) {
 
       <Forme
         typeForme="cube"
+        hoverIn={()=>setCubeHover(true)}
+        hoverOut={()=>setCubeHover(false)}
+        onClick={()=>tournerCouleurCube()}
+        actif={cubeHover}
         position={[3.1, 1.4, 1]}
         delay={650}
         args={[1, 1, 1]}
         opacity={0.3}
         factor={0.6}
         speed={3}
-        color="#908e00"
+        color={etatCube.color}
         minRange={1.23}
         maxRange={0.5}
         inverser={true}
-        valRotation={-0.003}
+        valRotation={etatCube.speed}
       />
-
-      <Forme
-        typeForme="cube"
-        position={[-2.1, 2.6, -1]}
-        delay={0}
-        args={[1,1,1]}
-        opacity={0.2}
-        factor={0.6}
-        speed={3}
-        color="#7e1399"
-        minRange={1.5}
-        maxRange={1.5}
-        valRotation={0.003}
-      ></Forme>
 
       <Forme
         typeForme="cube"
@@ -74,6 +110,7 @@ export function Composition({ router }) {
         maxRange={1.5}
         valRotation={0.003}
       ></Forme>
+
       <Forme
         typeForme="sphere"
         factor={0.6}
@@ -89,20 +126,24 @@ export function Composition({ router }) {
         valRotation={-0.01}
       >
         {router.pathname === "/bonus" && (
-          <Html distanceFactor={10} transform sprite>
-            <h1 className="text-blue-600 transition-all animate-bounce transform hover:scale-125">
+          <Html distanceFactor={10} transform>
+            <h1 className="text-blue-600 transition-all transform hover:scale-125">
               {texteSphere}
             </h1>
           </Html>
         )}
       </Forme>
       <Forme
+      onClick={()=>exploserSphere()}
         typeForme="sphere"
-        factor={0.3}
-        speed={3}
+        hoverIn={()=> setSphereHover(true)}
+        hoverOut={()=> setSphereHover(false)}
+        actif={sphereHover}
+        factor={etatSphere.factor}
+        speed={etatSphere.speed}
         delay={100}
         opacity={0.2}
-        args={[1, 50, 50]}
+        args={etatSphere.args}
         color="#0f4d22"
         position={[-0.5, 1.6, -12.2]}
         minRange={0.4}
@@ -110,12 +151,21 @@ export function Composition({ router }) {
         inverser={false}
         valRotation={0.007}
       >
-        {router.pathname === "/bonus" && (
+        {router.pathname === "/bonus" && modalActif && (
           <Html distanceFactor={10} transform sprite>
-            <h1 className="text-blue-600">Amusez-vous !</h1>
-            <p className="w-3/4 text-blue-600">
-              Déplacez-vous, interagissez, et expérimentez dans cet espace 3D
-            </p>
+            <div className="bg-gray-100 rounded-md shadow-lg relative flex flex-col justify-center items-center">
+              <h1 className="text-blue-600 p-2">Cet environnement est interactif !</h1>
+              <FaWindowClose
+              onClick={()=> setModalActif(false)}
+                role="button"
+                aria-label="fermer la fenetre modale"
+                className="text-white cursor-pointer text-xl absolute right-4 top-2 transition-transform transform hover:scale-110"
+                color="red"
+              />
+              <p className="w-3/4 text-blue-600 p-2">
+                Déplacez-vous, interagissez, et expérimentez dans cet espace 3D
+              </p>
+            </div>
           </Html>
         )}
       </Forme>
@@ -132,13 +182,13 @@ export function Composition({ router }) {
         maxRange={1.2}
         valRotation={-0.007}
       />
-       <Forme
+      <Forme
         typeForme="torus"
-        color="#32083f"
+        color="#8faf00"
         args={[1, 0.4, 4, 6]}
         factor={0.4}
         delay={2250}
-        opacity={0.7}
+        opacity={0.5}
         speed={2.5}
         position={[-15, 2.9, -25]}
         minRange={2.2}
@@ -149,16 +199,15 @@ export function Composition({ router }) {
       <Forme
         typeForme="torusknot"
         color="#052710"
-        // args={[1, 0.4, 4, 6]}
         factor={0.4}
         delay={1050}
         opacity={0.4}
         speed={2.5}
-        position={[-9,-2.9, -10]}
+        position={[-9, -2.9, -10]}
         minRange={0.8}
         maxRange={0.3}
         inverser={false}
-        valRotation={0.010}
+        valRotation={0.01}
       />
       <Forme
         typeForme="cone"
@@ -289,48 +338,3 @@ export function Forme({
     </a.mesh>
   );
 }
-
-type PropsForme = {
-  /** type possible de la forme */
-  typeForme: "sphere" | "cube" | "cone" | "dodecagone" | "torus" | "torusknot";
-  /**position de la forme X Y Z */
-  position: [number, number, number];
-  /** couleur de la forme , string , hex, rgb */
-  color?: string;
-  /** opacité de la forme entre 0 et 1 */
-  opacity?: number;
-  /** vitesse de l'animation de wobble ou distortion */
-  speed?: number;
-  /** facteur de puissance de la distortion */
-  factor?: number;
-  /** délai de l'animation de position, en MS */
-  delay?: number;
-  /** constructeur de la forme */
-  args?: number[];
-  /** valeur minimale de l'animation de pos y */
-  minRange?: number;
-  /** valeur maximale de l'animation de pos y */
-  maxRange?: number;
-  /** masse de la forme */
-  mass?: number;
-  /** la force énergétique du spring */
-  tension?: number;
-  /** la résistance du spring */
-  friction?: number;
-  /** si vrai, l'animation ne vas pas overshoot */
-  clamp?: boolean;
-  /** si vrai, commencer l'animation dans l'autre sens */
-  inverser?: boolean;
-  /** valeur positive ou négative pour l'animation de rotation de la forme */
-  valRotation: number;
-  /** composants enfant de la forme */
-  children?: ReactNode;
-  /** fonction à exécuter au clic de la forme */
-  onClick?: () => void;
-  /** état actif ou non de l'élément */
-  actif?: boolean;
-  /** fonction a exécuter lors du survol de la forme */
-  hoverIn?: () => void;
-  /** fonction à exécuter quand on cesse de survoler la forme */
-  hoverOut?: () => void;
-};
