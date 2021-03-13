@@ -4,14 +4,19 @@ import { useRouter } from "next/router";
 import { OrbitControls, Stars, PerspectiveCamera } from "@react-three/drei";
 import { Theme } from "../../pages/_app";
 import { softShadows, Html } from "@react-three/drei";
+import { useSpring, a } from "react-spring/three";
 
-// TODO : animation d'intro et lazy load la 3D ?
-// TODO : zoom-out le groupe lors d'arrivée page bonus
+// TODO : lazy load la 3D ?
 
 softShadows();
 
 export default function Scene3D({ theme }: { theme: Theme }) {
   const router = useRouter();
+
+  const animEntree = useSpring({
+    from: { scale: [0,0,0] },
+    to: { scale: [1,1,1] },
+  });
 
   return (
     <Canvas
@@ -41,7 +46,7 @@ export default function Scene3D({ theme }: { theme: Theme }) {
         shadow-camera-top={30}
         shadow-camera-bottom={-10}
       />
-      <ambientLight  intensity={0.3} />
+      <ambientLight intensity={0.3} />
       <pointLight intensity={0.3} position={[-10, 0, -20]} />
       {/* <pointLight intensity={0.3} position={[0, -10, 0]} /> */}
 
@@ -50,7 +55,11 @@ export default function Scene3D({ theme }: { theme: Theme }) {
         <OrbitControls />
       )}
 
-      {theme === "light" && <Composition router={router}/>}
+      {theme === "light" && (
+        <a.group {...animEntree}>
+          <Composition router={router} />
+        </a.group>
+      )}
 
       {router.pathname === "/bonus" && theme === "light" && (
         <mesh receiveShadow rotation-x={-Math.PI / 2} position-y={-5.7}>
@@ -61,25 +70,25 @@ export default function Scene3D({ theme }: { theme: Theme }) {
       )}
 
       {theme === "dark" && (
-        <group>
+        <a.group {...animEntree}>
           <Stars
             radius={100}
-            depth={50} 
-            count={5000} 
-            factor={4} 
-            saturation={0} 
-            fade 
+            depth={50}
+            count={5000}
+            factor={4}
+            saturation={0}
+            fade
           />
           {router.pathname === "/bonus" && (
-          <mesh position={[0, 2, 0]}>
-            <Html transform distanceFactor={10}>
-              <h1 className="text-blue-500">
-                Amusez-vous parmis les étoiles!
-              </h1>
-            </Html>
-          </mesh>
+            <mesh position={[0, 2, 0]}>
+              <Html transform distanceFactor={10}>
+                <h1 className="text-blue-500">
+                  Amusez-vous parmis les étoiles!
+                </h1>
+              </Html>
+            </mesh>
           )}
-        </group>
+        </a.group>
       )}
     </Canvas>
   );
