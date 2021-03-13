@@ -1,3 +1,13 @@
+
+export type PageAccueil = {
+  titrePrincipal: string;
+  phraseDaccueil: string;
+  boutonCtaSectionHero: string;
+  texteSectionBleue: string;
+  texteSuiteSectionBleue: string;
+  boutonCtaSectionTechnos: string;
+};
+
 export type ImageProjet = {
   /** Hauteur de l'image */
   height: number;

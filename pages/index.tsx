@@ -7,9 +7,9 @@ import { client } from "../lib/api";
 import { gql } from "graphql-request";
 import { GetStaticProps } from "next";
 import { MutableRefObject, useState } from "react";
-import type { ListeAppercuProjets } from "../lib/types";
+import type { AppercuProjet as appProjets, ListeAppercuProjets, PageAccueil } from "../lib/types";
 
-export default function Home({ projets }: ListeAppercuProjets) {
+export default function Home({ projets, pageAccueil }: {projets : appProjets[], pageAccueil: PageAccueil}) {
   // création d'un état de page pour sauvegarder le ref d'un élément auquel on veut scroll
   const [refElScroll, setRefElScroll] = useState<
     MutableRefObject<HTMLElement | null>
@@ -25,9 +25,9 @@ export default function Home({ projets }: ListeAppercuProjets) {
         />
       </Head>
       <div className="pb-48 sm:pb-28 max-w-xs mx-auto md:max-w-2xl lg:max-w-4xl xl:max-w-7xl">
-        <Hero refPourScroll={refElScroll} />
+        <Hero refPourScroll={refElScroll} texteHero={pageAccueil} />
 
-        <Perso />
+        <Perso textePerso={pageAccueil}/>
 
         <AppercuProjet projets={projets} />
 
@@ -38,7 +38,7 @@ export default function Home({ projets }: ListeAppercuProjets) {
 }
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const requeteGql = gql`
+  const requeteProjets = gql`
     {
       projets(orderBy: date_DESC, first: 4) {
         titre
@@ -53,11 +53,26 @@ export const getStaticProps: GetStaticProps = async (context) => {
     }
   `;
 
-  const { projets }: ListeAppercuProjets = await client.request(requeteGql);
+  const requetePage = gql`
+    {
+      pageAccueil(where: { id: "ckm7x3rwg2sn10b87n5au71g7" }) {
+        titrePrincipal
+        phraseDaccueil
+        boutonCtaSectionHero
+        texteSectionBleue
+        texteSuiteSectionBleue
+        boutonCtaSectionTechnos
+      }
+    }
+  `;
+
+  const { projets }: ListeAppercuProjets = await client.request(requeteProjets);
+  const { pageAccueil } : {pageAccueil : PageAccueil} = await client.request(requetePage);
 
   return {
     props: {
       projets,
+      pageAccueil
     },
     revalidate: 10,
   };
