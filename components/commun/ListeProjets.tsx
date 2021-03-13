@@ -6,7 +6,7 @@ import { useInView } from "react-intersection-observer";
 export default function ListeProjets({ projets }: {projets: AppercuProjet[]; }) {
   
   // hook pour détecter quand un élément entre dans la vue
-  const { ref, entry } = useInView({ triggerOnce: true, threshold: 0.15 });
+  const { ref, entry } = useInView({ triggerOnce: true, threshold: 0.10 });
 
   // animer si l'élément est dans la vue
   const trail = useTrail(projets.length, {

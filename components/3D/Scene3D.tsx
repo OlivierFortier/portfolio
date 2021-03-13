@@ -42,8 +42,8 @@ export default function Scene3D({ theme }: { theme: Theme }) {
         shadow-camera-bottom={-10}
       />
       <ambientLight  intensity={0.3} />
-      {/* <pointLight intensity={0.3} position={[-10, 0, -20]} /> */}
-      <pointLight intensity={0.3} position={[0, -10, 0]} />
+      <pointLight intensity={0.3} position={[-10, 0, -20]} />
+      {/* <pointLight intensity={0.3} position={[0, -10, 0]} /> */}
 
       {router.pathname === "/bonus" && (
         //@ts-ignore

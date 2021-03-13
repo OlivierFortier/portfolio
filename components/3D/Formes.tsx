@@ -41,7 +41,7 @@ export function Composition({ router }) {
   // petite animation du cube jaune lors du clic
   function tournerCouleurCube() {
     setEtatCube({
-      color: "#26008fe",
+      color: "#0b46b4",
       speed: -0.03
     })
     setTimeout(()=>{
@@ -154,7 +154,7 @@ export function Composition({ router }) {
         {router.pathname === "/bonus" && modalActif && (
           <Html distanceFactor={10} transform sprite>
             <div className="bg-gray-100 rounded-md shadow-lg relative flex flex-col justify-center items-center">
-              <h1 className="text-blue-600 p-2">Cet environnement est interactif !</h1>
+              <h1 className="text-blue-600 p-2 pr-4">Cet environnement est interactif !</h1>
               <FaWindowClose
               onClick={()=> setModalActif(false)}
                 role="button"
@@ -198,7 +198,7 @@ export function Composition({ router }) {
       />
       <Forme
         typeForme="torusknot"
-        color="#052710"
+        color="#8f0847"
         factor={0.4}
         delay={1050}
         opacity={0.4}
