@@ -2,13 +2,13 @@ import { gql } from "graphql-request";
 import Head from "next/head";
 import Link from "next/link";
 import { GetStaticPaths, GetStaticProps } from "next";
-import { AppercuProjet } from "../../components/accueil/AppercuProjets";
 import { client } from "../../lib/api";
 import Carousel from "../../components/projets/Carousel";
 import Markdown from "markdown-to-jsx";
 import { useRouter } from "next/router";
+import type { AppercuProjet } from "../../lib/types";
 
-export type Projet = AppercuProjet & {
+type Projet = AppercuProjet & {
   lienUrlDuProjet: string;
   lienUrlDuCode: string;
   sousTitreDetails: string;

@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { BsArrowRight } from "react-icons/bs";
-import { AppercuProjet } from "../accueil/AppercuProjets";
 import {animated} from "react-spring";
+import type { AppercuProjet } from "../../lib/types";
 
 export default function CarteProjet({ projet, animation }: {projet : AppercuProjet; animation : React.CSSProperties}) {
   return (

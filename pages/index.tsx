@@ -1,19 +1,19 @@
 import Hero from "../components/accueil/Hero";
 import Head from "next/head";
 import Perso from "../components/accueil/Perso";
-import AppercuProjet, {
-  ListeAppercuProjets,
-} from "../components/accueil/AppercuProjets";
+import AppercuProjet from "../components/accueil/AppercuProjets";
 import AppercuTechnos from "../components/accueil/AppercuTechnos";
 import { client } from "../lib/api";
 import { gql } from "graphql-request";
 import { GetStaticProps } from "next";
 import { MutableRefObject, useState } from "react";
+import type { ListeAppercuProjets } from "../lib/types";
 
 export default function Home({ projets }: ListeAppercuProjets) {
-  
   // création d'un état de page pour sauvegarder le ref d'un élément auquel on veut scroll
-  const [refElScroll, setRefElScroll] = useState< MutableRefObject<HTMLElement | null> >(null);
+  const [refElScroll, setRefElScroll] = useState<
+    MutableRefObject<HTMLElement | null>
+  >(null);
 
   return (
     <>
@@ -40,7 +40,7 @@ export default function Home({ projets }: ListeAppercuProjets) {
 export const getStaticProps: GetStaticProps = async (context) => {
   const requeteGql = gql`
     {
-      projets(orderBy: date_DESC first: 4) {
+      projets(orderBy: date_DESC, first: 4) {
         titre
         sommaire
         images {
@@ -59,6 +59,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
     props: {
       projets,
     },
-    revalidate: 10
+    revalidate: 10,
   };
 };

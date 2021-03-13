@@ -1,7 +1,7 @@
-import { AppercuProjet } from "../accueil/AppercuProjets";
 import CarteProjet from "./CarteProjet";
 import { useTrail } from "react-spring";
 import { useInView } from "react-intersection-observer";
+import type { AppercuProjet } from "../../lib/types";
 
 export default function ListeProjets({ projets }: {projets: AppercuProjet[]; }) {
   

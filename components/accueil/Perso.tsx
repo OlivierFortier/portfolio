@@ -1,5 +1,4 @@
 import { useSpring, animated } from "react-spring";
-
 export default function Perso() {
   
   // animation d'entrée de la section

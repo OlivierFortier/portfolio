@@ -1,30 +1,6 @@
+import type { ListeAppercuProjets } from "../../lib/types";
 import ListeProjets from "../commun/ListeProjets";
 import GrilleSvgDroit from "./GrilleSvgDroit";
-
-export type ImageProjet = {
-  /** Hauteur de l'image */
-  height: number;
-  /** Largeur de l'image */
-  width: number;
-  /** Chemin de l'image */
-  url: string;
-};
-
-export type AppercuProjet = {
-  /**Titre du projet */
-  titre: string;
-  /**Sommaire représentant le projet */
-  sommaire: string;
-  /**Tableau des images du projet */
-  images: ImageProjet[];
-  /**Slug du projet, utilisé pour les chemins et url */
-  slug: string;
-};
-
-export type ListeAppercuProjets = {
-  /** Tableau des projets */
-  projets: AppercuProjet[];
-};
 
 export default function AppercuProjets({ projets }: ListeAppercuProjets) {
   return (

@@ -1,5 +1,3 @@
-import Link from "next/link";
-// import Image from 'next/image';
 import { useSpring, animated } from "react-spring";
 import lottie from "lottie-web";
 import { useEffect } from "react";

@@ -3,7 +3,7 @@ import Head from "next/head";
 import { client } from "../../lib/api";
 import ListeProjets from "../../components/commun/ListeProjets";
 import { gql } from "graphql-request";
-import { ListeAppercuProjets } from "../../components/accueil/AppercuProjets";
+import type { ListeAppercuProjets } from "../../lib/types";
 
 export default function index({ projets }: ListeAppercuProjets) {
   return (

@@ -1,3 +1,4 @@
+import type { ImageProjet } from "../../lib/types";
 import Image from "next/image";
 
 // Import Swiper React components
@@ -13,9 +14,6 @@ import SwiperCore, {
 import "swiper/swiper.min.css";
 import "swiper/components/navigation/navigation.min.css";
 import "swiper/components/pagination/pagination.min.css";
-
-
-import { ImageProjet } from "../accueil/AppercuProjets";
 
 SwiperCore.use([Navigation, Pagination, A11y, Autoplay]);
 
