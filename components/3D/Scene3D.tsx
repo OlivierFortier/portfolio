@@ -38,7 +38,7 @@ export default function Scene3D({ theme }: { theme: Theme }) {
         shadow-mapSize-height={1024}
         shadow-camera-far={50}
         shadow-camera-left={-30}
-        shadow-camera-right={10}
+        shadow-camera-right={20}
         shadow-camera-top={30}
         shadow-camera-bottom={-10}
       />
