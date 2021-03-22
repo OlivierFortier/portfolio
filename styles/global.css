@@ -1,3 +1,4 @@
+/* définition des styles de base communs à tout le site */
 :root {
   --dark-mode-bg : #131516;
   --light-mode-bg : rgba(249, 250, 251, 1);

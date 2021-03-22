@@ -10,8 +10,12 @@ export function TechnoReact() {
         </div>
       </div>
       <div>
-        <h3 className="mb-2 font-semibold text-blue-600 dark:text-blue-400 leading-5">React</h3>
-        <p className="text-sm text-blue-500 dark:text-blue-400">Le cadriciel front-end le plus populaire</p>
+        <h3 className="mb-2 font-semibold text-blue-600 dark:text-blue-400 leading-5">
+          React
+        </h3>
+        <p className="text-sm text-blue-500 dark:text-blue-400">
+          Le cadriciel front-end le plus populaire
+        </p>
       </div>
     </div>
   );
@@ -26,8 +30,12 @@ export function TechnoVue() {
         </div>
       </div>
       <div>
-        <h3 className="mb-2 font-semibold text-blue-600 dark:text-blue-400 leading-5">Vue</h3>
-        <p className="text-sm text-blue-500 dark:text-blue-400">Le cadriciel front-end javascript progressif</p>
+        <h3 className="mb-2 font-semibold text-blue-600 dark:text-blue-400 leading-5">
+          Vue
+        </h3>
+        <p className="text-sm text-blue-500 dark:text-blue-400">
+          Le cadriciel front-end javascript progressif
+        </p>
       </div>
     </div>
   );
@@ -42,7 +50,9 @@ export function TechnoNext() {
         </div>
       </div>
       <div>
-        <h3 className="mb-2 font-semibold text-blue-600 dark:text-blue-400 leading-5">Next.js</h3>
+        <h3 className="mb-2 font-semibold text-blue-600 dark:text-blue-400 leading-5">
+          Next.js
+        </h3>
         <p className="text-sm text-blue-500 dark:text-blue-400">
           Le méta-cadriciel isomorphe pour react
         </p>
@@ -60,7 +70,9 @@ export function TechnoNode() {
         </div>
       </div>
       <div>
-        <h3 className="mb-2 font-semibold text-blue-600 dark:text-blue-400 leading-5">Node</h3>
+        <h3 className="mb-2 font-semibold text-blue-600 dark:text-blue-400 leading-5">
+          Node
+        </h3>
         <p className="text-sm text-blue-500 dark:text-blue-400">
           Le fameux runtime qui a changé le monde
         </p>
@@ -78,8 +90,12 @@ export function TechnoNet() {
         </div>
       </div>
       <div>
-        <h3 className="mb-2 font-semibold text-blue-600 dark:text-blue-400 leading-5">.Net</h3>
-        <p className="text-sm text-blue-500 dark:text-blue-400">L'écosystème OOP open-source moderne</p>
+        <h3 className="mb-2 font-semibold text-blue-600 dark:text-blue-400 leading-5">
+          .Net
+        </h3>
+        <p className="text-sm text-blue-500 dark:text-blue-400">
+          L'écosystème OOP open-source moderne
+        </p>
       </div>
     </div>
   );
@@ -94,7 +110,9 @@ export function TechnoGql() {
         </div>
       </div>
       <div>
-        <h3 className="mb-2 font-semibold text-blue-600 dark:text-blue-400 leading-5">GraphQL</h3>
+        <h3 className="mb-2 font-semibold text-blue-600 dark:text-blue-400 leading-5">
+          GraphQL
+        </h3>
         <p className="text-sm text-blue-500 dark:text-blue-400">
           La façon moderne d'interagir avec les données
         </p>

@@ -32,6 +32,8 @@ export default function index({ projets }: ListeAppercuProjets) {
   );
 }
 
+// meme principe ! encore la magie de Next.js et graphQl ! cela simplifie au maximum ma gestion dynamique des données
+// et du contenu
 export const getStaticProps: GetStaticProps = async (context) => {
   const requeteGql = gql`
     {

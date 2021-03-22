@@ -1,10 +1,7 @@
 import type { AppProps } from "next/app";
-
 import "../styles/tailwind.css";
 import "../styles/utilities.css";
-
 import "../styles/global.css";
-
 import Layout from "../components/layout/Layout";
 import { useEffect } from "react";
 import { useState } from "react";
@@ -15,9 +12,11 @@ import { useState } from "react";
 export type Theme = "light" | "dark";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  // bouton pour changer le theme sombre ou lumineux
+
+  //état du bouton pour changer le theme sombre ou lumineux
   const [theme, setTheme] = useState<Theme>("light");
 
+  // gestion du thème de couleur dans le localstorage pour sauvegarder la préférence utilisateur
   useEffect(() => {
     if (!localStorage.getItem("theme")) localStorage.setItem("theme", "light");
 

@@ -3,20 +3,22 @@ import { IoClose } from "react-icons/io5";
 import { IoMenu } from "react-icons/io5";
 import { FiSend } from "react-icons/fi";
 import { useState } from "react";
-import {useRouter} from 'next/router';
+import { useRouter } from "next/router";
 import Avatar from "./Avatar";
 import { useTransition, animated } from "react-spring";
 
 export default function MenuMobile() {
+
+  // définition de l'état du menu
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const router = useRouter();
 
-  // animation de transition du menu
-  const transitions = useTransition(isMenuOpen , null, {
-    from: {transform: "scale(0)", opacity: 0},
-    enter : {transform: "scale(1)", opacity: 1},
-    leave : {transform: "scale(0)", opacity: 0}
-  })
+  // définition de l'animation de transition du menu
+  const transitions = useTransition(isMenuOpen, null, {
+    from: { transform: "scale(0)", opacity: 0 },
+    enter: { transform: "scale(1)", opacity: 1 },
+    leave: { transform: "scale(0)", opacity: 0 },
+  });
 
   return (
     <div className="lg:hidden">
@@ -29,6 +31,7 @@ export default function MenuMobile() {
         <IoMenu className="text-6xl" />
       </button>
 
+      {/* animation de transition de l'apparition du menu mobile */}
       {transitions.map(
         ({ item, key, props }) =>
           item && (

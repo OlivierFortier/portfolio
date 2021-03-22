@@ -20,6 +20,8 @@ type Projet = AppercuProjet & {
 export default function Projet({ projet }: { projet: Projet }) {
   const router = useRouter();
 
+  // grace à Next.js, je peux détecter si une page n'a pas finie d'être générée et afficher 
+  // un message très facilement
   if (router.isFallback) {
     return (
       <section className="flex justify-center items-center">
@@ -108,6 +110,8 @@ export default function Projet({ projet }: { projet: Projet }) {
   );
 }
 
+
+// encore une fois, la magie de Next.js et GraphQL !!
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const requeteGql = gql`
     query unProjet($slug: String!) {
@@ -141,6 +145,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   };
 };
 
+// encore plus de magie de Next.js ! Cette fois-ci, on peut générer des pages dynamiquement,
+// donc chaque fois que je crée du nouveau contenu dans mon CMS, Next.js va automatiquement générer une nouvelle page
+// pour ce contenu !
 export const getStaticPaths: GetStaticPaths = async () => {
   type CheminsProjets = {
     titre: string;

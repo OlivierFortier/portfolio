@@ -4,10 +4,7 @@ import GrilleSvgDroit from "./GrilleSvgDroit";
 
 export default function AppercuProjets({ projets }: ListeAppercuProjets) {
   return (
-    <section
-      id="appercuProjets"
-      className="body-font py-8 sm:py-14"
-    >
+    <section id="appercuProjets" className="body-font py-8 sm:py-14">
       <h1 className="px-4 sm:text-center mb-6 font-sans text-3xl font-bold tracking-tight text-blue-600 dark:text-blue-400 sm:text-4xl sm:leading-none">
         Projets{" "}
         <span className="relative inline-block">

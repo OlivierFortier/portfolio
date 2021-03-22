@@ -50,7 +50,6 @@ export default function index({pageAPropos} : {pageAPropos : PageAPropos}) {
           <p className="px-4 text-lg mx-auto xl:max-w-4xl text-blue-500 mb-8">
             {pageAPropos.resumePersonnel}
           </p>
-
           <animated.div
             style={growRight}
             className="origin-left xl:max-w-4xl flex items-center justify-between mx-4 p-6 border-l-4 sm:py-8 dark:border-blue-600 dark:bg-blue-900 dark:text-blue-500 border-blue-300 bg-blue-50 text-blue-300"
@@ -60,7 +59,6 @@ export default function index({pageAPropos} : {pageAPropos : PageAPropos}) {
             </p>
           </animated.div>
         </section>
-
         <section className="body-font py-8 pb-6 sm:py-14 sm:pt-0 sm:pb-8">
           <h1 className="px-4 mb-6 md:mb-8 font-sans text-xl font-bold tracking-tight text-blue-600 dark:text-blue-500 sm:text-3xl sm:leading-none">
             {pageAPropos.titreSection2}
@@ -69,9 +67,7 @@ export default function index({pageAPropos} : {pageAPropos : PageAPropos}) {
            {pageAPropos.texteSection2}
           </p>
         </section>
-
         <ListeTechnos />
-
         <section className="py-6  text-blue-600">
           <div
             ref={ref}
@@ -97,7 +93,6 @@ export default function index({pageAPropos} : {pageAPropos : PageAPropos}) {
                   </span>
                 </span>
               </a>
-
               <a
               aria-label="Consulter mon CV"
                 href="/medias/Olivier_Fortier_CV.pdf"
@@ -123,6 +118,8 @@ type PageAPropos = {
   texteSection2: string;
 }
 
+// encore une fois de la magie de Next.js ! simplement pour générer la page à l'avance,
+// selon le contenu que j'écris dans mon CMS
 export const getStaticProps: GetStaticProps = async (context) => {
 
   const requetePage = gql`

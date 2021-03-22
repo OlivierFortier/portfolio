@@ -6,13 +6,14 @@ import { Theme } from "../../pages/_app";
 import { softShadows, Html } from "@react-three/drei";
 import { useSpring, a } from "react-spring/three";
 
-// TODO : lazy load la 3D ?
 
+// fonction provenant d'une librairie externe, qui applique des ombres douces à tous les objets de la scene
 softShadows();
 
 export default function Scene3D({ theme }: { theme: Theme }) {
   const router = useRouter();
 
+  // définition de l'animation d'entrée des formes 3D
   const animEntree = useSpring({
     from: { scale: [0,0,0], opacity: 0 },
     to: { scale: [1,1,1], opacity: 1 },
@@ -24,6 +25,8 @@ export default function Scene3D({ theme }: { theme: Theme }) {
     }
   });
 
+  // définition du canvas, de la scène, des lumières et des controles.
+  // notez la syntaxe déclarative, familière au html et à react
   return (
     <Canvas
       colorManagement

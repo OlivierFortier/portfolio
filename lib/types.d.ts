@@ -1,10 +1,18 @@
+// définition des types des props des différends composants du projet
+
 
 export type PageAccueil = {
+  /** Le titre principal de la page affichée dans la section héro */
   titrePrincipal: string;
+  /** la phrase d'accueil qui suit le titre principal */
   phraseDaccueil: string;
+  /** texte du bouton d'invitation de la section héro */
   boutonCtaSectionHero: string;
+  /** texte informatif de la section bleue */
   texteSectionBleue: string;
+  /** texte informatif suivant la section bleue */
   texteSuiteSectionBleue: string;
+  /** texte du bouton d'invitation situé au bas de la page */
   boutonCtaSectionTechnos: string;
 };
 

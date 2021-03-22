@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { BsArrowRight } from "react-icons/bs";
-import {animated} from "react-spring";
+import { animated } from "react-spring";
 import type { AppercuProjet } from "../../lib/types";
 
-export default function CarteProjet({ projet, animation }: {projet : AppercuProjet; animation : React.CSSProperties}) {
+export default function CarteProjet({ projet, animation, }: { projet: AppercuProjet; animation: React.CSSProperties; }) {
   return (
     <animated.li style={animation} className="py-4 md:p-4 lg:w-1/2 md:w-full">
       <Link href={`/projets/${projet.slug}`}>
@@ -27,7 +27,10 @@ export default function CarteProjet({ projet, animation }: {projet : AppercuProj
                 {projet?.sommaire || "Erreur : sommaire non défini"}
               </p>
               <Link href={`/projets/${projet.slug}`}>
-                <a aria-label={`En savoir plus sur le projet : ${projet.titre}`} className="font-semibold text-lg mt-3 text-blue-600 dark:text-blue-400 inline-flex items-center">
+                <a
+                  aria-label={`En savoir plus sur le projet : ${projet.titre}`}
+                  className="font-semibold text-lg mt-3 text-blue-600 dark:text-blue-400 inline-flex items-center"
+                >
                   En savoir plus
                   <BsArrowRight className="ml-2" size={20} />
                 </a>

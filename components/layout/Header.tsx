@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { FiSend } from "react-icons/fi";
 import MenuMobile from "./MenuMobile";
-// import MenuMobilePleinEcran from "./MenuMobilePleinEcran";
 import Avatar from "./Avatar";
 import { useRouter } from "next/router";
 
@@ -33,7 +32,9 @@ export default function Header() {
               <a
                 aria-label="Aller à la page d'accueil"
                 title="Accueil"
-                className={`${router.pathname === "/" && "underline"} font-medium tracking-wide transition-colors duration-200 dark:hover:text-blue-500 hover:text-blue-800`}
+                className={`${
+                  router.pathname === "/" && "underline"
+                } font-medium tracking-wide transition-colors duration-200 dark:hover:text-blue-500 hover:text-blue-800`}
               >
                 Accueil
               </a>
@@ -44,7 +45,9 @@ export default function Header() {
               <a
                 aria-label="Aller à la page des projets"
                 title="Projets"
-                className={`${router.pathname.includes("/projets") && "underline"} font-medium tracking-wide transition-colors duration-200 dark:hover:text-blue-500  hover:text-blue-800`}
+                className={`${
+                  router.pathname.includes("/projets") && "underline"
+                } font-medium tracking-wide transition-colors duration-200 dark:hover:text-blue-500  hover:text-blue-800`}
               >
                 Projets
               </a>
@@ -55,7 +58,9 @@ export default function Header() {
               <a
                 aria-label="Aller à la page 'À propos'"
                 title="À propos"
-                className={`${router.pathname === "/a-propos" && "underline"} font-medium tracking-wide transition-colors duration-200 dark:hover:text-blue-500  hover:text-blue-800`}
+                className={`${
+                  router.pathname === "/a-propos" && "underline"
+                } font-medium tracking-wide transition-colors duration-200 dark:hover:text-blue-500  hover:text-blue-800`}
               >
                 À propos
               </a>
@@ -66,7 +71,9 @@ export default function Header() {
               <a
                 aria-label="Aller à la page bonus"
                 title="Bonus"
-                className={`${router.pathname === "/bonus" && "underline"} font-medium tracking-wide transition-colors duration-200 dark:hover:text-blue-500 hover:text-blue-800`}
+                className={`${
+                  router.pathname === "/bonus" && "underline"
+                } font-medium tracking-wide transition-colors duration-200 dark:hover:text-blue-500 hover:text-blue-800`}
               >
                 Bonus
               </a>

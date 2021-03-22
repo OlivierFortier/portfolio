@@ -5,8 +5,13 @@ import svgAnim from "../../assets/hero-anim.json";
 import { MutableRefObject } from "react";
 import type { PageAccueil } from "../../lib/types";
 
-export default function Hero({refPourScroll, texteHero} : {refPourScroll : any, texteHero : PageAccueil}) {
-
+export default function Hero({
+  refPourScroll,
+  texteHero,
+}: {
+  refPourScroll: any;
+  texteHero: PageAccueil;
+}) {
   // animation d'entrée du texte principal
   const entreeGauche = useSpring({
     from: { opacity: 0, transform: "scaleX(0.65)" },
@@ -35,8 +40,10 @@ export default function Hero({refPourScroll, texteHero} : {refPourScroll : any, 
   }, []);
 
   // faire dérouler la page jusqu'en bas
-  function scrollToAppercu<T extends HTMLElement>(refScroll : MutableRefObject<T>) {
-    refScroll.current.scrollIntoView({behavior: "smooth"});
+  function scrollToAppercu<T extends HTMLElement>(
+    refScroll: MutableRefObject<T>
+  ) {
+    refScroll.current.scrollIntoView({ behavior: "smooth" });
   }
 
   return (
@@ -55,9 +62,13 @@ export default function Hero({refPourScroll, texteHero} : {refPourScroll : any, 
             </h2>
           </div>
           <div className="flex flex-col items-center md:flex-row">
-              <a aria-label="Dérouler jusqu'au bas de la page rapidement" onClick={()=> scrollToAppercu(refPourScroll)} className="bg-gray-100 dark:bg-transparent cursor-pointer text-lg inline-flex items-center justify-center w-full h-12 px-6 mb-3 font-medium tracking-wide text-blue-600 dark:text-blue-400 transition duration-200 rounded shadow-md md:w-auto md:mr-4 md:mb-0 border-2 border-blue-600 dark:border-blue-400  hover:bg-blue-600 dark:hover:bg-blue-400 dark:hover:text-blue-800 hover:text-white focus:shadow-outline focus:outline-none">
-                {texteHero.boutonCtaSectionHero}
-              </a>
+            <a
+              aria-label="Dérouler jusqu'au bas de la page rapidement"
+              onClick={() => scrollToAppercu(refPourScroll)}
+              className="bg-gray-100 dark:bg-transparent cursor-pointer text-lg inline-flex items-center justify-center w-full h-12 px-6 mb-3 font-medium tracking-wide text-blue-600 dark:text-blue-400 transition duration-200 rounded shadow-md md:w-auto md:mr-4 md:mb-0 border-2 border-blue-600 dark:border-blue-400  hover:bg-blue-600 dark:hover:bg-blue-400 dark:hover:text-blue-800 hover:text-white focus:shadow-outline focus:outline-none"
+            >
+              {texteHero.boutonCtaSectionHero}
+            </a>
           </div>
         </animated.div>
 

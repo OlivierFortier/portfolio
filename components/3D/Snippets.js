@@ -1,4 +1,6 @@
-// animer un mesh de haut en bas
+// autres exemples de possibilités d'utilisation plus traditionnelles avec React-three-fiber
+
+// animer un mesh de haut en bas de facon plus "traditionnelle"
 // (
 //     let descend = true;
 //   useFrame(() => {
@@ -19,5 +21,5 @@
 //   });
 // )
 
-// animation smooth d'une valeur a une autre en loop
+// animation smooth d'une valeur a une autre en loop grace aux mathématiques
 // Math.sin(state.clock.getElapsedTime()) * delay;

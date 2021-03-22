@@ -59,6 +59,10 @@ export function Composition({ router }) {
 
   return (
     <group>
+
+      {/* chaque forme est décrite avec les attributs typés , optionnels, et faciles
+      à modifier, comme des éléments HTML. Puisqu'une forme est un élément visuel,
+      il en va de soit qu'elle soit représentée de cette façon et non par une classe orientée objet */}
       <Forme
         typeForme="dodecagone"
         onClick={() => setTexteSphere("pouf !")}
@@ -241,6 +245,9 @@ export function Composition({ router }) {
   );
 }
 
+// grace à R3F et au modèle de react, il est facile de créer des formes dynamiques et réutilisables
+// on peut facilement sortir des sentiers battus et inventer nos propres choses, sans nécéssairement 
+// etre ultra bon en programmation, mais seulement avoir une connaissance du HTML !
 export function Forme({
   typeForme = "cube",
   children,
@@ -324,6 +331,7 @@ export function Forme({
       {...animScale}
     >
       {
+        // on applique un matériel différent selon les types de formes affichés
         typeForme !== "cube" && typeForme !== "dodecagone" ? 
         ( //@ts-ignore
           <MeshDistortMaterial opacity={opacity} distort={factor} speed={speed} color={color} /> 

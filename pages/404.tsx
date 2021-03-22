@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+// page d'erreur personnalisé au cas ou un utilisateur tente de naviguer vers une page inexistante
 export default function Custom404() {
   return (
     <section className="flex items-center h-full p-16 text-blue-800 dark:text-blue-400">

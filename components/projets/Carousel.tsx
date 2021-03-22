@@ -1,24 +1,15 @@
 import type { ImageProjet } from "../../lib/types";
 import Image from "next/image";
-
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, {
-  Navigation,
-  Pagination,
-  A11y,
-  Autoplay,
-} from "swiper";
-
-// Import Swiper styles
+import SwiperCore, { Navigation, Pagination, A11y, Autoplay } from "swiper";
 import "swiper/swiper.min.css";
 import "swiper/components/navigation/navigation.min.css";
 import "swiper/components/pagination/pagination.min.css";
 
+// définition des plugins utilisés pour le carousel
 SwiperCore.use([Navigation, Pagination, A11y, Autoplay]);
 
 export default function Carousel({ images }: { images: ImageProjet[] }) {
-
   return (
     <Swiper
       autoHeight={true}
@@ -33,6 +24,7 @@ export default function Carousel({ images }: { images: ImageProjet[] }) {
         nextEl: ".swiper-button-next",
       }}
     >
+      {/* boucle pour afficher toutes les images d'un projet */}
       {images.map((photo, index) => {
         return (
           <SwiperSlide key={index}>

@@ -7,6 +7,8 @@ import Document, {
 } from "next/document";
 
 class MyDocument extends Document {
+  
+  // fonction par défaut du framework Next.js pour la gestion des données dans un contexte hybride SSG, SSR, ISG
   static async getInitialProps(ctx: DocumentContext) {
     const initialProps = await Document.getInitialProps(ctx);
     return { ...initialProps };
