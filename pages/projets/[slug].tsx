@@ -42,7 +42,7 @@ export default function Projet({ projet }: { projet: Projet }) {
       <section className="pb-48 sm:pb-28 px-4 py-14 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 ">
         <div className="mx-auto  lg:max-w-4xl">
           <div className="max-w-xl mb-10   lg:max-w-4xl md:mb-12">
-            <h1 className="max-w-lg mb-6 font-sans text-4xl font-bold leading-none tracking-tight dark:text-blue-400 text-blue-600 sm:text-6xl ">
+            <h1 className=" mb-6 font-sans text-4xl font-bold leading-none tracking-tight dark:text-blue-400 text-blue-600 sm:text-6xl ">
               {projet.titre || "Erreur : titre non défini"}
             </h1>
             <h2 className="text-base text-blue-500 dark:text-blue-400 md:text-lg">
