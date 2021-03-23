@@ -43,6 +43,7 @@ export default function MenuMobilePleinEcran() {
             </li>
             <li>
               <a
+                target="_blank"
                 href="mailto:olivier_fortier@outlook.com"
                 className="inline-flex items-center justify-center w-full h-12 px-6 py-8 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-blue-500 hover:bg-blue-700 focus:shadow-outline focus:outline-none"
               >

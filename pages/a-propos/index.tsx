@@ -54,9 +54,7 @@ export default function index({pageAPropos} : {pageAPropos : PageAPropos}) {
             style={growRight}
             className="origin-left xl:max-w-4xl flex items-center justify-between mx-4 p-6 border-l-4 sm:py-8 dark:border-blue-600 dark:bg-blue-900 dark:text-blue-500 border-blue-300 bg-blue-50 text-blue-300"
           >
-            <p>
-             {pageAPropos.texteAnimationSlide}
-            </p>
+            <p>{pageAPropos.texteAnimationSlide}</p>
           </animated.div>
         </section>
         <section className="body-font py-8 pb-6 sm:py-14 sm:pt-0 sm:pb-8">
@@ -64,7 +62,7 @@ export default function index({pageAPropos} : {pageAPropos : PageAPropos}) {
             {pageAPropos.titreSection2}
           </h1>
           <p className="px-4 text-lg mx-auto xl:max-w-4xl text-blue-500">
-           {pageAPropos.texteSection2}
+            {pageAPropos.texteSection2}
           </p>
         </section>
         <ListeTechnos />
@@ -83,7 +81,8 @@ export default function index({pageAPropos} : {pageAPropos : PageAPropos}) {
               className="flex flex-col items-center justify-center flex-shrink-0 mt-6 space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 lg:ml-4 lg:mt-0 lg:justify-end"
             >
               <a
-              aria-label="Ajoutez moi sur LinkedIn!"
+                target="_blank"
+                aria-label="Ajoutez moi sur LinkedIn!"
                 href="https://www.linkedin.com/in/olivier-fortier/"
                 className="cursor-pointer hover:text-white hover:bg-blue-600 transition-colors inline-flex items-center px-6 py-3 rounded border-blue-600 border-2 text-blue-600"
               >
@@ -94,7 +93,8 @@ export default function index({pageAPropos} : {pageAPropos : PageAPropos}) {
                 </span>
               </a>
               <a
-              aria-label="Consulter mon CV"
+                target="_blank"
+                aria-label="Consulter mon CV"
                 href="/medias/Olivier_Fortier_CV.pdf"
                 className="cursor-pointer hover:text-white hover:bg-blue-600 transition-colors inline-flex items-center px-5 py-3 rounded border-blue-600 border-2 text-blue-600"
               >

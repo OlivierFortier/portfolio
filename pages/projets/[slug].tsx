@@ -53,6 +53,7 @@ export default function Projet({ projet }: { projet: Projet }) {
             <span className="flex justify-between text-blue-700 dark:text-blue-500">
               {projet.lienUrlDuProjet && (
                 <a
+                  target="_blank"
                   aria-label="Lien vers le site du projet"
                   className="break-words underline"
                   href={projet.lienUrlDuProjet}
@@ -62,6 +63,7 @@ export default function Projet({ projet }: { projet: Projet }) {
               )}
               {projet.lienUrlDuCode && (
                 <a
+                  target="_blank"
                   aria-label="Lien vers le répo GitHub du projet"
                   className="break-words underline"
                   href={projet.lienUrlDuCode}

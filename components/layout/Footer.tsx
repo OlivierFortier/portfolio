@@ -31,6 +31,7 @@ export default function Footer({ theme, setDarkTheme, setLightTheme, }: { theme:
         </button>
         <span className="z-10 inline-flex  sm:mt-0 mt-4 justify-center sm:justify-start">
           <a
+            target="_blank"
             aria-label="Connectez avec moi sur LinkedIn"
             href="https://www.linkedin.com/in/olivier-fortier/"
             className="hover:bg-blue-600 transition-colors px-2 rounded-full bg-blue-500 dark:bg-blue-900 dark:hover:bg-blue-500 h-10 w-10 flex justify-center items-center text-white dark:text-blue-400"
@@ -38,6 +39,7 @@ export default function Footer({ theme, setDarkTheme, setLightTheme, }: { theme:
             <FaLinkedinIn />
           </a>
           <a
+            target="_blank"
             aria-label="Retrouvez tout mon code sur GitHub"
             href="https://github.com/OlivierFortier"
             className="hover:bg-blue-600 transition-colors px-2 rounded-full bg-blue-500 dark:bg-blue-900 dark:hover:bg-blue-500 h-10 w-10 flex justify-center items-center shadow-md ml-3 text-white dark:text-blue-400"
@@ -45,6 +47,7 @@ export default function Footer({ theme, setDarkTheme, setLightTheme, }: { theme:
             <FiGithub />
           </a>
           <a
+            target="_blank"
             aria-label="Contactez moi par courriel"
             href="mailto:olivier_fortier@outlook.com"
             className="hover:bg-blue-600 transition-colors px-2 rounded-full bg-blue-500 dark:bg-blue-900 dark:hover:bg-blue-500 h-10 w-10 flex justify-center items-center shadow-md ml-3 text-white dark:text-blue-400"
