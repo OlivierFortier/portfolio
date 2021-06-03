@@ -139,7 +139,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
     props: {
       pageAPropos
     },
-    revalidate: 10,
+    revalidate: 10000,
   };
 };
 
