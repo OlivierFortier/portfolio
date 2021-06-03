@@ -83,6 +83,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
       projets,
       pageAccueil
     },
-    revalidate: 10000,
+    revalidate: false,
   };
 };

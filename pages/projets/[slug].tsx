@@ -143,7 +143,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     props: {
       projet,
     },
-    revalidate: 10000,
+    revalidate: false,
   };
 };
 
